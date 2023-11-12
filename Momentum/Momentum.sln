@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Momentum", "Momentum\Momentum.csproj", "{28B3CCEA-F68F-416D-9124-443CCB779676}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28B3CCEA-F68F-416D-9124-443CCB779676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28B3CCEA-F68F-416D-9124-443CCB779676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28B3CCEA-F68F-416D-9124-443CCB779676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28B3CCEA-F68F-416D-9124-443CCB779676}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2223A3B-F5DE-40A3-9518-A2D714EBBC15}
+	EndGlobalSection
+EndGlobal
