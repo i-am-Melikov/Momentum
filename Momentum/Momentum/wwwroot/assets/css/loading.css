@@ -1,0 +1,61 @@
+.loading-overlay {
+    position: absolute;
+    z-index: 1;
+    width: 1.8rem
+}
+
+@media screen and (max-width: 767px) {
+    .loading-overlay {
+        top:0;
+        right: 0
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .loading-overlay {
+        left:0
+    }
+}
+
+.loading-overlay__spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.loading-overlay__spinner svg {
+    animation: rotator 1.4s linear infinite;
+    width: 15px;
+    height: 15px;
+    fill: var(--white);
+    margin: 0 auto 0 10px
+}
+
+@keyframes rotator {
+    0% {
+        transform: rotate(0)
+    }
+
+    to {
+        transform: rotate(270deg)
+    }
+}
+
+.product-form__submit.loading>svg,.add-cart-btn.loading>svg {
+    display: none
+}
+
+.loading-overlay:not(.hidden)+.cart-item__price-wrapper,.loading-overlay:not(.hidden)~cart-remove-button {
+    opacity: 50%
+}
+
+.loading-overlay:not(.hidden)~cart-remove-button {
+    pointer-events: none;
+    cursor: default
+}
+
+.add-cart-btn.loading .atc-ic {
+    display: none
+}
+
+/*# sourceMappingURL=/cdn/shop/t/3/assets/component-loading-overlay.css.map?v=166252473155100050561690887028 */

@@ -1,0 +1,1321 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\css\\component-facets.css",
+      "PackagePath": "staticwebassets\\assets\\css\\component-facets.css"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\css\\loading.css",
+      "PackagePath": "staticwebassets\\assets\\css\\loading.css"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\css\\style.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css.map"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\css\\style.scss",
+      "PackagePath": "staticwebassets\\assets\\css\\style.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\css\\swiper.css",
+      "PackagePath": "staticwebassets\\assets\\css\\swiper.css"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\dropdown.png",
+      "PackagePath": "staticwebassets\\assets\\img\\dropdown.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\dropdown.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\dropdown.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\1-1_247x198.avif",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\1-1_247x198.avif"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\1-1_258x258.avif",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\1-1_258x258.avif"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\1_098957a5-a68e-41e1-b702-95d5b5b22204_247x198.avif",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\1_098957a5-a68e-41e1-b702-95d5b5b22204_247x198.avif"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\1_098957a5-a68e-41e1-b702-95d5b5b22204_600x600.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\1_098957a5-a68e-41e1-b702-95d5b5b22204_600x600.webp"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\1_1b6b9b1a-54f6-4df3-99ee-8d9362e873ba_600x600.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\1_1b6b9b1a-54f6-4df3-99ee-8d9362e873ba_600x600.webp"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\1_4661881d-c8c7-4d3b-962e-038344e4ac81_258x258.avif",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\1_4661881d-c8c7-4d3b-962e-038344e4ac81_258x258.avif"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\1_50862e3f-4e56-4d7c-9220-04cde28aca6d_258x258.avif",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\1_50862e3f-4e56-4d7c-9220-04cde28aca6d_258x258.avif"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\1_50862e3f-4e56-4d7c-9220-04cde28aca6d_600x600.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\1_50862e3f-4e56-4d7c-9220-04cde28aca6d_600x600.webp"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\1_892117ef-00bc-43f7-8789-c8a6a7c180ee_247x198.avif",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\1_892117ef-00bc-43f7-8789-c8a6a7c180ee_247x198.avif"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\gx6-back-1000-removebg-preview_258x258.avif",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\gx6-back-1000-removebg-preview_258x258.avif"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\hyperx_chargeplay_duo_xbox_2_angled_controller_900x-removebg-preview_258x258.avif",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\hyperx_chargeplay_duo_xbox_2_angled_controller_900x-removebg-preview_258x258.avif"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\hyperx_cloud_alpha_black_1_main_1600x-removebg-preview_258x258.avif",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\hyperx_cloud_alpha_black_1_main_1600x-removebg-preview_258x258.avif"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\js\\basket.js",
+      "PackagePath": "staticwebassets\\assets\\js\\basket.js"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\js\\custom.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom.js"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\js\\detail.js",
+      "PackagePath": "staticwebassets\\assets\\js\\detail.js"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\vendor\\slick\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\assets\\vendor\\slick\\ajax-loader.gif"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\vendor\\slick\\config.rb",
+      "PackagePath": "staticwebassets\\assets\\vendor\\slick\\config.rb"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\vendor\\slick\\fonts\\slick.eot",
+      "PackagePath": "staticwebassets\\assets\\vendor\\slick\\fonts\\slick.eot"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\vendor\\slick\\fonts\\slick.svg",
+      "PackagePath": "staticwebassets\\assets\\vendor\\slick\\fonts\\slick.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\vendor\\slick\\fonts\\slick.ttf",
+      "PackagePath": "staticwebassets\\assets\\vendor\\slick\\fonts\\slick.ttf"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\vendor\\slick\\fonts\\slick.woff",
+      "PackagePath": "staticwebassets\\assets\\vendor\\slick\\fonts\\slick.woff"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\vendor\\slick\\slick-theme.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\slick\\slick-theme.css"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\vendor\\slick\\slick-theme.css.map",
+      "PackagePath": "staticwebassets\\assets\\vendor\\slick\\slick-theme.css.map"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\vendor\\slick\\slick-theme.less",
+      "PackagePath": "staticwebassets\\assets\\vendor\\slick\\slick-theme.less"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\vendor\\slick\\slick-theme.scss",
+      "PackagePath": "staticwebassets\\assets\\vendor\\slick\\slick-theme.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\vendor\\slick\\slick.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\slick\\slick.css"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\vendor\\slick\\slick.css.map",
+      "PackagePath": "staticwebassets\\assets\\vendor\\slick\\slick.css.map"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\vendor\\slick\\slick.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\slick\\slick.js"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\vendor\\slick\\slick.less",
+      "PackagePath": "staticwebassets\\assets\\vendor\\slick\\slick.less"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\vendor\\slick\\slick.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\slick\\slick.min.js"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\vendor\\slick\\slick.scss",
+      "PackagePath": "staticwebassets\\assets\\vendor\\slick\\slick.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\css\\nucleo-icons.css",
+      "PackagePath": "staticwebassets\\manage\\css\\nucleo-icons.css"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\css\\nucleo-svg.css",
+      "PackagePath": "staticwebassets\\manage\\css\\nucleo-svg.css"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\css\\soft-ui-dashboard.css",
+      "PackagePath": "staticwebassets\\manage\\css\\soft-ui-dashboard.css"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\css\\soft-ui-dashboard.css.map",
+      "PackagePath": "staticwebassets\\manage\\css\\soft-ui-dashboard.css.map"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\css\\soft-ui-dashboard.min.css",
+      "PackagePath": "staticwebassets\\manage\\css\\soft-ui-dashboard.min.css"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\fonts\\nucleo-icons.eot",
+      "PackagePath": "staticwebassets\\manage\\fonts\\nucleo-icons.eot"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\fonts\\nucleo-icons.svg",
+      "PackagePath": "staticwebassets\\manage\\fonts\\nucleo-icons.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\fonts\\nucleo-icons.ttf",
+      "PackagePath": "staticwebassets\\manage\\fonts\\nucleo-icons.ttf"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\fonts\\nucleo-icons.woff",
+      "PackagePath": "staticwebassets\\manage\\fonts\\nucleo-icons.woff"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\fonts\\nucleo-icons.woff2",
+      "PackagePath": "staticwebassets\\manage\\fonts\\nucleo-icons.woff2"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\fonts\\nucleo.eot",
+      "PackagePath": "staticwebassets\\manage\\fonts\\nucleo.eot"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\fonts\\nucleo.ttf",
+      "PackagePath": "staticwebassets\\manage\\fonts\\nucleo.ttf"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\fonts\\nucleo.woff",
+      "PackagePath": "staticwebassets\\manage\\fonts\\nucleo.woff"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\fonts\\nucleo.woff2",
+      "PackagePath": "staticwebassets\\manage\\fonts\\nucleo.woff2"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\apple-icon.png",
+      "PackagePath": "staticwebassets\\manage\\img\\apple-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\bg1.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\bg1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\bruce-mars.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\bruce-mars.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved-10.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved-10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved-11.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved-6.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved-8.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved0.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved1.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved10.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved11-small.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved11-small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved11.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved12.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved13.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved14.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved14.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved19.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved19.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved2.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved21.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved21.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved3.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved4.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved5-small.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved5-small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved5.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved6-small.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved6-small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved6.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved7.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved8.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\curved9.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\curved9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\curved-images\\white-curved.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\curved-images\\white-curved.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\down-arrow-dark.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\down-arrow-dark.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\down-arrow-white.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\down-arrow-white.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\down-arrow.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\down-arrow.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\favicon.png",
+      "PackagePath": "staticwebassets\\manage\\img\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\home-decor-1.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\home-decor-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\home-decor-2.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\home-decor-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\home-decor-3.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\home-decor-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\illustrations\\rocket-dark.png",
+      "PackagePath": "staticwebassets\\manage\\img\\illustrations\\rocket-dark.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\illustrations\\rocket-white.png",
+      "PackagePath": "staticwebassets\\manage\\img\\illustrations\\rocket-white.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\ivana-square.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\ivana-square.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\ivancik.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\ivancik.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\kal-visuals-square.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\kal-visuals-square.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\logo-ct-dark.png",
+      "PackagePath": "staticwebassets\\manage\\img\\logo-ct-dark.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\logo-ct.png",
+      "PackagePath": "staticwebassets\\manage\\img\\logo-ct.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\logos\\mastercard.png",
+      "PackagePath": "staticwebassets\\manage\\img\\logos\\mastercard.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\logos\\visa.png",
+      "PackagePath": "staticwebassets\\manage\\img\\logos\\visa.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\marie.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\marie.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\shapes\\pattern-lines.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\shapes\\pattern-lines.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\shapes\\shape-1.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\shapes\\shape-1.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\shapes\\shape-2.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\shapes\\shape-2.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\shapes\\shape-3.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\shapes\\shape-3.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\shapes\\wave-down.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\shapes\\wave-down.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\shapes\\wave-up.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\shapes\\wave-up.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\shapes\\waves-gray.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\shapes\\waves-gray.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\shapes\\waves-white.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\shapes\\waves-white.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\small-logos\\icon-sun-cloud.png",
+      "PackagePath": "staticwebassets\\manage\\img\\small-logos\\icon-sun-cloud.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\small-logos\\logo-atlassian.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\small-logos\\logo-atlassian.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\small-logos\\logo-invision.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\small-logos\\logo-invision.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\small-logos\\logo-jira.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\small-logos\\logo-jira.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\small-logos\\logo-slack.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\small-logos\\logo-slack.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\small-logos\\logo-spotify.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\small-logos\\logo-spotify.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\small-logos\\logo-webdev.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\small-logos\\logo-webdev.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\small-logos\\logo-xd.svg",
+      "PackagePath": "staticwebassets\\manage\\img\\small-logos\\logo-xd.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\team-1.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\team-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\team-2.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\team-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\team-3.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\team-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\team-4.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\team-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\theme\\angular.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\theme\\angular.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\theme\\bootstrap.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\theme\\bootstrap.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\theme\\dribbble.png",
+      "PackagePath": "staticwebassets\\manage\\img\\theme\\dribbble.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\theme\\dropbox.png",
+      "PackagePath": "staticwebassets\\manage\\img\\theme\\dropbox.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\theme\\mastercard.png",
+      "PackagePath": "staticwebassets\\manage\\img\\theme\\mastercard.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\theme\\paypal.png",
+      "PackagePath": "staticwebassets\\manage\\img\\theme\\paypal.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\theme\\react.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\theme\\react.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\theme\\sketch.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\theme\\sketch.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\theme\\slack.png",
+      "PackagePath": "staticwebassets\\manage\\img\\theme\\slack.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\theme\\spotify.jpeg",
+      "PackagePath": "staticwebassets\\manage\\img\\theme\\spotify.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\theme\\tim.png",
+      "PackagePath": "staticwebassets\\manage\\img\\theme\\tim.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\theme\\unass.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\theme\\unass.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\theme\\visa.png",
+      "PackagePath": "staticwebassets\\manage\\img\\theme\\visa.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\theme\\vue.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\theme\\vue.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\img\\vr-bg.jpg",
+      "PackagePath": "staticwebassets\\manage\\img\\vr-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\js\\core\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\manage\\js\\core\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\js\\core\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\manage\\js\\core\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\js\\core\\popper.min.js",
+      "PackagePath": "staticwebassets\\manage\\js\\core\\popper.min.js"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\js\\plugins\\Chart.extension.js",
+      "PackagePath": "staticwebassets\\manage\\js\\plugins\\Chart.extension.js"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\js\\plugins\\bootstrap-notify.js",
+      "PackagePath": "staticwebassets\\manage\\js\\plugins\\bootstrap-notify.js"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\js\\plugins\\chartjs.min.js",
+      "PackagePath": "staticwebassets\\manage\\js\\plugins\\chartjs.min.js"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\js\\plugins\\perfect-scrollbar.min.js",
+      "PackagePath": "staticwebassets\\manage\\js\\plugins\\perfect-scrollbar.min.js"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\js\\plugins\\smooth-scrollbar.min.js",
+      "PackagePath": "staticwebassets\\manage\\js\\plugins\\smooth-scrollbar.min.js"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\js\\soft-ui-dashboard.js",
+      "PackagePath": "staticwebassets\\manage\\js\\soft-ui-dashboard.js"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\js\\soft-ui-dashboard.js.map",
+      "PackagePath": "staticwebassets\\manage\\js\\soft-ui-dashboard.js.map"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\js\\soft-ui-dashboard.min.js",
+      "PackagePath": "staticwebassets\\manage\\js\\soft-ui-dashboard.min.js"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard.css",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard.css"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard.css.map",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard.css.map"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_alert.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_alert.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_avatars.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_avatars.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_badge.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_badge.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_breadcrumbs.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_breadcrumbs.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_buttons.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_cards.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_cards.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_dark-version.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_dark-version.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_dropdown.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_dropup.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_dropup.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_fixed-plugin.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_fixed-plugin.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_footer.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_footer.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_forms.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_forms.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_gradients.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_gradients.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_header.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_header.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_info-areas.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_info-areas.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_misc.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_misc.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_nav.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_nav.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_navbar-vertical.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_navbar-vertical.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_navbar.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_navbar.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_pagination.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_pagination.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_popovers.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_popovers.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_progress.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_progress.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_rtl.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_rtl.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_social-buttons.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_social-buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_tables.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_tables.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_tilt.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_tilt.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_timeline.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_timeline.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_tooltips.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_tooltips.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_typography.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_typography.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_utilities-extend.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_utilities-extend.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_utilities.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_utilities.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\_variables.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_accordion.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_accordion.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_alert.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_alert.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_badge.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_badge.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_breadcrumb.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_button-group.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_button-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_buttons.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_card.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_card.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_carousel.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_carousel.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_close.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_close.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_containers.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_containers.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_dropdown.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_forms.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_forms.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_functions.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_functions.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_grid.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_grid.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_helpers.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_helpers.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_images.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_images.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_list-group.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_list-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_maps.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_maps.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_mixins.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_mixins.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_modal.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_modal.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_nav.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_nav.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_navbar.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_navbar.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_offcanvas.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_offcanvas.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_pagination.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_pagination.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_placeholders.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_placeholders.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_popover.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_popover.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_progress.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_progress.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_reboot.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_reboot.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_root.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_root.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_spinners.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_spinners.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_tables.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_tables.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_toasts.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_toasts.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_tooltip.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_transitions.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_transitions.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_type.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_type.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_utilities.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_utilities.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_variables.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-utilities.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap-utilities.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap.css",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\bootstrap.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_floating-labels.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_floating-labels.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_form-check.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_form-check.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_form-control.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_form-control.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_form-range.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_form-range.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_form-select.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_form-select.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_form-text.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_form-text.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_input-group.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_input-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_labels.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_labels.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_validation.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\forms\\_validation.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_clearfix.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_color-bg.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_color-bg.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_colored-links.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_colored-links.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_position.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_position.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_ratio.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_ratio.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_stacks.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_stacks.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_stretched-link.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_text-truncation.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_text-truncation.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_visually-hidden.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_vr.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\helpers\\_vr.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_backdrop.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_backdrop.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_banner.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_banner.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_color-scheme.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_color-scheme.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_container.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_container.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_image.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_table-variants.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_table-variants.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_utilities.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_utilities.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\mixins\\_visually-hidden.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\utilities\\_api.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\utilities\\_api.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\bootstrap\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\bootstrap\\vendor\\_rfs.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\cards\\card-background.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\cards\\card-background.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\custom\\_styles.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\custom\\_styles.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\custom\\_variables.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\custom\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\forms\\_form-check.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\forms\\_form-check.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\forms\\_form-select.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\forms\\_form-select.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\forms\\_form-switch.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\forms\\_form-switch.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\forms\\_forms.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\forms\\_forms.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\forms\\_input-group.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\forms\\_input-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\forms\\_inputs.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\forms\\_inputs.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\forms\\_labels.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\forms\\_labels.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\mixins\\_badge.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\mixins\\_badge.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\mixins\\_colored-shadows.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\mixins\\_colored-shadows.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\mixins\\_container.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\mixins\\_container.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\mixins\\_hover.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\mixins\\_hover.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\mixins\\_social-buttons.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\mixins\\_social-buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\mixins\\mixins.css",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\mixins\\mixins.css"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\mixins\\mixins.css.map",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\mixins\\mixins.css.map"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\mixins\\mixins.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\mixins\\mixins.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\plugins\\free\\_flatpickr.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\plugins\\free\\_flatpickr.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\plugins\\free\\_nouislider.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\plugins\\free\\_nouislider.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\plugins\\free\\_perfect-scrollbar.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\plugins\\free\\_perfect-scrollbar.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\plugins\\free\\_prism.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\plugins\\free\\_prism.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\plugins\\free\\plugins.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\plugins\\free\\plugins.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\theme.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\theme.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_animations.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_animations.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_avatars.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_avatars.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_badge.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_badge.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_breadcrumb.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_cards-extend.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_cards-extend.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_cards.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_cards.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_choices.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_choices.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_dark-version.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_dark-version.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_dropdowns.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_dropdowns.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_fixed-plugin.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_fixed-plugin.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_form-switch.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_form-switch.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_full-calendar.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_full-calendar.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_header.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_header.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_info-areas.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_info-areas.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_misc-extend.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_misc-extend.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_misc.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_misc.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_navbar-vertical.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_navbar-vertical.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_navbar.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_navbar.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_pagination.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_pagination.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_rtl.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_rtl.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_social-buttons.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_social-buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_table.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_table.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_timeline.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_timeline.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_utilities-extend.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_utilities-extend.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_utilities.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_utilities.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_virtual-reality.scss",
+      "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_virtual-reality.scss"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Momentum.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Momentum.props",
+      "PackagePath": "build\\Momentum.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Momentum.props",
+      "PackagePath": "buildMultiTargeting\\Momentum.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Momentum.props",
+      "PackagePath": "buildTransitive\\Momentum.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

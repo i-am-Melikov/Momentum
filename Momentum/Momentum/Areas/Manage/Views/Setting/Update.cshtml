@@ -1,0 +1,36 @@
+﻿@model SettingVM
+@{
+    ViewData["Title"] = "Update";
+}
+
+<main class="main-content  mt-0">
+    <section>
+        <div class="page-header min-vh-50">
+            <div class="container">
+                <div class="row">
+                    <div class="pt-3 pb-0 mb-5">
+                          <h6>Setting</h6>
+                    </div>
+                    <div class="col-12">
+                        <div class="card mb-4" style="padding:50px">
+                            <div class="card-body px-0 pt-0 pb-2">
+                                <div class="table-responsive p-0">
+                                    <form method="post">
+                                        <div class="input-group mb-3">
+                                            <h5>Key: @ViewBag.key</h5>
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <h5 style="margin-right:50px">Value:</h5>
+                                            <input asp-for="Value" class="form-control" style="outline:none; padding:0px 25px;">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
