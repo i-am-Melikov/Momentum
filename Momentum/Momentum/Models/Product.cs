@@ -20,7 +20,7 @@ namespace Momentum.Models
         [StringLength(255)]
         public string? MainImage { get; set; }
         public List<ProductCategory>? ProductCategories { get; set; }
-
+        public List<ProductColor>? ProductColor { get; set; }
         public bool IsTopSeller { get; set; }
         public bool IsOurProduct { get; set; }
         public List<ProductImage>? ProductImages { get; set; }
@@ -28,7 +28,11 @@ namespace Momentum.Models
         public IFormFile? MainFile { get; set; }
         [NotMapped]
         public IEnumerable<IFormFile>? Files { get; set; }
-        [NotMapped] // This attribute prevents EF from mapping it to the database.
+        [NotMapped]
         public List<int> CategoryIds { get; set; }
+        public Product()
+        {
+            CategoryIds = new List<int>();
+        }
     }
 }

@@ -12,7 +12,7 @@
                           <h6>Setting</h6>
                     </div>
                     <div class="col-12">
-                        <div class="card mb-4" style="padding:50px">
+                        <div class="card mb-4" style="padding:50px 50px 10px">
                             <div class="card-body px-0 pt-0 pb-2">
                                 <div class="table-responsive p-0">
                                     <form method="post">
@@ -23,7 +23,8 @@
                                             <h5 style="margin-right:50px">Value:</h5>
                                             <input asp-for="Value" class="form-control" style="outline:none; padding:0px 25px;">
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <a asp-area="manage" asp-controller="setting" asp-action="index" class="btn btn-primary">Go Home</a>
+                                        <button type="submit" class="btn btn-danger">Submit</button>
                                     </form>
                                 </div>
                             </div>

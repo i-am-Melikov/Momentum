@@ -1,0 +1,49 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Detail";
+}
+<main class="main-content  mt-0">
+    <section>
+        <div class="page-header min-vh-75">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Page Heading -->
+                        <div class="d-sm-flex justify-content-between mt-4 mb-4">
+                            <h1 class="h3 mb-0 text-gray-800">Category Detail</h1>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-body px-0 pt-0 pb-2">
+                                <div class="table-responsive p-0">
+                                    <table class="table align-items-center mb-0" style="padding:20px 20px 0px">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Image</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Product Count</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Created At</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Created By</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                    <td>
+                                                    <img style="width:100px;" src="~/assets/img/category/@Model.MainImage">
+                                                    </td>
+                                                    <td>@Model.Name</td>
+                                                    <td>@Model.ProductCategories.Count</td>
+                                                    <td>@Model.CreatedAt?.ToString("yyyy / MM / dd")</td>
+                                                    <td>@Model.CreatedBy</td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                                    <a asp-area="manage" asp-controller="category" asp-action="index" class="btn btn-primary" style="margin:10px 0px 20px 30px;">Go Home</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

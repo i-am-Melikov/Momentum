@@ -11,5 +11,6 @@ namespace Momentum.DataAccess
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
     }
 }

@@ -1,0 +1,95 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Delete";
+    IEnumerable<Category> categories = ViewBag.Categories;
+    IEnumerable<ProductImage> productImages = ViewBag.ProductImages;
+}
+
+<main class="main-content  mt-0">
+    <section>
+        <div class="page-header min-vh-75">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Page Heading -->
+                        <div class="d-sm-flex justify-content-between mt-4 mb-4">
+                            <h1 class="h3 mb-0 text-gray-800">Product Detail</h1>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-body px-0 pt-0 pb-2">
+                                <div class="p-0">
+                                    <table class="table align-items-center mb-0" style="padding:20px 20px 0px">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Id</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Image</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Title</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Category</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Price</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Discounted Price</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Created At</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Created By</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>@Model.Id</td>
+                                                <td>
+                                                    <img style="width:100px;" src="~/assets/img/product/@Model.MainImage">
+                                                </td>
+                                                <td>@Model.Title</td>
+                                                <td>@string.Join(", ",Model.ProductCategories.Select(t=>t.Category.Name))</td>
+                                                <td>@Model.Price</td>
+                                                <td>@Model.DiscountedPrice</td>
+                                                <td>@Model.CreatedAt?.ToString("yyyy / MM / dd")</td>
+                                                <td>@Model.CreatedBy</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div style="padding:30px">
+                                        <div class="imageContainer imageContainer d-flex align-items-center">
+                                            @foreach (ProductImage productImage in productImages)
+                                            {
+                                                <div style="margin-right:20px; overflow:hidden; width:100px; height:100px; background-color: #fff;">
+                                                    <img style="width:100%; height:100%; object-fit:cover" src="~/assets/img/product/@productImage.Image" />
+                                                </div>
+                                            }
+                                        </div>
+                                        <span>Description: @Html.Raw(Model.Description)</span>
+                                        <div>
+                                            Greats:
+                                            @if (Model.IsTopSeller == true)
+                                            {
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" checked disabled>
+                                                    <label class="form-check-label">
+                                                        IsTopSeller
+                                                    </label>
+                                                </div>
+                                            }
+                                            @if (Model.IsOurProduct == true)
+                                            {
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" checked disabled>
+                                                    <label class="form-check-label">
+                                                        IsOurProduct
+                                                    </label>
+                                                </div>
+                                            }
+                                        </div>
+                                        <div class="form-group">
+                                            Category:
+                                            @string.Join(", ",Model.ProductCategories.Select(t=>t.Category.Name))
+                                        </div>
+                                        <a asp-area="manage" asp-controller="product" asp-action="index" class="btn btn-primary">Go Home</a>
+                                        <a asp-area="manage" asp-controller="product" asp-action="DeleteProduct" asp-route-id="@Model.Id" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

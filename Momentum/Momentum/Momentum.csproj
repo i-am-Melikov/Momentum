@@ -9,7 +9,8 @@
   <ItemGroup>
     <Folder Include="Areas\Manage\Data\" />
     <Folder Include="Areas\Manage\Models\" />
-    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\assets\img\category\" />
+    <Folder Include="wwwroot\assets\img\product\" />
   </ItemGroup>
 
   <ItemGroup>
