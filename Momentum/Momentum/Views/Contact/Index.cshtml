@@ -1,4 +1,4 @@
-﻿
+﻿@model Dictionary<string,string>
 @{
     ViewData["Title"] = "Index";
 }
@@ -34,17 +34,17 @@
                         <ul class="col-sm-6 col-12">
                             <li>
                                 <h4>Call us:</h4>
-                                <p>+994 77 777 77 77</p>
+                                <p>@Model.FirstOrDefault(s=>s.Key=="number").Value</p>
                             </li>
                             <li>
                                 <h4>EMAIL:</h4>
-                                <p>shop@company.com</p>
+                                <p>@Model.FirstOrDefault(s=>s.Key=="email").Value</p>
                             </li>
                         </ul>
                         <ul class="col-sm-6 col-12">
                             <li>
                                 <h4>ADDRESS:</h4>
-                                <p class="address">Nizami küçəsi 203B, AF Business House, 2-ci mərtəbə, Baku 1000</p>
+                                <p class="address">@Model.FirstOrDefault(s=>s.Key=="adress").Value</p>
                             </li>
                         </ul>
                     </div>

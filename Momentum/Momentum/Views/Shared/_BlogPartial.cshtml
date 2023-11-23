@@ -1,0 +1,35 @@
+﻿@model PageNatedList<Blog>
+<div class="blog-grid-row row">
+    @foreach (Blog blog in Model)
+    {
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12 blog-itm-card">
+            <div class="blog-card-inner">
+                <div class="blog-card-image">
+                    <a asp-controller="blog" asp-action="detail" asp-route-id="@blog.Id">
+                        <img src="~/assets/img/blog/@blog.MainImage" class="default-img">
+                    </a>
+                    <div class="blog-labl">news</div>
+                    <div class="date-labl"><p>@blog.CreatedAt?.ToString("MMMM d, yyyy")<p></div>
+                </div>
+                <div class="blog-product-content">
+                    <h4 class="product-title product-title-blog">
+                        <a asp-controller="blog" asp-action="detail" asp-route-id="@blog.Id">@blog.Title</a>
+                    </h4>
+                </div>
+                <ul class="blog-number blog-number-black">
+                    <li>
+                        Author: @blog.CreatedBy
+                    </li>
+                </ul>
+                <div class="blog-description">
+                    <p>
+                        @Html.Raw(blog.Description)
+                    </p>
+                </div>
+                <div class="read-more-btn">
+                    <a asp-controller="blog" asp-action="detail" asp-route-id="@blog.Id" class="btn-primary">READ MORE</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

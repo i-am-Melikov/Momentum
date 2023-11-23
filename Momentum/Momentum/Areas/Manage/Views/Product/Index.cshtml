@@ -4,7 +4,7 @@
     int no = (Model.CurrentPage - 1) * Model.ElementCount;
 }
 <style>
-    .description p{
+    .description p, .product-title p{
         width: 100px;
         white-space: nowrap;
         overflow: hidden;
@@ -31,6 +31,7 @@
                                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">No</th>
                                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Image</th>
                                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Title</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Color</th>
                                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Category</th>
                                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Price</th>
                                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Discounted Price</th>
@@ -49,8 +50,9 @@
                                                     <td>
                                                         <img style="width:100px;" src="~/assets/img/product/@product.MainImage">
                                                     </td>
-                                                    <td>@product.Title</td>
-                                                    <td>@string.Join(", ",product.ProductCategories.Select(t=>t.Category.Name))</td>
+                                                    <td class="product-title"><p>@product.Title</p></td>
+                                                    <td>@string.Join(", ", product.ProductColors.Select(pc => pc.Color.Title))</td>
+                                                    <td>@string.Join(", ", product.ProductCategories.Select(t=>t.Category.Name))</td>
                                                     <td>@product.Price</td>
                                                     <td>@product.DiscountedPrice</td>
                                                     <td class="description">
@@ -77,12 +79,10 @@
                                         {
                                         <li class="page-item"><a class="page-link" asp-area="manage" asp-controller="product" asp-action="index" asp-route-currentPage="@(Model.CurrentPage-1)"><i class="fa-solid fa-arrow-left-long"></i></a></li>
                                         }
-
                                         @for (int i = Model.Start; i <= Model.End; i++)
                                         {
                                         <li class="page-item @(Model.CurrentPage == i ? "active" : "") "><a class="page-link" style="background:none;" asp-area="manage" asp-controller="product" asp-action="index" asp-route-currentPage="@i">@i</a></li>
                                         }
-
                                         @if (Model.HasNext)
                                         {
                                         <li class="page-item"><a class="page-link" asp-area="manage" asp-controller="product" asp-action="index" asp-route-currentPage="@(Model.CurrentPage+1)"><i class="fa-solid fa-arrow-right-long"></i></a></li>

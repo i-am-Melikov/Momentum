@@ -1,0 +1,53 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<main class="main-content  mt-0">
+    <section>
+        <div class="page-header min-vh-75">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Page Heading -->
+                        <div class="d-sm-flex justify-content-between mt-4 mb-4">
+                            <h1 class="h3 mb-0 text-gray-800">Blog Detail</h1>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-body px-0 pt-0 pb-2">
+                                <div class="p-0">
+                                    <table class="table align-items-center mb-0" style="padding:20px 20px 0px">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Id</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Image</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Title</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Created At</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Created By</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>@Model.Id</td>
+                                                <td>
+                                                    <img style="width:100px;" src="~/assets/img/blog/@Model.MainImage">
+                                                </td>
+                                                <td>@Model.Title</td>
+                                                <td>@Model.CreatedAt?.ToString("yyyy / MM / dd")</td>
+                                                <td>@Model.CreatedBy</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div style="padding:30px">
+                                        <span>Description: @Html.Raw(Model.Description)</span>
+                                        <a asp-area="manage" asp-controller="blog" asp-action="index" class="btn btn-primary">Go Home</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

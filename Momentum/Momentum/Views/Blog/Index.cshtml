@@ -1,7 +1,38 @@
-﻿
+﻿@model PageNatedList<Blog>
 @{
     ViewData["Title"] = "Index";
 }
+
+<style>
+    .blog-itm-card p {
+        max-width: 250px;
+        max-height: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .product-title a {
+        max-width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .blog-description p:not(:nth-child(2)) {
+        display: none;
+    }
+
+    /* Additional styles for .blog-description p:nth-child(2) */
+    .blog-description p:nth-child(2) {
+        max-height: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Number of lines to show */
+        -webkit-box-orient: vertical;
+        white-space: normal;
+    }
+</style>
 
 <main id="MainContent" class="content-for-layout home-wrapper">
     <div>
@@ -33,131 +64,24 @@
                 <div class="subtitle">ALL BLOGS</div>
                 <h2>GAME</h2>
             </div>
-            <div class="blog-grid-row row">
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 blog-itm-card">
-                    <div class="blog-card-inner">
-                        <div class="blog-card-image">
-                            <a href="/blogs/news/best-gamers-desk-settings-for-amateurs-8">
-                                <img src="//gaming-workdo.myshopify.com/cdn/shop/articles/10.png?v=1670910756" class="default-img">
-                            </a>
-                            <div class="blog-labl">news</div>
-                            <div class="date-labl"><p>December 13, 2022</p></div>
-                        </div>
-                        <div class="blog-product-content">
-                            <h4 class="product-title product-title-blog">
-                                <a href="/blogs/news/best-gamers-desk-settings-for-amateurs-8">The Dev Diary Season Points Boomstick...</a>
-                            </h4>
-                        </div>
-                        <ul class="blog-number blog-number-black">
-                            <li>
-                                Author: WorkDo
-                            </li>
-                        </ul>
-                        <p>Gambling has been a main recreational activity in Great Britain for centuries. Queen Elizabeth I chartered a lottery...</p>
-                        <div class="read-more-btn">
-                            <a href="/blogs/news/best-gamers-desk-settings-for-amateurs-8" class="btn-primary add-cart-btn">READ MORE</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 blog-itm-card">
-                    <div class="blog-card-inner">
-                        <div class="blog-card-image">
-                            <a href="/blogs/news/best-gamers-desk-settings-for-amateurs-8">
-                                <img src="//gaming-workdo.myshopify.com/cdn/shop/articles/10.png?v=1670910756" class="default-img">
-                            </a>
-                            <div class="blog-labl">news</div>
-                            <div class="date-labl"><p>December 13, 2022</p></div>
-                        </div>
-                        <div class="blog-product-content">
-                            <h4 class="product-title product-title-blog">
-                                <a href="/blogs/news/best-gamers-desk-settings-for-amateurs-8">The Dev Diary Season Points Boomstick...</a>
-                            </h4>
-                        </div>
-                        <ul class="blog-number blog-number-black">
-                            <li>
-                                Author: WorkDo
-                            </li>
-                        </ul>
-                        <p>Gambling has been a main recreational activity in Great Britain for centuries. Queen Elizabeth I chartered a lottery...</p>
-                        <div class="read-more-btn">
-                            <a href="/blogs/news/best-gamers-desk-settings-for-amateurs-8" class="btn-primary add-cart-btn">READ MORE</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 blog-itm-card">
-                    <div class="blog-card-inner">
-                        <div class="blog-card-image">
-                            <a href="/blogs/news/best-gamers-desk-settings-for-amateurs-8">
-                                <img src="//gaming-workdo.myshopify.com/cdn/shop/articles/10.png?v=1670910756" class="default-img">
-                            </a>
-                            <div class="blog-labl">news</div>
-                            <div class="date-labl"><p>December 13, 2022</p></div>
-                        </div>
-                        <div class="blog-product-content">
-                            <h4 class="product-title product-title-blog">
-                                <a href="/blogs/news/best-gamers-desk-settings-for-amateurs-8">The Dev Diary Season Points Boomstick...</a>
-                            </h4>
-                        </div>
-                        <ul class="blog-number blog-number-black">
-                            <li>
-                                Author: WorkDo
-                            </li>
-                        </ul>
-                        <p>Gambling has been a main recreational activity in Great Britain for centuries. Queen Elizabeth I chartered a lottery...</p>
-                        <div class="read-more-btn">
-                            <a href="/blogs/news/best-gamers-desk-settings-for-amateurs-8" class="btn-primary add-cart-btn">READ MORE</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12 blog-itm-card">
-                    <div class="blog-card-inner">
-                        <div class="blog-card-image">
-                            <a href="/blogs/news/best-gamers-desk-settings-for-amateurs-8">
-                                <img src="//gaming-workdo.myshopify.com/cdn/shop/articles/10.png?v=1670910756" class="default-img">
-                            </a>
-                            <div class="blog-labl">news</div>
-                            <div class="date-labl"><p>December 13, 2022</p></div>
-                        </div>
-                        <div class="blog-product-content">
-                            <h4 class="product-title product-title-blog">
-                                <a href="/blogs/news/best-gamers-desk-settings-for-amateurs-8">The Dev Diary Season Points Boomstick...</a>
-                            </h4>
-                        </div>
-                        <ul class="blog-number blog-number-black">
-                            <li>
-                                Author: WorkDo
-                            </li>
-                        </ul>
-                        <p>Gambling has been a main recreational activity in Great Britain for centuries. Queen Elizabeth I chartered a lottery...</p>
-                        <div class="read-more-btn">
-                            <a href="/blogs/news/best-gamers-desk-settings-for-amateurs-8" class="btn-primary add-cart-btn">READ MORE</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <link rel="stylesheet" href="//gaming-workdo.myshopify.com/cdn/shop/t/3/assets/component-pagination.css?v=178902974117111477441690887028" media="all" onload="this.media='all'">
-            <noscript>
-                <link href="//gaming-workdo.myshopify.com/cdn/shop/t/3/assets/component-pagination.css?v=178902974117111477441690887028" rel="stylesheet" type="text/css" media="all" />
-            </noscript>
+            @await Html.PartialAsync("_BlogPartial", Model)
 
             <div class="pagination-wrapper pagination-wraapper-blog">
-                <nav class="pagination" role="navigation" aria-label="Pagination">
-                    <ul class="pagination__list list-unstyled" role="list">
-                        <li>
-                            <span class="pagination__item pagination__item--current">1</span>
-                        </li>
-                        <li>
-                            <a href="" class="pagination__item link">2</a>
-                        </li>
-                        <li>
-                            <a href="" class="pagination__item link">3</a>
-                        </li>
-                        <li>
-                            <a href="" class="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                            </a>
-                        </li>
+                <nav class="pagination d-flex justify-content-center align-items-center">
+                    <ul class="pagination">
+                        @if (Model.HasPrev)
+                        {
+                            <li class="page-item"><a class="page-link" asp-controller="blog" asp-action="index" asp-route-currentPage="@(Model.CurrentPage-1)"><i class="fa-solid fa-arrow-left-long"></i></a></li>
+                        }
+                        @for (int i = Model.Start; i <= Model.End; i++)
+                        {
+                            <li class="page-item @(Model.CurrentPage == i ? "active" : "") "><a class="page-link" style="background:none;" asp-controller="blog" asp-action="index" asp-route-currentPage="@i">@i</a></li>
+                        }
+                        @if (Model.HasNext)
+                        {
+                            <li class="page-item"><a class="page-link" asp-controller="blog" asp-action="index" asp-route-currentPage="@(Model.CurrentPage+1)"><i class="fa-solid fa-arrow-right-long"></i></a></li>
+                        }
                     </ul>
                 </nav>
             </div>

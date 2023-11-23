@@ -20,6 +20,7 @@ namespace Momentum.Areas.Manage.Controllers
         {
             IQueryable<Product> products = _context.Products
                 .Include(p => p.ProductCategories.Where(pc => pc.IsDeleted == false)).ThenInclude(p => p.Category)
+                .Include(p=> p.ProductColors.Where(pc=>pc.IsDeleted==false)).ThenInclude(p=>p.Color)
                 .Where(c => c.IsDeleted == false)
                 .OrderByDescending(c => c.Id);
 
@@ -31,7 +32,7 @@ namespace Momentum.Areas.Manage.Controllers
             if (id == null) return BadRequest();
 
             ViewBag.Categories = await _context.Categories.Where(c => c.IsDeleted == false).ToListAsync();
-
+            ViewBag.Colors = await _context.Colors.Where(c => c.IsDeleted == false).ToListAsync();
             ViewBag.ProductImages = await _context.ProductImages.Where(pi => pi.IsDeleted == false && pi.ProductId == id).ToListAsync();
 
             Product? product = await _context.Products
@@ -47,6 +48,7 @@ namespace Momentum.Areas.Manage.Controllers
         public async Task<IActionResult> Create()
         {
             ViewBag.Categories = await _context.Categories.Where(c => c.IsDeleted == false).ToListAsync();
+            ViewBag.Colors = await _context.Colors.Where(c => c.IsDeleted == false).ToListAsync();
 
             return View();
         }
@@ -54,6 +56,7 @@ namespace Momentum.Areas.Manage.Controllers
         public async Task<IActionResult> Create(Product product)
         {
             ViewBag.Categories = await _context.Categories.Where(c => c.IsDeleted == false).ToListAsync();
+            ViewBag.Colors = await _context.Colors.Where(c => c.IsDeleted == false).ToListAsync();
 
             if (!ModelState.IsValid) return View(product);
 
@@ -68,6 +71,27 @@ namespace Momentum.Areas.Manage.Controllers
                 ModelState.AddModelError("EcoTax", "Tax can`t be more than price or discounted price");
                 return View(product);
             }
+
+
+            List<ProductColor> productColors = new List<ProductColor>();
+            
+            if (product.ColorIds != null && product.ColorIds.Count() > 0)
+            {
+                foreach (int colorId in product.ColorIds)
+                {
+                    if (!await _context.Colors.AnyAsync(t => t.IsDeleted == false && t.Id == colorId))
+                    {
+                        ModelState.AddModelError("ColorIds", $"Color id = {colorId} is incorrect");
+                        return View(product);
+                    }
+                    ProductColor productColor = new ProductColor
+                    {
+                        ColorId = colorId,
+                    };
+                    productColors.Add(productColor);
+                }
+            }
+            product.ProductColors = productColors;
 
 
             List<ProductCategory> productCategories = new List<ProductCategory>();
@@ -88,7 +112,6 @@ namespace Momentum.Areas.Manage.Controllers
                     productCategories.Add(productCategory);
                 }
             }
-
             product.ProductCategories = productCategories;
 
 
@@ -111,9 +134,9 @@ namespace Momentum.Areas.Manage.Controllers
                     ModelState.AddModelError("Files", "File Type must be image");
                     return View(product);
                 }
-                if ((file.Length / 1024) > 200)
+                if ((file.Length / 1024) > 500)
                 {
-                    ModelState.AddModelError("Files", "File length must be maximum 200kb");
+                    ModelState.AddModelError("Files", "File length must be maximum 500kb");
                     return View(product);
                 }
             }
@@ -148,9 +171,9 @@ namespace Momentum.Areas.Manage.Controllers
                     ModelState.AddModelError("MainFile", "File Type must be image");
                     return View(product);
                 }
-                if ((product.MainFile.Length / 1024) > 200)
+                if ((product.MainFile.Length / 1024) > 500)
                 {
-                    ModelState.AddModelError("MainFile", "File length must be maximum 200kb");
+                    ModelState.AddModelError("MainFile", "File length must be maximum 500kb");
                     return View(product);
                 }
 
@@ -181,13 +204,19 @@ namespace Momentum.Areas.Manage.Controllers
         {
             if (id == null) return BadRequest();
 
-            Product? product = await _context.Products
+            Product product = await _context.Products
                 .Include(p => p.ProductImages.Where(pi => pi.IsDeleted == false))
+                .Include(p => p.ProductColors.Where(pc => pc.IsDeleted == false))
+                .Include(p => p.ProductCategories.Where(pc => pc.IsDeleted == false))
                 .FirstOrDefaultAsync(p => p.Id == id && p.IsDeleted == false);
 
             if (product == null) return NotFound();
 
             ViewBag.Categories = await _context.Categories.Where(c => c.IsDeleted == false).ToListAsync();
+            ViewBag.Colors = await _context.Colors.Where(c => c.IsDeleted == false).ToListAsync();
+
+            product.ColorIds = product.ProductColors.Select(pc => pc.ColorId).ToList();
+            product.CategoryIds = product.ProductCategories.Select(pc => pc.CategoryId).ToList();
 
             return View(product);
         }
@@ -197,6 +226,10 @@ namespace Momentum.Areas.Manage.Controllers
             if (product.CategoryIds == null)
             {
                 product.CategoryIds = new List<int>();
+            }
+            if (product.ColorIds == null)
+            {
+                product.ColorIds = new List<int>();
             }
 
             if (!ModelState.IsValid) return View(product);
@@ -210,11 +243,13 @@ namespace Momentum.Areas.Manage.Controllers
             Product dbProduct = await _context.Products
                 .Include(p => p.ProductImages.Where(pi => pi.IsDeleted == false))
                 .Include(c => c.ProductCategories.Where(pc => pc.IsDeleted == false))
+                .Include(c => c.ProductColors.Where(pc => pc.IsDeleted == false))
                 .FirstOrDefaultAsync(p => p.Id == id && p.IsDeleted == false);
 
             if (dbProduct == null) return NotFound();
 
             dbProduct.CategoryIds = product.CategoryIds;
+            dbProduct.ColorIds = product.ColorIds;
 
             int canUpload = 10 - dbProduct.ProductImages.Count;
 
@@ -233,6 +268,40 @@ namespace Momentum.Areas.Manage.Controllers
                 ModelState.AddModelError("Files", $"You can add maximum {canUpload} files");
                 return View(dbProduct);
             }
+
+            if (dbProduct.ProductColors != null && dbProduct.ProductColors.Count() > 0)
+            {
+                foreach (ProductColor productColor in dbProduct.ProductColors)
+                {
+                    productColor.IsDeleted = true;
+                    productColor.DeletedAt = DateTime.UtcNow.AddHours(4);
+                    productColor.DeletedBy = "Admin";
+                }
+            }
+
+            List<ProductColor> productColors = new List<ProductColor>();
+
+            if (product.ColorIds != null && product.ColorIds.Count() > 0)
+            {
+                dbProduct.ColorIds = null;
+
+                foreach (int colorId in product.ColorIds)
+                {
+                    if (!await _context.Colors.AnyAsync(t => t.IsDeleted == false && t.Id == colorId))
+                    {
+                        ModelState.AddModelError("ColorIds", $"Color id = {colorId} is incorrect");
+                        return View(dbProduct);
+                    }
+                    ProductColor productColor = new ProductColor
+                    {
+                        ColorId = colorId,
+                    };
+                    productColors.Add(productColor);
+                }
+            }
+            dbProduct.ProductColors ??= new List<ProductColor>();
+            dbProduct.ProductColors.AddRange(productColors);
+
 
             if (dbProduct.ProductCategories != null && dbProduct.ProductCategories.Count() > 0)
             {
@@ -254,7 +323,7 @@ namespace Momentum.Areas.Manage.Controllers
                 {
                     if (!await _context.Categories.AnyAsync(t => t.IsDeleted == false && t.Id == categoryId))
                     {
-                        ModelState.AddModelError("TagIds", $"Tag id = {categoryId} is incorrect");
+                        ModelState.AddModelError("CategoryIds", $"Category id = {categoryId} is incorrect");
                         return View(dbProduct);
                     }
                     ProductCategory productCategory = new ProductCategory
@@ -264,7 +333,7 @@ namespace Momentum.Areas.Manage.Controllers
                     productCategories.Add(productCategory);
                 }
             }
-
+            dbProduct.ProductCategories ??= new List<ProductCategory>();
             dbProduct.ProductCategories.AddRange(productCategories);
 
             if (product.MainFile != null)

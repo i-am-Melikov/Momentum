@@ -2,13 +2,13 @@
 @{
     ViewData["Title"] = "Update";
     IEnumerable<Category> categories = ViewBag.Categories;
+    IEnumerable<Color> colors = ViewBag.Colors;
     SelectList selectListItems = null;
-
-    if (categories != null)
+    SelectList selectListColors = null;
+    if (categories != null && colors != null)
     {
-        var selectedCategoryIds = Model.CategoryIds;
-
-        selectListItems = new SelectList(categories, nameof(Category.Id), nameof(Category.Name), selectedCategoryIds);
+        selectListItems = new SelectList(categories, nameof(Category.Id), nameof(Category.Name), ViewBag.SelectedCategoriesIds);
+        selectListColors = new SelectList(colors, nameof(Color.Id), nameof(Color.Title), ViewBag.SelectedColorIds);
     }
 }
 
@@ -87,6 +87,11 @@
                                                     <label asp-for="CategoryIds">Category</label>
                                                     <select asp-for="CategoryIds" asp-items="selectListItems" class="form-control" required></select>
                                                     <span asp-validation-for="CategoryIds" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="ColorIds">Color</label>
+                                                    <select asp-for="ColorIds" asp-items="selectListColors" class="form-control" required></select>
+                                                    <span asp-validation-for="ColorIds" class="text-danger"></span>
                                                 </div>
                                                 <a asp-area="manage" asp-controller="product" asp-action="index" class="btn btn-primary">Go Home</a>
                                                 <button type="submit" class="btn btn-primary">Submit</button>

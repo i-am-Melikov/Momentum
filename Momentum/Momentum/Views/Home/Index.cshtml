@@ -79,7 +79,7 @@
                     <div class="product-center-item product-card grid__item card">
                         <div class="product-card-inner card-inner">
                             <h4 class="product-title">
-                                <a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">Colossus Ergonomic Gaming Office Chair</a>
+                                <a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">@product.Title</a>
                             </h4>
                             <div class="product-card-image">
                                 <div class="product-card-image card__media">
@@ -120,7 +120,7 @@
                             </div>
                             <div class="product-content">
                                 <div class="product-content-top no-js-hidden">
-                                    <div class="pro-labl">Color: @product.ProductColor</div>
+                                    <div class="pro-labl">Color: @* @product.ProductColor *@</div>
                                 </div>
                                 <div class="product-content-bottom d-flex align-items-center justify-content-between">
                                     <div class="no-js-hidden price d-flex">
@@ -168,7 +168,7 @@
                         </div>
                         <ul class="cat-tab tabs">
                             <li class="tab-link active">
-                                <a href="">
+                                <a asp-controller="category" asp-action="index">
                                     <img src="//gaming-workdo.myshopify.com/cdn/shop/files/1_4e117171-0b63-4d80-b3fa-1ebc70c0f76e_18x17.png?v=1671615056" class="icon" alt="image">
                                     Gaming peripherals
                                 </a>
@@ -176,7 +176,7 @@
                             <li class="tab-link">
                                 <a href="">
                                     <img src="//gaming-workdo.myshopify.com/cdn/shop/files/2_226ba59a-8c4d-48fd-9928-e32ed3555f5b_18x17.png?v=1671615074" class="icon" alt="image">
-                                    Speakers &amp; Headphones
+                                    Speakers & Headphones
                                 </a>
                             </li>
                             <li class="tab-link">
@@ -187,7 +187,7 @@
                             </li>
                         </ul>
                         <div class="more-categories">
-                            <a href="category.html">
+                            <a asp-controller="category" asp-action="index">
                                 SHOW MORE CATEGORIES
                             </a>
                         </div>
@@ -195,387 +195,24 @@
                 </div>
                 <div class="col-lg-9 col-md-8 col-12">
                     <div class="tabs-container">
-                        <div class="tab-content active">
+                        <div class="tab-content active" id="gaming-peripherals-content">
                             <div class="product-list shop-protab-slider product-card-row">
                                 <div class="categories-slider">
-                                    <div class="product-card">
-                                        <div class="product-card-inner card-inner">
-                                            <h4 class="product-title">
-                                                <a href="product-detail.html">Refurbished Xbox Series X 1TB Console</a>
-                                            </h4>
-
-                                            <ul class="product-number">
-                                                <li>
-                                                    TYPE: XFX
-                                                </li>
-                                            </ul>
-
-                                            <div class="product-card-image">
-                                                <div class="product-card-image card__media">
-                                                    <a href="product-detail.html" class="product__media-item">
-                                                        <img loading="lazy" class="" src="https://gaming-workdo.myshopify.com/cdn/shop/products/1_892117ef-00bc-43f7-8789-c8a6a7c180ee_600x600.png?v=1671449791" alt="">
-                                                    </a>
-                                                    <div class="pro_btn">
-                                                        <div class="pro_btn_wrapper">
-                                                            <a class="wishlist wish heart" href="wishlist.html" title="Wishlist">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="white">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1335 2.95108C16.73 4.16664 16.9557 6.44579 15.6274 7.93897L8.99983 15.3894L2.37233 7.93977C1.04381 6.44646 1.26946 4.167 2.86616 2.95128C4.50032 1.70704 6.87275 2.10393 7.99225 3.80885L8.36782 4.38082C8.59267 4.72325 9.05847 4.82238 9.40821 4.60224C9.51777 4.53328 9.60294 4.44117 9.66134 4.33666L10.0076 3.80914C11.1268 2.10394 13.4993 1.70679 15.1335 2.95108ZM8.99998 2.653C7.31724 0.526225 4.15516 0.102335 1.94184 1.78754C-0.33726 3.52284 -0.659353 6.77651 1.23696 8.90805L8.4334 16.9972C8.7065 17.3041 9.18204 17.3362 9.49557 17.0688C9.53631 17.0341 9.57231 16.996 9.60351 16.9553L16.7628 8.90721C18.6589 6.77579 18.3367 3.52246 16.0579 1.78734C13.8446 0.102142 10.6825 0.526185 8.99998 2.653Z" fill="white"></path>
-                                                                </svg>
-                                                            </a>
-                                                            <div class="quickview-btn" id="quickview">
-                                                                <a style="text-decoration:none" href="">
-                                                                    <svg id="Layer_1" enable-background="new 0 0 32 32" height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="m16 21.693c3.14 0 5.693-2.554 5.693-5.693s-2.553-5.693-5.693-5.693-5.693 2.553-5.693 5.693 2.553 5.693 5.693 5.693zm0-9.386c2.036 0 3.693 1.657 3.693 3.693s-1.657 3.693-3.693 3.693-3.693-1.657-3.693-3.693 1.657-3.693 3.693-3.693z"></path>
-                                                                        <path d="m16 25.326c8.138 0 14.531-8.368 14.799-8.725.269-.356.269-.847 0-1.203-.268-.356-6.661-8.724-14.799-8.724s-14.531 8.368-14.799 8.724c-.269.356-.269.847 0 1.203.268.357 6.661 8.725 14.799 8.725zm0-16.652c5.958 0 11.132 5.476 12.709 7.326-1.577 1.851-6.751 7.326-12.709 7.326s-11.132-5.475-12.709-7.326c1.577-1.851 6.751-7.326 12.709-7.326z"></path>
-                                                                    </svg>
-                                                                </a>
-                                                            </div>
-                                                            <div class="pro-compare">
-                                                                <label>
-                                                                    <span class="compare-label">
-                                                                        <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path clip-rule="evenodd" d="m17.2929 4.29289c-.3905.39053-.3905 1.02369 0 1.41422l1.2929 1.29289h-5.5858c-2.2091 0-4 1.79086-4 4v1c0 .5523.44772 1 1 1 .5523 0 1-.4477 1-1v-1c0-1.10457.8954-2 2-2h5.5858l-1.2929 1.2929c-.3905.3905-.3905 1.0237 0 1.4142s1.0237.3905 1.4142 0l3-2.99999c.3905-.39053.3905-1.02369 0-1.41422l-3-3c-.3905-.39052-1.0237-.39052-1.4142 0zm-3.2929 6.70711c-.5523 0-1 .4477-1 1v1c0 1.1046-.8954 2-2 2h-5.58579l1.2929-1.2929c.39052-.3905.39052-1.0237 0-1.4142-.39053-.3905-1.02369-.3905-1.41422 0l-3 3c-.39052.3905-.39052 1.0237 0 1.4142l3 3c.39053.3905 1.02369.3905 1.41422 0 .39052-.3905.39052-1.0237 0-1.4142l-1.2929-1.2929h5.58579c2.2091 0 4-1.7909 4-4v-1c0-.5523-.4477-1-1-1z" fill="rgb(0,0,0)" fill-rule="evenodd"></path>
-                                                                        </svg>
-                                                                    </span>
-                                                                    <a class="compare-now" href="compare.html" style="display:none;">Compare Now</a>
-                                                                    <input type="checkbox" style="display:none;">
-                                                                    <span class="checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="product-content">
-                                                <div class="pro-labl">Color:White</div>
-                                                <div class="product-content-bottom d-flex align-items-center justify-content-between">
-                                                    <div class="no-js-hidden price d-flex">
-                                                        <ins class="price-item--regular">430.00 <span class="currency-type">USD</span></ins>
-                                                        <ins class="price-item--sale"></ins>
-                                                    </div>
-                                                    <button type="submit" name="add" class="btn-primary add-cart-btn product-form__submit">
-                                                        <span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-card">
-                                        <div class="product-card-inner card-inner">
-                                            <h4 class="product-title">
-                                                <a href="product-detail.html">Refurbished Xbox Series X 1TB Console</a>
-                                            </h4>
-
-                                            <ul class="product-number">
-                                                <li>
-                                                    TYPE: XFX
-                                                </li>
-                                            </ul>
-
-                                            <div class="product-card-image">
-                                                <div class="product-card-image card__media">
-                                                    <a href="product-detail.html" class="product__media-item">
-                                                        <img loading="lazy" class="" src="https://gaming-workdo.myshopify.com/cdn/shop/products/1_892117ef-00bc-43f7-8789-c8a6a7c180ee_600x600.png?v=1671449791" alt="">
-                                                    </a>
-                                                    <div class="pro_btn">
-                                                        <div class="pro_btn_wrapper">
-                                                            <a class="wishlist wish heart" href="wishlist.html" title="Wishlist">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="white">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1335 2.95108C16.73 4.16664 16.9557 6.44579 15.6274 7.93897L8.99983 15.3894L2.37233 7.93977C1.04381 6.44646 1.26946 4.167 2.86616 2.95128C4.50032 1.70704 6.87275 2.10393 7.99225 3.80885L8.36782 4.38082C8.59267 4.72325 9.05847 4.82238 9.40821 4.60224C9.51777 4.53328 9.60294 4.44117 9.66134 4.33666L10.0076 3.80914C11.1268 2.10394 13.4993 1.70679 15.1335 2.95108ZM8.99998 2.653C7.31724 0.526225 4.15516 0.102335 1.94184 1.78754C-0.33726 3.52284 -0.659353 6.77651 1.23696 8.90805L8.4334 16.9972C8.7065 17.3041 9.18204 17.3362 9.49557 17.0688C9.53631 17.0341 9.57231 16.996 9.60351 16.9553L16.7628 8.90721C18.6589 6.77579 18.3367 3.52246 16.0579 1.78734C13.8446 0.102142 10.6825 0.526185 8.99998 2.653Z" fill="white"></path>
-                                                                </svg>
-                                                            </a>
-                                                            <div class="quickview-btn" id="quickview">
-                                                                <a style="text-decoration:none" href="">
-                                                                    <svg id="Layer_1" enable-background="new 0 0 32 32" height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="m16 21.693c3.14 0 5.693-2.554 5.693-5.693s-2.553-5.693-5.693-5.693-5.693 2.553-5.693 5.693 2.553 5.693 5.693 5.693zm0-9.386c2.036 0 3.693 1.657 3.693 3.693s-1.657 3.693-3.693 3.693-3.693-1.657-3.693-3.693 1.657-3.693 3.693-3.693z"></path>
-                                                                        <path d="m16 25.326c8.138 0 14.531-8.368 14.799-8.725.269-.356.269-.847 0-1.203-.268-.356-6.661-8.724-14.799-8.724s-14.531 8.368-14.799 8.724c-.269.356-.269.847 0 1.203.268.357 6.661 8.725 14.799 8.725zm0-16.652c5.958 0 11.132 5.476 12.709 7.326-1.577 1.851-6.751 7.326-12.709 7.326s-11.132-5.475-12.709-7.326c1.577-1.851 6.751-7.326 12.709-7.326z"></path>
-                                                                    </svg>
-                                                                </a>
-                                                            </div>
-                                                            <div class="pro-compare">
-                                                                <label>
-                                                                    <span class="compare-label">
-                                                                        <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path clip-rule="evenodd" d="m17.2929 4.29289c-.3905.39053-.3905 1.02369 0 1.41422l1.2929 1.29289h-5.5858c-2.2091 0-4 1.79086-4 4v1c0 .5523.44772 1 1 1 .5523 0 1-.4477 1-1v-1c0-1.10457.8954-2 2-2h5.5858l-1.2929 1.2929c-.3905.3905-.3905 1.0237 0 1.4142s1.0237.3905 1.4142 0l3-2.99999c.3905-.39053.3905-1.02369 0-1.41422l-3-3c-.3905-.39052-1.0237-.39052-1.4142 0zm-3.2929 6.70711c-.5523 0-1 .4477-1 1v1c0 1.1046-.8954 2-2 2h-5.58579l1.2929-1.2929c.39052-.3905.39052-1.0237 0-1.4142-.39053-.3905-1.02369-.3905-1.41422 0l-3 3c-.39052.3905-.39052 1.0237 0 1.4142l3 3c.39053.3905 1.02369.3905 1.41422 0 .39052-.3905.39052-1.0237 0-1.4142l-1.2929-1.2929h5.58579c2.2091 0 4-1.7909 4-4v-1c0-.5523-.4477-1-1-1z" fill="rgb(0,0,0)" fill-rule="evenodd"></path>
-                                                                        </svg>
-                                                                    </span>
-                                                                    <a class="compare-now" href="compare.html" style="display:none;">Compare Now</a>
-                                                                    <input type="checkbox" style="display:none;">
-                                                                    <span class="checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="product-content">
-                                                <div class="pro-labl">Color:White</div>
-                                                <div class="product-content-bottom d-flex align-items-center justify-content-between">
-                                                    <div class="no-js-hidden price d-flex">
-                                                        <ins class="price-item--regular">430.00 <span class="currency-type">USD</span></ins>
-                                                        <ins class="price-item--sale"></ins>
-                                                    </div>
-                                                    <button type="submit" name="add" class="btn-primary add-cart-btn product-form__submit">
-                                                        <span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-card">
-                                        <div class="product-card-inner card-inner">
-                                            <h4 class="product-title">
-                                                <a href="product-detail.html">Refurbished Xbox Series X 1TB Console</a>
-                                            </h4>
-
-                                            <ul class="product-number">
-                                                <li>
-                                                    TYPE: XFX
-                                                </li>
-                                            </ul>
-
-                                            <div class="product-card-image">
-                                                <div class="product-card-image card__media">
-                                                    <a href="product-detail.html" class="product__media-item">
-                                                        <img loading="lazy" class="" src="https://gaming-workdo.myshopify.com/cdn/shop/products/1_892117ef-00bc-43f7-8789-c8a6a7c180ee_600x600.png?v=1671449791" alt="">
-                                                    </a>
-                                                    <div class="pro_btn">
-                                                        <div class="pro_btn_wrapper">
-                                                            <a class="wishlist wish heart" href="wishlist.html" title="Wishlist">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="white">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1335 2.95108C16.73 4.16664 16.9557 6.44579 15.6274 7.93897L8.99983 15.3894L2.37233 7.93977C1.04381 6.44646 1.26946 4.167 2.86616 2.95128C4.50032 1.70704 6.87275 2.10393 7.99225 3.80885L8.36782 4.38082C8.59267 4.72325 9.05847 4.82238 9.40821 4.60224C9.51777 4.53328 9.60294 4.44117 9.66134 4.33666L10.0076 3.80914C11.1268 2.10394 13.4993 1.70679 15.1335 2.95108ZM8.99998 2.653C7.31724 0.526225 4.15516 0.102335 1.94184 1.78754C-0.33726 3.52284 -0.659353 6.77651 1.23696 8.90805L8.4334 16.9972C8.7065 17.3041 9.18204 17.3362 9.49557 17.0688C9.53631 17.0341 9.57231 16.996 9.60351 16.9553L16.7628 8.90721C18.6589 6.77579 18.3367 3.52246 16.0579 1.78734C13.8446 0.102142 10.6825 0.526185 8.99998 2.653Z" fill="white"></path>
-                                                                </svg>
-                                                            </a>
-                                                            <div class="quickview-btn" id="quickview">
-                                                                <a style="text-decoration:none" href="">
-                                                                    <svg id="Layer_1" enable-background="new 0 0 32 32" height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="m16 21.693c3.14 0 5.693-2.554 5.693-5.693s-2.553-5.693-5.693-5.693-5.693 2.553-5.693 5.693 2.553 5.693 5.693 5.693zm0-9.386c2.036 0 3.693 1.657 3.693 3.693s-1.657 3.693-3.693 3.693-3.693-1.657-3.693-3.693 1.657-3.693 3.693-3.693z"></path>
-                                                                        <path d="m16 25.326c8.138 0 14.531-8.368 14.799-8.725.269-.356.269-.847 0-1.203-.268-.356-6.661-8.724-14.799-8.724s-14.531 8.368-14.799 8.724c-.269.356-.269.847 0 1.203.268.357 6.661 8.725 14.799 8.725zm0-16.652c5.958 0 11.132 5.476 12.709 7.326-1.577 1.851-6.751 7.326-12.709 7.326s-11.132-5.475-12.709-7.326c1.577-1.851 6.751-7.326 12.709-7.326z"></path>
-                                                                    </svg>
-                                                                </a>
-                                                            </div>
-                                                            <div class="pro-compare">
-                                                                <label>
-                                                                    <span class="compare-label">
-                                                                        <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path clip-rule="evenodd" d="m17.2929 4.29289c-.3905.39053-.3905 1.02369 0 1.41422l1.2929 1.29289h-5.5858c-2.2091 0-4 1.79086-4 4v1c0 .5523.44772 1 1 1 .5523 0 1-.4477 1-1v-1c0-1.10457.8954-2 2-2h5.5858l-1.2929 1.2929c-.3905.3905-.3905 1.0237 0 1.4142s1.0237.3905 1.4142 0l3-2.99999c.3905-.39053.3905-1.02369 0-1.41422l-3-3c-.3905-.39052-1.0237-.39052-1.4142 0zm-3.2929 6.70711c-.5523 0-1 .4477-1 1v1c0 1.1046-.8954 2-2 2h-5.58579l1.2929-1.2929c.39052-.3905.39052-1.0237 0-1.4142-.39053-.3905-1.02369-.3905-1.41422 0l-3 3c-.39052.3905-.39052 1.0237 0 1.4142l3 3c.39053.3905 1.02369.3905 1.41422 0 .39052-.3905.39052-1.0237 0-1.4142l-1.2929-1.2929h5.58579c2.2091 0 4-1.7909 4-4v-1c0-.5523-.4477-1-1-1z" fill="rgb(0,0,0)" fill-rule="evenodd"></path>
-                                                                        </svg>
-                                                                    </span>
-                                                                    <a class="compare-now" href="compare.html" style="display:none;">Compare Now</a>
-                                                                    <input type="checkbox" style="display:none;">
-                                                                    <span class="checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="product-content">
-                                                <div class="pro-labl">Color:White</div>
-                                                <div class="product-content-bottom d-flex align-items-center justify-content-between">
-                                                    <div class="no-js-hidden price d-flex">
-                                                        <ins class="price-item--regular">430.00 <span class="currency-type">USD</span></ins>
-                                                        <ins class="price-item--sale"></ins>
-                                                    </div>
-                                                    <button type="submit" name="add" class="btn-primary add-cart-btn product-form__submit">
-                                                        <span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-card">
-                                        <div class="product-card-inner card-inner">
-                                            <h4 class="product-title">
-                                                <a href="product-detail.html">Refurbished Xbox Series X 1TB Console</a>
-                                            </h4>
-
-                                            <ul class="product-number">
-                                                <li>
-                                                    TYPE: XFX
-                                                </li>
-                                            </ul>
-
-                                            <div class="product-card-image">
-                                                <div class="product-card-image card__media">
-                                                    <a href="product-detail.html" class="product__media-item">
-                                                        <img loading="lazy" class="" src="https://gaming-workdo.myshopify.com/cdn/shop/products/1_892117ef-00bc-43f7-8789-c8a6a7c180ee_600x600.png?v=1671449791" alt="">
-                                                    </a>
-                                                    <div class="pro_btn">
-                                                        <div class="pro_btn_wrapper">
-                                                            <a class="wishlist wish heart" href="wishlist.html" title="Wishlist">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="white">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1335 2.95108C16.73 4.16664 16.9557 6.44579 15.6274 7.93897L8.99983 15.3894L2.37233 7.93977C1.04381 6.44646 1.26946 4.167 2.86616 2.95128C4.50032 1.70704 6.87275 2.10393 7.99225 3.80885L8.36782 4.38082C8.59267 4.72325 9.05847 4.82238 9.40821 4.60224C9.51777 4.53328 9.60294 4.44117 9.66134 4.33666L10.0076 3.80914C11.1268 2.10394 13.4993 1.70679 15.1335 2.95108ZM8.99998 2.653C7.31724 0.526225 4.15516 0.102335 1.94184 1.78754C-0.33726 3.52284 -0.659353 6.77651 1.23696 8.90805L8.4334 16.9972C8.7065 17.3041 9.18204 17.3362 9.49557 17.0688C9.53631 17.0341 9.57231 16.996 9.60351 16.9553L16.7628 8.90721C18.6589 6.77579 18.3367 3.52246 16.0579 1.78734C13.8446 0.102142 10.6825 0.526185 8.99998 2.653Z" fill="white"></path>
-                                                                </svg>
-                                                            </a>
-                                                            <div class="quickview-btn" id="quickview">
-                                                                <a style="text-decoration:none" href="">
-                                                                    <svg id="Layer_1" enable-background="new 0 0 32 32" height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="m16 21.693c3.14 0 5.693-2.554 5.693-5.693s-2.553-5.693-5.693-5.693-5.693 2.553-5.693 5.693 2.553 5.693 5.693 5.693zm0-9.386c2.036 0 3.693 1.657 3.693 3.693s-1.657 3.693-3.693 3.693-3.693-1.657-3.693-3.693 1.657-3.693 3.693-3.693z"></path>
-                                                                        <path d="m16 25.326c8.138 0 14.531-8.368 14.799-8.725.269-.356.269-.847 0-1.203-.268-.356-6.661-8.724-14.799-8.724s-14.531 8.368-14.799 8.724c-.269.356-.269.847 0 1.203.268.357 6.661 8.725 14.799 8.725zm0-16.652c5.958 0 11.132 5.476 12.709 7.326-1.577 1.851-6.751 7.326-12.709 7.326s-11.132-5.475-12.709-7.326c1.577-1.851 6.751-7.326 12.709-7.326z"></path>
-                                                                    </svg>
-                                                                </a>
-                                                            </div>
-                                                            <div class="pro-compare">
-                                                                <label>
-                                                                    <span class="compare-label">
-                                                                        <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path clip-rule="evenodd" d="m17.2929 4.29289c-.3905.39053-.3905 1.02369 0 1.41422l1.2929 1.29289h-5.5858c-2.2091 0-4 1.79086-4 4v1c0 .5523.44772 1 1 1 .5523 0 1-.4477 1-1v-1c0-1.10457.8954-2 2-2h5.5858l-1.2929 1.2929c-.3905.3905-.3905 1.0237 0 1.4142s1.0237.3905 1.4142 0l3-2.99999c.3905-.39053.3905-1.02369 0-1.41422l-3-3c-.3905-.39052-1.0237-.39052-1.4142 0zm-3.2929 6.70711c-.5523 0-1 .4477-1 1v1c0 1.1046-.8954 2-2 2h-5.58579l1.2929-1.2929c.39052-.3905.39052-1.0237 0-1.4142-.39053-.3905-1.02369-.3905-1.41422 0l-3 3c-.39052.3905-.39052 1.0237 0 1.4142l3 3c.39053.3905 1.02369.3905 1.41422 0 .39052-.3905.39052-1.0237 0-1.4142l-1.2929-1.2929h5.58579c2.2091 0 4-1.7909 4-4v-1c0-.5523-.4477-1-1-1z" fill="rgb(0,0,0)" fill-rule="evenodd"></path>
-                                                                        </svg>
-                                                                    </span>
-                                                                    <a class="compare-now" href="compare.html" style="display:none;">Compare Now</a>
-                                                                    <input type="checkbox" style="display:none;">
-                                                                    <span class="checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="product-content">
-                                                <div class="pro-labl">Color:White</div>
-                                                <div class="product-content-bottom d-flex align-items-center justify-content-between">
-                                                    <div class="no-js-hidden price d-flex">
-                                                        <ins class="price-item--regular">430.00 <span class="currency-type">USD</span></ins>
-                                                        <ins class="price-item--sale"></ins>
-                                                    </div>
-                                                    <button type="submit" name="add" class="btn-primary add-cart-btn product-form__submit">
-                                                        <span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-card">
-                                        <div class="product-card-inner card-inner">
-                                            <h4 class="product-title">
-                                                <a href="product-detail.html">Refurbished Xbox Series X 1TB Console</a>
-                                            </h4>
-
-                                            <ul class="product-number">
-                                                <li>
-                                                    TYPE: XFX
-                                                </li>
-                                            </ul>
-
-                                            <div class="product-card-image">
-                                                <div class="product-card-image card__media">
-                                                    <a href="product-detail.html" class="product__media-item">
-                                                        <img loading="lazy" class="" src="https://gaming-workdo.myshopify.com/cdn/shop/products/1_892117ef-00bc-43f7-8789-c8a6a7c180ee_600x600.png?v=1671449791" alt="">
-                                                    </a>
-                                                    <div class="pro_btn">
-                                                        <div class="pro_btn_wrapper">
-                                                            <a class="wishlist wish heart" href="wishlist.html" title="Wishlist">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="white">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1335 2.95108C16.73 4.16664 16.9557 6.44579 15.6274 7.93897L8.99983 15.3894L2.37233 7.93977C1.04381 6.44646 1.26946 4.167 2.86616 2.95128C4.50032 1.70704 6.87275 2.10393 7.99225 3.80885L8.36782 4.38082C8.59267 4.72325 9.05847 4.82238 9.40821 4.60224C9.51777 4.53328 9.60294 4.44117 9.66134 4.33666L10.0076 3.80914C11.1268 2.10394 13.4993 1.70679 15.1335 2.95108ZM8.99998 2.653C7.31724 0.526225 4.15516 0.102335 1.94184 1.78754C-0.33726 3.52284 -0.659353 6.77651 1.23696 8.90805L8.4334 16.9972C8.7065 17.3041 9.18204 17.3362 9.49557 17.0688C9.53631 17.0341 9.57231 16.996 9.60351 16.9553L16.7628 8.90721C18.6589 6.77579 18.3367 3.52246 16.0579 1.78734C13.8446 0.102142 10.6825 0.526185 8.99998 2.653Z" fill="white"></path>
-                                                                </svg>
-                                                            </a>
-                                                            <div class="quickview-btn" id="quickview">
-                                                                <a style="text-decoration:none" href="">
-                                                                    <svg id="Layer_1" enable-background="new 0 0 32 32" height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="m16 21.693c3.14 0 5.693-2.554 5.693-5.693s-2.553-5.693-5.693-5.693-5.693 2.553-5.693 5.693 2.553 5.693 5.693 5.693zm0-9.386c2.036 0 3.693 1.657 3.693 3.693s-1.657 3.693-3.693 3.693-3.693-1.657-3.693-3.693 1.657-3.693 3.693-3.693z"></path>
-                                                                        <path d="m16 25.326c8.138 0 14.531-8.368 14.799-8.725.269-.356.269-.847 0-1.203-.268-.356-6.661-8.724-14.799-8.724s-14.531 8.368-14.799 8.724c-.269.356-.269.847 0 1.203.268.357 6.661 8.725 14.799 8.725zm0-16.652c5.958 0 11.132 5.476 12.709 7.326-1.577 1.851-6.751 7.326-12.709 7.326s-11.132-5.475-12.709-7.326c1.577-1.851 6.751-7.326 12.709-7.326z"></path>
-                                                                    </svg>
-                                                                </a>
-                                                            </div>
-                                                            <div class="pro-compare">
-                                                                <label>
-                                                                    <span class="compare-label">
-                                                                        <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path clip-rule="evenodd" d="m17.2929 4.29289c-.3905.39053-.3905 1.02369 0 1.41422l1.2929 1.29289h-5.5858c-2.2091 0-4 1.79086-4 4v1c0 .5523.44772 1 1 1 .5523 0 1-.4477 1-1v-1c0-1.10457.8954-2 2-2h5.5858l-1.2929 1.2929c-.3905.3905-.3905 1.0237 0 1.4142s1.0237.3905 1.4142 0l3-2.99999c.3905-.39053.3905-1.02369 0-1.41422l-3-3c-.3905-.39052-1.0237-.39052-1.4142 0zm-3.2929 6.70711c-.5523 0-1 .4477-1 1v1c0 1.1046-.8954 2-2 2h-5.58579l1.2929-1.2929c.39052-.3905.39052-1.0237 0-1.4142-.39053-.3905-1.02369-.3905-1.41422 0l-3 3c-.39052.3905-.39052 1.0237 0 1.4142l3 3c.39053.3905 1.02369.3905 1.41422 0 .39052-.3905.39052-1.0237 0-1.4142l-1.2929-1.2929h5.58579c2.2091 0 4-1.7909 4-4v-1c0-.5523-.4477-1-1-1z" fill="rgb(0,0,0)" fill-rule="evenodd"></path>
-                                                                        </svg>
-                                                                    </span>
-                                                                    <a class="compare-now" href="compare.html" style="display:none;">Compare Now</a>
-                                                                    <input type="checkbox" style="display:none;">
-                                                                    <span class="checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="product-content">
-                                                <div class="pro-labl">Color:White</div>
-                                                <div class="product-content-bottom d-flex align-items-center justify-content-between">
-                                                    <div class="no-js-hidden price d-flex">
-                                                        <ins class="price-item--regular">430.00 <span class="currency-type">USD</span></ins>
-                                                        <ins class="price-item--sale"></ins>
-                                                    </div>
-                                                    <button type="submit" name="add" class="btn-primary add-cart-btn product-form__submit">
-                                                        <span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-card">
-                                        <div class="product-card-inner card-inner">
-                                            <h4 class="product-title">
-                                                <a href="product-detail.html">Refurbished Xbox Series X 1TB Console</a>
-                                            </h4>
-
-                                            <ul class="product-number">
-                                                <li>
-                                                    TYPE: XFX
-                                                </li>
-                                            </ul>
-
-                                            <div class="product-card-image">
-                                                <div class="product-card-image card__media">
-                                                    <a href="product-detail.html" class="product__media-item">
-                                                        <img loading="lazy" class="" src="https://gaming-workdo.myshopify.com/cdn/shop/products/1_892117ef-00bc-43f7-8789-c8a6a7c180ee_600x600.png?v=1671449791" alt="">
-                                                    </a>
-                                                    <div class="pro_btn">
-                                                        <div class="pro_btn_wrapper">
-                                                            <a class="wishlist wish heart" href="wishlist.html" title="Wishlist">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="white">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1335 2.95108C16.73 4.16664 16.9557 6.44579 15.6274 7.93897L8.99983 15.3894L2.37233 7.93977C1.04381 6.44646 1.26946 4.167 2.86616 2.95128C4.50032 1.70704 6.87275 2.10393 7.99225 3.80885L8.36782 4.38082C8.59267 4.72325 9.05847 4.82238 9.40821 4.60224C9.51777 4.53328 9.60294 4.44117 9.66134 4.33666L10.0076 3.80914C11.1268 2.10394 13.4993 1.70679 15.1335 2.95108ZM8.99998 2.653C7.31724 0.526225 4.15516 0.102335 1.94184 1.78754C-0.33726 3.52284 -0.659353 6.77651 1.23696 8.90805L8.4334 16.9972C8.7065 17.3041 9.18204 17.3362 9.49557 17.0688C9.53631 17.0341 9.57231 16.996 9.60351 16.9553L16.7628 8.90721C18.6589 6.77579 18.3367 3.52246 16.0579 1.78734C13.8446 0.102142 10.6825 0.526185 8.99998 2.653Z" fill="white"></path>
-                                                                </svg>
-                                                            </a>
-                                                            <div class="quickview-btn" id="quickview">
-                                                                <a style="text-decoration:none" href="">
-                                                                    <svg id="Layer_1" enable-background="new 0 0 32 32" height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="m16 21.693c3.14 0 5.693-2.554 5.693-5.693s-2.553-5.693-5.693-5.693-5.693 2.553-5.693 5.693 2.553 5.693 5.693 5.693zm0-9.386c2.036 0 3.693 1.657 3.693 3.693s-1.657 3.693-3.693 3.693-3.693-1.657-3.693-3.693 1.657-3.693 3.693-3.693z"></path>
-                                                                        <path d="m16 25.326c8.138 0 14.531-8.368 14.799-8.725.269-.356.269-.847 0-1.203-.268-.356-6.661-8.724-14.799-8.724s-14.531 8.368-14.799 8.724c-.269.356-.269.847 0 1.203.268.357 6.661 8.725 14.799 8.725zm0-16.652c5.958 0 11.132 5.476 12.709 7.326-1.577 1.851-6.751 7.326-12.709 7.326s-11.132-5.475-12.709-7.326c1.577-1.851 6.751-7.326 12.709-7.326z"></path>
-                                                                    </svg>
-                                                                </a>
-                                                            </div>
-                                                            <div class="pro-compare">
-                                                                <label>
-                                                                    <span class="compare-label">
-                                                                        <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path clip-rule="evenodd" d="m17.2929 4.29289c-.3905.39053-.3905 1.02369 0 1.41422l1.2929 1.29289h-5.5858c-2.2091 0-4 1.79086-4 4v1c0 .5523.44772 1 1 1 .5523 0 1-.4477 1-1v-1c0-1.10457.8954-2 2-2h5.5858l-1.2929 1.2929c-.3905.3905-.3905 1.0237 0 1.4142s1.0237.3905 1.4142 0l3-2.99999c.3905-.39053.3905-1.02369 0-1.41422l-3-3c-.3905-.39052-1.0237-.39052-1.4142 0zm-3.2929 6.70711c-.5523 0-1 .4477-1 1v1c0 1.1046-.8954 2-2 2h-5.58579l1.2929-1.2929c.39052-.3905.39052-1.0237 0-1.4142-.39053-.3905-1.02369-.3905-1.41422 0l-3 3c-.39052.3905-.39052 1.0237 0 1.4142l3 3c.39053.3905 1.02369.3905 1.41422 0 .39052-.3905.39052-1.0237 0-1.4142l-1.2929-1.2929h5.58579c2.2091 0 4-1.7909 4-4v-1c0-.5523-.4477-1-1-1z" fill="rgb(0,0,0)" fill-rule="evenodd"></path>
-                                                                        </svg>
-                                                                    </span>
-                                                                    <a class="compare-now" href="compare.html" style="display:none;">Compare Now</a>
-                                                                    <input type="checkbox" style="display:none;">
-                                                                    <span class="checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="product-content">
-                                                <div class="pro-labl">Color:White</div>
-                                                <div class="product-content-bottom d-flex align-items-center justify-content-between">
-                                                    <div class="no-js-hidden price d-flex">
-                                                        <ins class="price-item--regular">430.00 <span class="currency-type">USD</span></ins>
-                                                        <ins class="price-item--sale"></ins>
-                                                    </div>
-                                                    <button type="submit" name="add" class="btn-primary add-cart-btn product-form__submit">
-                                                        <span>Add to Cart</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @await Html.PartialAsync("_ProductCategoryPartial", Model.PC)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="speakers-headphones-content">
+                            <div class="product-list shop-protab-slider product-card-row">
+                                <div class="categories-slider">
+                                    @await Html.PartialAsync("_ProductCategoryPartial", Model.Headphone)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="power-supplies-content">
+                            <div class="product-list shop-protab-slider product-card-row">
+                                <div class="categories-slider">
+                                    @await Html.PartialAsync("_ProductCategoryPartial", Model.Console)
                                 </div>
                             </div>
                         </div>
@@ -762,406 +399,38 @@
             </div>
             <div class="blog-two-row-slider common-arrows">
                 <div class="responsive">
-                    <div>
+                    @for (int i = 0; i < (int)Math.Ceiling((decimal)Model.Blog.Count() / 2); i++)
+                    {
                         <div>
-                            <div class="blog-itm-card">
-                                <div class="blog-card-inner">
-                                    <div class="blog-card-image">
-                                        <a href="">
-                                            <img class="lazyload" src="//gaming-workdo.myshopify.com/cdn/shop/articles/8.png?v=1670910752" alt="My Game Review Yourpick Entertainment">
-                                        </a>
-                                        <div class="blog-labl">news</div>
-                                        <div class="date-labl"><time>December 13, 2022</time></div>
-                                    </div>
-                                    <div class="blog-product-content">
-                                        <h4 class="product-title"><a href="">My Game Review Yourpick Entertainment</a></h4>
-                                    </div>
-                                    <ul class="blog-number">
-                                        <li>AUTHOR: WorkDo</li>
-                                    </ul>
-                                    <div class="read-more-btn">
-                                        <a href="" class="btn-primary add-cart-btn">
-                                            READ MORE
-                                        </a>
+                            @foreach(Blog blog in Model.Blog.Skip(i * 2).Take(2))
+                            {
+                                <div>
+                                    <div class="blog-itm-card">
+                                        <div class="blog-card-inner">
+                                            <div class="blog-card-image">
+                                                <a href="">
+                                                    <img class="lazyload" src="~/assets/img/blog/@blog.MainImage" alt="@blog.Title">
+                                                </a>
+                                                <div class="blog-labl">news</div>
+                                                <div class="date-labl"><time>@blog.CreatedAt?.ToString("MMMM d, yyyy")</time></div>
+                                            </div>
+                                            <div class="blog-product-content">
+                                                <h4 class="product-title"><a href="">@blog.Title</a></h4>
+                                            </div>
+                                            <ul class="blog-number">
+                                                <li>AUTHOR: @blog.CreatedBy</li>
+                                            </ul>
+                                            <div class="read-more-btn">
+                                                <a href="" class="btn-primary add-cart-btn">
+                                                    READ MORE
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            }
                         </div>
-                        <div>
-                            <div class="blog-itm-card">
-                                <div class="blog-card-inner">
-                                    <div class="blog-card-image">
-                                        <a href="">
-                                            <img class="lazyload" src="//gaming-workdo.myshopify.com/cdn/shop/articles/8.png?v=1670910752" alt="My Game Review Yourpick Entertainment">
-                                        </a>
-                                        <div class="blog-labl">news</div>
-                                        <div class="date-labl"><time>December 13, 2022</time></div>
-                                    </div>
-                                    <div class="blog-product-content">
-                                        <h4 class="product-title"><a href="">My Game Review Yourpick Entertainment</a></h4>
-                                    </div>
-                                    <ul class="blog-number">
-                                        <li>AUTHOR: WorkDo</li>
-                                    </ul>
-                                    <div class="read-more-btn">
-                                        <a href="" class="btn-primary add-cart-btn">
-                                            READ MORE
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <div class="blog-itm-card">
-                                <div class="blog-card-inner">
-                                    <div class="blog-card-image">
-                                        <a href="">
-                                            <img class="lazyload" src="//gaming-workdo.myshopify.com/cdn/shop/articles/8.png?v=1670910752" alt="My Game Review Yourpick Entertainment">
-                                        </a>
-                                        <div class="blog-labl">news</div>
-                                        <div class="date-labl"><time>December 13, 2022</time></div>
-                                    </div>
-                                    <div class="blog-product-content">
-                                        <h4 class="product-title"><a href="">My Game Review Yourpick Entertainment</a></h4>
-                                    </div>
-                                    <ul class="blog-number">
-                                        <li>AUTHOR: WorkDo</li>
-                                    </ul>
-                                    <div class="read-more-btn">
-                                        <a href="" class="btn-primary add-cart-btn">
-                                            READ MORE
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="blog-itm-card">
-                                <div class="blog-card-inner">
-                                    <div class="blog-card-image">
-                                        <a href="">
-                                            <img class="lazyload" src="//gaming-workdo.myshopify.com/cdn/shop/articles/8.png?v=1670910752" alt="My Game Review Yourpick Entertainment">
-                                        </a>
-                                        <div class="blog-labl">news</div>
-                                        <div class="date-labl"><time>December 13, 2022</time></div>
-                                    </div>
-                                    <div class="blog-product-content">
-                                        <h4 class="product-title"><a href="">My Game Review Yourpick Entertainment</a></h4>
-                                    </div>
-                                    <ul class="blog-number">
-                                        <li>AUTHOR: WorkDo</li>
-                                    </ul>
-                                    <div class="read-more-btn">
-                                        <a href="" class="btn-primary add-cart-btn">
-                                            READ MORE
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <div class="blog-itm-card">
-                                <div class="blog-card-inner">
-                                    <div class="blog-card-image">
-                                        <a href="">
-                                            <img class="lazyload" src="//gaming-workdo.myshopify.com/cdn/shop/articles/8.png?v=1670910752" alt="My Game Review Yourpick Entertainment">
-                                        </a>
-                                        <div class="blog-labl">news</div>
-                                        <div class="date-labl"><time>December 13, 2022</time></div>
-                                    </div>
-                                    <div class="blog-product-content">
-                                        <h4 class="product-title"><a href="">My Game Review Yourpick Entertainment</a></h4>
-                                    </div>
-                                    <ul class="blog-number">
-                                        <li>AUTHOR: WorkDo</li>
-                                    </ul>
-                                    <div class="read-more-btn">
-                                        <a href="" class="btn-primary add-cart-btn">
-                                            READ MORE
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="blog-itm-card">
-                                <div class="blog-card-inner">
-                                    <div class="blog-card-image">
-                                        <a href="">
-                                            <img class="lazyload" src="//gaming-workdo.myshopify.com/cdn/shop/articles/8.png?v=1670910752" alt="My Game Review Yourpick Entertainment">
-                                        </a>
-                                        <div class="blog-labl">news</div>
-                                        <div class="date-labl"><time>December 13, 2022</time></div>
-                                    </div>
-                                    <div class="blog-product-content">
-                                        <h4 class="product-title"><a href="">My Game Review Yourpick Entertainment</a></h4>
-                                    </div>
-                                    <ul class="blog-number">
-                                        <li>AUTHOR: WorkDo</li>
-                                    </ul>
-                                    <div class="read-more-btn">
-                                        <a href="" class="btn-primary add-cart-btn">
-                                            READ MORE
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <div class="blog-itm-card">
-                                <div class="blog-card-inner">
-                                    <div class="blog-card-image">
-                                        <a href="">
-                                            <img class="lazyload" src="//gaming-workdo.myshopify.com/cdn/shop/articles/8.png?v=1670910752" alt="My Game Review Yourpick Entertainment">
-                                        </a>
-                                        <div class="blog-labl">news</div>
-                                        <div class="date-labl"><time>December 13, 2022</time></div>
-                                    </div>
-                                    <div class="blog-product-content">
-                                        <h4 class="product-title"><a href="">My Game Review Yourpick Entertainment</a></h4>
-                                    </div>
-                                    <ul class="blog-number">
-                                        <li>AUTHOR: WorkDo</li>
-                                    </ul>
-                                    <div class="read-more-btn">
-                                        <a href="" class="btn-primary add-cart-btn">
-                                            READ MORE
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="blog-itm-card">
-                                <div class="blog-card-inner">
-                                    <div class="blog-card-image">
-                                        <a href="">
-                                            <img class="lazyload" src="//gaming-workdo.myshopify.com/cdn/shop/articles/8.png?v=1670910752" alt="My Game Review Yourpick Entertainment">
-                                        </a>
-                                        <div class="blog-labl">news</div>
-                                        <div class="date-labl"><time>December 13, 2022</time></div>
-                                    </div>
-                                    <div class="blog-product-content">
-                                        <h4 class="product-title"><a href="">My Game Review Yourpick Entertainment</a></h4>
-                                    </div>
-                                    <ul class="blog-number">
-                                        <li>AUTHOR: WorkDo</li>
-                                    </ul>
-                                    <div class="read-more-btn">
-                                        <a href="" class="btn-primary add-cart-btn">
-                                            READ MORE
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <div class="blog-itm-card">
-                                <div class="blog-card-inner">
-                                    <div class="blog-card-image">
-                                        <a href="">
-                                            <img class="lazyload" src="//gaming-workdo.myshopify.com/cdn/shop/articles/8.png?v=1670910752" alt="My Game Review Yourpick Entertainment">
-                                        </a>
-                                        <div class="blog-labl">news</div>
-                                        <div class="date-labl"><time>December 13, 2022</time></div>
-                                    </div>
-                                    <div class="blog-product-content">
-                                        <h4 class="product-title"><a href="">My Game Review Yourpick Entertainment</a></h4>
-                                    </div>
-                                    <ul class="blog-number">
-                                        <li>AUTHOR: WorkDo</li>
-                                    </ul>
-                                    <div class="read-more-btn">
-                                        <a href="" class="btn-primary add-cart-btn">
-                                            READ MORE
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="blog-itm-card">
-                                <div class="blog-card-inner">
-                                    <div class="blog-card-image">
-                                        <a href="">
-                                            <img class="lazyload" src="//gaming-workdo.myshopify.com/cdn/shop/articles/8.png?v=1670910752" alt="My Game Review Yourpick Entertainment">
-                                        </a>
-                                        <div class="blog-labl">news</div>
-                                        <div class="date-labl"><time>December 13, 2022</time></div>
-                                    </div>
-                                    <div class="blog-product-content">
-                                        <h4 class="product-title"><a href="">My Game Review Yourpick Entertainment</a></h4>
-                                    </div>
-                                    <ul class="blog-number">
-                                        <li>AUTHOR: WorkDo</li>
-                                    </ul>
-                                    <div class="read-more-btn">
-                                        <a href="" class="btn-primary add-cart-btn">
-                                            READ MORE
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <div class="blog-itm-card">
-                                <div class="blog-card-inner">
-                                    <div class="blog-card-image">
-                                        <a href="">
-                                            <img class="lazyload" src="//gaming-workdo.myshopify.com/cdn/shop/articles/8.png?v=1670910752" alt="My Game Review Yourpick Entertainment">
-                                        </a>
-                                        <div class="blog-labl">news</div>
-                                        <div class="date-labl"><time>December 13, 2022</time></div>
-                                    </div>
-                                    <div class="blog-product-content">
-                                        <h4 class="product-title"><a href="">My Game Review Yourpick Entertainment</a></h4>
-                                    </div>
-                                    <ul class="blog-number">
-                                        <li>AUTHOR: WorkDo</li>
-                                    </ul>
-                                    <div class="read-more-btn">
-                                        <a href="" class="btn-primary add-cart-btn">
-                                            READ MORE
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="blog-itm-card">
-                                <div class="blog-card-inner">
-                                    <div class="blog-card-image">
-                                        <a href="">
-                                            <img class="lazyload" src="//gaming-workdo.myshopify.com/cdn/shop/articles/8.png?v=1670910752" alt="My Game Review Yourpick Entertainment">
-                                        </a>
-                                        <div class="blog-labl">news</div>
-                                        <div class="date-labl"><time>December 13, 2022</time></div>
-                                    </div>
-                                    <div class="blog-product-content">
-                                        <h4 class="product-title"><a href="">My Game Review Yourpick Entertainment</a></h4>
-                                    </div>
-                                    <ul class="blog-number">
-                                        <li>AUTHOR: WorkDo</li>
-                                    </ul>
-                                    <div class="read-more-btn">
-                                        <a href="" class="btn-primary add-cart-btn">
-                                            READ MORE
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <div class="blog-itm-card">
-                                <div class="blog-card-inner">
-                                    <div class="blog-card-image">
-                                        <a href="">
-                                            <img class="lazyload" src="//gaming-workdo.myshopify.com/cdn/shop/articles/8.png?v=1670910752" alt="My Game Review Yourpick Entertainment">
-                                        </a>
-                                        <div class="blog-labl">news</div>
-                                        <div class="date-labl"><time>December 13, 2022</time></div>
-                                    </div>
-                                    <div class="blog-product-content">
-                                        <h4 class="product-title"><a href="">My Game Review Yourpick Entertainment</a></h4>
-                                    </div>
-                                    <ul class="blog-number">
-                                        <li>AUTHOR: WorkDo</li>
-                                    </ul>
-                                    <div class="read-more-btn">
-                                        <a href="" class="btn-primary add-cart-btn">
-                                            READ MORE
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="blog-itm-card">
-                                <div class="blog-card-inner">
-                                    <div class="blog-card-image">
-                                        <a href="">
-                                            <img class="lazyload" src="//gaming-workdo.myshopify.com/cdn/shop/articles/8.png?v=1670910752" alt="My Game Review Yourpick Entertainment">
-                                        </a>
-                                        <div class="blog-labl">news</div>
-                                        <div class="date-labl"><time>December 13, 2022</time></div>
-                                    </div>
-                                    <div class="blog-product-content">
-                                        <h4 class="product-title"><a href="">My Game Review Yourpick Entertainment</a></h4>
-                                    </div>
-                                    <ul class="blog-number">
-                                        <li>AUTHOR: WorkDo</li>
-                                    </ul>
-                                    <div class="read-more-btn">
-                                        <a href="" class="btn-primary add-cart-btn">
-                                            READ MORE
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <div class="blog-itm-card">
-                                <div class="blog-card-inner">
-                                    <div class="blog-card-image">
-                                        <a href="">
-                                            <img class="lazyload" src="//gaming-workdo.myshopify.com/cdn/shop/articles/8.png?v=1670910752" alt="My Game Review Yourpick Entertainment">
-                                        </a>
-                                        <div class="blog-labl">news</div>
-                                        <div class="date-labl"><time>December 13, 2022</time></div>
-                                    </div>
-                                    <div class="blog-product-content">
-                                        <h4 class="product-title"><a href="">My Game Review Yourpick Entertainment</a></h4>
-                                    </div>
-                                    <ul class="blog-number">
-                                        <li>AUTHOR: WorkDo</li>
-                                    </ul>
-                                    <div class="read-more-btn">
-                                        <a href="" class="btn-primary add-cart-btn">
-                                            READ MORE
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="blog-itm-card">
-                                <div class="blog-card-inner">
-                                    <div class="blog-card-image">
-                                        <a href="">
-                                            <img class="lazyload" src="//gaming-workdo.myshopify.com/cdn/shop/articles/8.png?v=1670910752" alt="My Game Review Yourpick Entertainment">
-                                        </a>
-                                        <div class="blog-labl">news</div>
-                                        <div class="date-labl"><time>December 13, 2022</time></div>
-                                    </div>
-                                    <div class="blog-product-content">
-                                        <h4 class="product-title"><a href="">My Game Review Yourpick Entertainment</a></h4>
-                                    </div>
-                                    <ul class="blog-number">
-                                        <li>AUTHOR: WorkDo</li>
-                                    </ul>
-                                    <div class="read-more-btn">
-                                        <a href="" class="btn-primary add-cart-btn">
-                                            READ MORE
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>
@@ -1209,3 +478,83 @@
     </section>
     <!-- ABOUT SECTION END -->
 </main>
+
+@* <script>
+    var tabLinks = document.querySelectorAll('.tab-link');
+    tabLinks.forEach(function (tabLink) {
+        tabLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            tabLinks.forEach(function (link) {
+                link.classList.remove('active');
+            });
+            tabLink.classList.add('active');
+        });
+    });
+</script> *@
+@* <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get all tab links
+        var tabLinks = document.querySelectorAll('.tab-link');
+
+        // Add click event listener to each tab link
+        tabLinks.forEach(function (tabLink) {
+            tabLink.addEventListener('click', function (event) {
+                // Prevent default link behavior
+                event.preventDefault();
+
+                // Remove the 'active' class from all tab links
+                tabLinks.forEach(function (link) {
+                    link.classList.remove('active');
+                });
+
+                // Add the 'active' class to the clicked tab link
+                tabLink.classList.add('active');
+
+                // Get the category associated with the clicked tab
+                var category = tabLink.getAttribute('data-category');
+
+                // Hide all tab contents
+                var tabContents = document.querySelectorAll('.tab-content');
+                tabContents.forEach(function (content) {
+                    content.classList.remove('active');
+                });
+
+                // Show the content associated with the clicked tab
+                var contentId = category + '-content';
+                var activeContent = document.getElementById(contentId);
+                if (activeContent) {
+                    activeContent.classList.add('active');
+                }
+            });
+        });
+    });
+</script> *@
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get all tab links
+        var tabLinks = document.querySelectorAll('.tab-link');
+
+        // Add click event listener to each tab link
+        tabLinks.forEach(function (tabLink) {
+            tabLink.addEventListener('click', function (event) {
+                // Prevent default link behavior
+                event.preventDefault();
+
+                // Get the content ID associated with the clicked tab
+                var contentId = tabLink.getAttribute('href').substring(1);
+
+                // Hide all tab contents
+                var tabContents = document.querySelectorAll('.tab-content');
+                tabContents.forEach(function (content) {
+                    content.classList.remove('active');
+                });
+
+                // Show the content associated with the clicked tab
+                var activeContent = document.getElementById(contentId);
+                if (activeContent) {
+                    activeContent.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
