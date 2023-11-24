@@ -81,12 +81,20 @@
                             <h4 class="product-title">
                                 <a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">@product.Title</a>
                             </h4>
+                            <ul class="product-number">
+                                <li>
+                                    TYPE: @string.Join(", ", product.ProductCategories.Select(pc => pc.Category.Name))
+                                </li>
+                            </ul>
                             <div class="product-card-image">
                                 <div class="product-card-image card__media">
                                     <a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">
                                         <img src="~/assets/img/product/@product.MainImage" alt="">
                                     </a>
-                                    <span class="slide-label">New</span>
+                                    @if (DateTime.UtcNow.AddHours(4) - product.CreatedAt <= TimeSpan.FromDays(7))
+                                    {
+                                        <span class="slide-label">New</span>
+                                    }
                                     <div class="pro_btn">
                                         <div class="pro_btn_wrapper">
                                             <a class="wishlist wish heart" href="wishlist.html" title="Wishlist">
@@ -94,8 +102,8 @@
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1335 2.95108C16.73 4.16664 16.9557 6.44579 15.6274 7.93897L8.99983 15.3894L2.37233 7.93977C1.04381 6.44646 1.26946 4.167 2.86616 2.95128C4.50032 1.70704 6.87275 2.10393 7.99225 3.80885L8.36782 4.38082C8.59267 4.72325 9.05847 4.82238 9.40821 4.60224C9.51777 4.53328 9.60294 4.44117 9.66134 4.33666L10.0076 3.80914C11.1268 2.10394 13.4993 1.70679 15.1335 2.95108ZM8.99998 2.653C7.31724 0.526225 4.15516 0.102335 1.94184 1.78754C-0.33726 3.52284 -0.659353 6.77651 1.23696 8.90805L8.4334 16.9972C8.7065 17.3041 9.18204 17.3362 9.49557 17.0688C9.53631 17.0341 9.57231 16.996 9.60351 16.9553L16.7628 8.90721C18.6589 6.77579 18.3367 3.52246 16.0579 1.78734C13.8446 0.102142 10.6825 0.526185 8.99998 2.653Z" fill="white"></path>
                                                 </svg>
                                             </a>
-                                            <div class="quickview-btn" id="quickview">
-                                                <a style="text-decoration:none" href="" data-handle="">
+                                            <div >
+                                                <a style="text-decoration:none" asp-controller="product" asp-action="modal" asp-route-id="@product.Id" class="quickview-btn" id="quickview">
                                                     <svg id="Layer_1" enable-background="new 0 0 32 32" height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="m16 21.693c3.14 0 5.693-2.554 5.693-5.693s-2.553-5.693-5.693-5.693-5.693 2.553-5.693 5.693 2.553 5.693 5.693 5.693zm0-9.386c2.036 0 3.693 1.657 3.693 3.693s-1.657 3.693-3.693 3.693-3.693-1.657-3.693-3.693 1.657-3.693 3.693-3.693z"></path>
                                                         <path d="m16 25.326c8.138 0 14.531-8.368 14.799-8.725.269-.356.269-.847 0-1.203-.268-.356-6.661-8.724-14.799-8.724s-14.531 8.368-14.799 8.724c-.269.356-.269.847 0 1.203.268.357 6.661 8.725 14.799 8.725zm0-16.652c5.958 0 11.132 5.476 12.709 7.326-1.577 1.851-6.751 7.326-12.709 7.326s-11.132-5.475-12.709-7.326c1.577-1.851 6.751-7.326 12.709-7.326z"></path>
@@ -120,7 +128,7 @@
                             </div>
                             <div class="product-content">
                                 <div class="product-content-top no-js-hidden">
-                                    <div class="pro-labl">Color: @* @product.ProductColor *@</div>
+                                    <div class="pro-labl">Color: @string.Join(", ", product.ProductColors.Select(pc => pc.Color.Title))</div>
                                 </div>
                                 <div class="product-content-bottom d-flex align-items-center justify-content-between">
                                     <div class="no-js-hidden price d-flex">
@@ -135,7 +143,7 @@
                                         }
                                     </div>
                                     <div class="product-form">
-                                        <button type="submit" name="add" class="btn-primary add-cart-btn product-form__submit">
+                                        <a type="submit" name="add" class="btn-primary add-cart-btn product-form__submit" asp-controller="cookie" asp-action="AddBasket" asp-route-id="@product.Id">
                                             <span id="add-to-cart">Add to Cart</span>
                                             <div class="loading-overlay__spinner hidden">
                                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 511.494 511.494" style="enable-background:new 0 0 511.494 511.494;" xml:space="preserve" width="20" height="20">
@@ -144,7 +152,7 @@
                                                     </g>
                                                 </svg>
                                             </div>
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

@@ -3,12 +3,15 @@
     ViewData["Title"] = "Update";
     IEnumerable<Category> categories = ViewBag.Categories;
     IEnumerable<Color> colors = ViewBag.Colors;
+    IEnumerable<Brand> brands = ViewBag.Brands;
+    SelectList selectListBrands = null;
     SelectList selectListItems = null;
     SelectList selectListColors = null;
-    if (categories != null && colors != null)
+    if (categories != null && colors != null && brands != null)
     {
         selectListItems = new SelectList(categories, nameof(Category.Id), nameof(Category.Name), ViewBag.SelectedCategoriesIds);
         selectListColors = new SelectList(colors, nameof(Color.Id), nameof(Color.Title), ViewBag.SelectedColorIds);
+        selectListBrands = new SelectList(brands, nameof(Brand.Id), nameof(Brand.Name));
     }
 }
 
@@ -44,11 +47,6 @@
                                                     <span asp-validation-for="DiscountedPrice" class="text-danger"></span>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label asp-for="EcoTax"></label>
-                                                    <input asp-for="EcoTax" class="form-control">
-                                                    <span asp-validation-for="EcoTax" class="text-danger"></span>
-                                                </div>
-                                                <div class="form-group">
                                                     <label asp-for="Count"></label>
                                                     <input asp-for="Count" class="form-control">
                                                     <span asp-validation-for="Count" class="text-danger"></span>
@@ -82,6 +80,13 @@
                                                 </div>
                                                 <div class="imageContainer imageContainer d-flex justify-content-between align-items-center">
                                                     @await Html.PartialAsync("_DeleteImagePartial",Model.ProductImages)
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="BrandId">Brand</label>
+                                                    <select asp-for="BrandId" asp-items="selectListBrands" class="form-control">
+                                                        <option value="">Select Brand</option>
+                                                    </select>
+                                                    <span asp-validation-for="BrandId" class="text-danger"></span>
                                                 </div>
                                                 <div class="form-group">
                                                     <label asp-for="CategoryIds">Category</label>

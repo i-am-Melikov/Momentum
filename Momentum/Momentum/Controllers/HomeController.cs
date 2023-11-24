@@ -42,8 +42,11 @@ namespace Momentum.Controllers
                     (product, productCategory) => product
                 ).ToListAsync(),
 
-                TopSeller = await _context.Products.Where(s => s.IsDeleted == false && s.IsTopSeller == true).ToListAsync(),
-                Blog = await _context.Blogs.Where(b=>b.IsDeleted == false).ToListAsync(),
+                TopSeller = await _context.Products.Where(s => !s.IsDeleted && s.IsTopSeller == true)
+                .Include(p => p.ProductColors.Where(pc => !pc.IsDeleted)).ThenInclude(pc => pc.Color)
+                .Include(p => p.ProductCategories.Where(pc => !pc.IsDeleted)).ThenInclude(pc => pc.Category)
+                .ToListAsync(),
+                Blog = await _context.Blogs.Where(b => !b.IsDeleted).ToListAsync(),
             };
 
             return View(homeVM);

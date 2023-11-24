@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Momentum.DataAccess;
 using Momentum.Models;
+using Momentum.ViewModels;
 using NuGet.Protocol.Plugins;
 
 namespace Momentum.Areas.Manage.Controllers
@@ -18,14 +19,14 @@ namespace Momentum.Areas.Manage.Controllers
             _env = env;
         }
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(int currentPage = 1)
         {
             IQueryable<Category> categories = _context.Categories
             .Include(c => c.ProductCategories)
             .ThenInclude(pc => pc.Product)
             .Where(c => !c.IsDeleted);
 
-            return View(categories);
+            return View(PageNatedList<Category>.Create(categories, currentPage, 6,6));
         }
         [HttpGet]
         public async Task<IActionResult> Detail(int id)

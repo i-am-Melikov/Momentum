@@ -3,6 +3,8 @@
     ViewData["Title"] = "Create";
     IEnumerable<Category> categories = ViewBag.Categories;
     IEnumerable<Color> colors = ViewBag.Colors;
+    IEnumerable<Brand> brands = ViewBag.Brands;
+    SelectList selectListBrands = new SelectList(brands, nameof(Brand.Id), nameof(Brand.Name));
     SelectList selectListColors = new SelectList(colors, nameof(Color.Id), nameof(Color.Title));
     SelectList selectListItems = new SelectList(categories, nameof(Category.Id), nameof(Category.Name));
 }
@@ -38,11 +40,6 @@
                                                     <span asp-validation-for="DiscountedPrice" class="text-danger"></span>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label asp-for="EcoTax"></label>
-                                                    <input asp-for="EcoTax" class="form-control">
-                                                    <span asp-validation-for="EcoTax" class="text-danger"></span>
-                                                </div>
-                                                <div class="form-group">
                                                     <label asp-for="Count"></label>
                                                     <input asp-for="Count" class="form-control">
                                                     <span asp-validation-for="Count" class="text-danger"></span>
@@ -70,6 +67,13 @@
                                                     <label asp-for="Files"></label>
                                                     <input asp-for="Files" accept="image/*" multiple class="form-control-file">
                                                     <span asp-validation-for="Files" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="BrandId">Brand</label>
+                                                    <select asp-for="BrandId" asp-items="selectListBrands" class="form-control">
+                                                        <option value="">Select Brand</option>
+                                                    </select>
+                                                    <span asp-validation-for="BrandId" class="text-danger"></span>
                                                 </div>
                                                 <div class="form-group">
                                                     <label asp-for="ColorIds">Color</label>

@@ -1,8 +1,32 @@
-﻿
+﻿@model ProductDetailVM
 @{
     ViewData["Title"] = "Detail";
     ViewData["IsProductDetail"] = true;
 }
+<style>
+    .pro-large-img {
+        height:50vh;
+        position: relative;
+        width: 100%;
+    }
+
+        .pro-large-img img {
+            max-width: 100%;
+            max-height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+        }
+
+    .ellipsis-3-lines {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>
 
 <main id="MainContent" class="content-for-layout home-wrapper product-detail-main">
     <div>
@@ -53,23 +77,32 @@
                                         Write a Review
                                     </a>
                                 </div>
-                                <h2>Colossus Ergonomic Gaming Office Chair</h2>
+                                <h2>@Model.Selected.Title</h2>
                                 <ul class="pro-number">
                                     <li>
-                                        TYPE: Chair
+                                        TYPE: @string.Join(", ", Model.Selected.ProductCategories.Select(pc => pc.Category.Name))
                                     </li>
 
                                     <li class="hideAll" style="display: block;">
                                         SKU: <span class="sku">1140550231142</span>
                                     </li>
                                 </ul>
-                                <p>ERGONOMICALLY DESIGNED FOR HARDCORE GAMING : From its unique contours and angled seat edges, to its fully adjustable recline, tilt, and height, the Dr Luxur...</p>
+                                <div class="ellipsis-3-lines">
+                                    <p>@Html.Raw(Model.Selected.Description)</p>
+                                </div>
                             </div>
-                            <div class="pro-labl">Color: White</div>
+                            <div class="pro-labl">Color: @string.Join(", ", Model.Selected.ProductColors.Select(pc => pc.Color.Title))</div>
                             <div class="product-content-bottom d-flex align-items-center justify-content-between">
                                 <div class="no-js-hidden price">
-                                    <ins class="price-item--regular">356.00 <span class="currency-type">USD</span></ins>
-                                    <ins class="price-item--sale">500.00 <span class="currency-type">USD</span></ins>
+                                    @if (Model.Selected.DiscountedPrice == null || Model.Selected.DiscountedPrice == 0)
+                                    {
+                                        <ins class="price-item--regular">@Model.Selected.Price <span class="currency-type">USD</span></ins>
+                                    }
+                                    else
+                                    {
+                                        <ins class="price-item--regular">@Model.Selected.Price <span class="currency-type">USD</span></ins>
+                                        <ins class="price-item--sale">@Model.Selected.DiscountedPrice <span class="currency-type">USD</span></ins>
+                                    }
                                 </div>
                                 <div class="quantity-select">
                                     <span class="lbl">Quantity :</span>
@@ -104,31 +137,27 @@
                         <div class="slider-wrap">
                             <div class="product-main-slider">
                                 <div class="slider-for">
-                                    <div class="pro-large-img img-zoom">
-                                        <img src="//gaming-workdo.myshopify.com/cdn/shop/products/1-1_247x198.png?v=1671449884" alt="product thumb" />
-                                    </div>
-                                    <div class="pro-large-img img-zoom">
-                                        <img src="//gaming-workdo.myshopify.com/cdn/shop/products/1_50862e3f-4e56-4d7c-9220-04cde28aca6d_258x258.png?v=1671448019" alt="product thumb" />
-                                    </div>
-                                    <div class="pro-large-img img-zoom">
-                                        <img src="//gaming-workdo.myshopify.com/cdn/shop/products/gx6-back-1000-removebg-preview_258x258.png?v=1671451565" alt="product thumb" />
-                                    </div>
-                                    <div class="pro-large-img img-zoom">
-                                        <img src="//gaming-workdo.myshopify.com/cdn/shop/products/1_4661881d-c8c7-4d3b-962e-038344e4ac81_258x258.png?v=1671451100" alt="product thumb" />
-                                    </div>
-                                    <div class="pro-large-img img-zoom">
-                                        <img src="//gaming-workdo.myshopify.com/cdn/shop/products/hyperx_chargeplay_duo_xbox_2_angled_controller_900x-removebg-preview_258x258.png?v=1671445499" alt="product thumb" />
-                                    </div>
+                                    @if (Model.Selected != null && Model.Selected.ProductImages != null)
+                                    {
+                                        @foreach (ProductImage productImage in Model.Selected.ProductImages)
+                                        {
+                                            <div class="pro-large-img img-zoom" style="position: relative; display: flex; justify-content: center; align-items: center;">
+                                                <img src="~/assets/img/product/@productImage.Image" alt="product thumb"/>
+                                            </div>
+                                        }
+                                    }
                                 </div>
                             </div>
                             <div class="product-thumb-slider">
                                 <div class="">
                                     <div class="slider-nav slider-list">
-                                        <div class="slider-nav-thumb"><img src="//gaming-workdo.myshopify.com/cdn/shop/products/1-1_247x198.png?v=1671449884" alt="" /></div>
-                                        <div class="slider-nav-thumb"><img src="//gaming-workdo.myshopify.com/cdn/shop/products/1_50862e3f-4e56-4d7c-9220-04cde28aca6d_258x258.png?v=1671448019" alt="" /></div>
-                                        <div class="slider-nav-thumb"><img src="//gaming-workdo.myshopify.com/cdn/shop/products/gx6-back-1000-removebg-preview_258x258.png?v=1671451565" alt="" /></div>
-                                        <div class="slider-nav-thumb"><img src="//gaming-workdo.myshopify.com/cdn/shop/products/1_4661881d-c8c7-4d3b-962e-038344e4ac81_258x258.png?v=1671451100" alt="" /></div>
-                                        <div class="slider-nav-thumb"><img src="//gaming-workdo.myshopify.com/cdn/shop/products/hyperx_chargeplay_duo_xbox_2_angled_controller_900x-removebg-preview_258x258.png?v=1671445499" alt="" /></div>
+                                        @if (Model.Selected != null && Model.Selected.ProductImages != null)
+                                        {
+                                            @foreach (ProductImage productImage in Model.Selected.ProductImages)
+                                            {
+                                                <div class="slider-nav-thumb"><img src="~/assets/img/product/@productImage.Image" alt=""/></div>
+                                            }
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -143,7 +172,7 @@
                     <div class="col-md-5 col-12">
                         <div class="pro-descrip-left">
                             <h3>Description:</h3>
-                            <p>ERGONOMICALLY DESIGNED FOR HARDCORE GAMING : From its unique contours and angled seat edges, to its fully adjustable recline, tilt, and height, the Dr Luxur Colossus supports a healthy sitting posture so you can game for hours in comfort</p>
+                            <p>@Html.Raw(Model.Selected.Description)</p>
                         </div>
                     </div>
 

@@ -195,8 +195,6 @@ $(document).ready(function () {
     }, 100);
     });
 
-
-
     var backdrop = document.getElementById('modalBackdrop');
 
     $(".mobile-facets__open").click( function(e){
@@ -242,7 +240,7 @@ $(document).ready(function () {
 		$(".minicart-inner").addClass('show')
 	})
 
-	$(".offcanvas-close, .minicart-close,.offcanvas-overlay").on('click', function(){
+	$(".offcanvas-close, .minicart-close, .closecart ,.offcanvas-overlay").on('click', function(){
 		$("body").removeClass('fix');
 		$(".offcanvas-search-inner, .minicart-inner").removeClass('show')
 	})
@@ -335,7 +333,6 @@ document.addEventListener('DOMContentLoaded', function() {
         cartBtn.addEventListener('click', function(e) {
             e.preventDefault();
             cartNotif.classList.add('active');
-            console.log('ffasfas');
         });
         cartNotifClose.addEventListener('click', function() {
             cartNotif.classList.remove('active');
@@ -380,3 +377,76 @@ details.forEach(detail => {
     });
 });
 //FILTERS MOBILE OPENING CLOSING AREA END
+$('.quickview-btn').click(function (e) {
+
+    let url = $(this).attr('href');
+
+    fetch(url)
+        .then(res => res.text())
+        .then(data => {
+            console.log(data);
+            $('.quickview_popup_data').html(data);
+
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                dots: false,
+                fade: true,
+                asNavFor: '.slider-nav',
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: false
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            dots: false,
+                            arrows: false
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            dots: false,
+                            arrows: false
+                        }
+                    }
+                ]
+            });
+            $('.slider-nav').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                asNavFor: '.slider-for',
+                arrows: true,
+                dots: false,
+                centerMode: true,
+                focusOnSelect: true,
+                draggable: true,
+                vertical: true,
+            });
+        });
+
+    console.log(url);
+});
+$('.add-cart-btn').click(function (e) {
+        e.preventDefault();
+
+        let url = $(this).attr('href');
+
+        fetch(url)
+            .then(res => res.text())
+            .then(data => {
+                $('.cart-modal').html(data);
+            })
+    })

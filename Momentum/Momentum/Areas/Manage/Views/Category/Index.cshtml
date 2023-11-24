@@ -1,4 +1,4 @@
-﻿@model IQueryable<Category>
+﻿@model PageNatedList<Category>
 @{
     ViewData["Title"] = "Index";
     int no = 0;
@@ -53,6 +53,24 @@
                                     </table>
                                 </div>
                             </div>
+                        </div>
+                        <div class="pagination-wrapper pagination-wraapper-blog">
+                            <nav class="pagination d-flex justify-content-center align-items-center">
+                                <ul class="pagination">
+                                    @if (Model.HasPrev)
+                                    {
+                                        <li class="page-item"><a class="page-link" asp-area="manage" asp-controller="category" asp-action="index" asp-route-currentPage="@(Model.CurrentPage-1)"><i class="fa-solid fa-arrow-left-long"></i></a></li>
+                                    }
+                                    @for (int i = Model.Start; i <= Model.End; i++)
+                                    {
+                                        <li class="page-item @(Model.CurrentPage == i ? "active" : "") "><a class="page-link" style="background:none;" asp-area="manage" asp-controller="category" asp-action="index" asp-route-currentPage="@i">@i</a></li>
+                                    }
+                                    @if (Model.HasNext)
+                                    {
+                                        <li class="page-item"><a class="page-link" asp-area="manage" asp-controller="category" asp-action="index" asp-route-currentPage="@(Model.CurrentPage+1)"><i class="fa-solid fa-arrow-right-long"></i></a></li>
+                                    }
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>

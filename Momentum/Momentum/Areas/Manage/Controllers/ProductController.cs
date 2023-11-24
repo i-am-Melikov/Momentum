@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Momentum.DataAccess;
 using Momentum.Models;
 using Momentum.ViewModels;
+using System.Drawing.Drawing2D;
 
 namespace Momentum.Areas.Manage.Controllers
 {
@@ -21,6 +22,7 @@ namespace Momentum.Areas.Manage.Controllers
             IQueryable<Product> products = _context.Products
                 .Include(p => p.ProductCategories.Where(pc => pc.IsDeleted == false)).ThenInclude(p => p.Category)
                 .Include(p=> p.ProductColors.Where(pc=>pc.IsDeleted==false)).ThenInclude(p=>p.Color)
+                .Include(p => p.Brand)
                 .Where(c => c.IsDeleted == false)
                 .OrderByDescending(c => c.Id);
 
@@ -37,7 +39,9 @@ namespace Momentum.Areas.Manage.Controllers
 
             Product? product = await _context.Products
                 .Include(p => p.ProductImages.Where(pi => pi.IsDeleted == false))
-                .Include(c => c.ProductCategories).ThenInclude(p => p.Category)
+                .Include(p => p.ProductColors.Where(pc => pc.IsDeleted == false)).ThenInclude(p => p.Color)
+                .Include(c => c.ProductCategories.Where(pc=>!pc.IsDeleted)).ThenInclude(p => p.Category)
+                .Include(p => p.Brand)
                 .FirstOrDefaultAsync(p => p.Id == id && p.IsDeleted == false);
 
             if (product == null) return NotFound();
@@ -56,6 +60,7 @@ namespace Momentum.Areas.Manage.Controllers
         public async Task<IActionResult> Create(Product product)
         {
             ViewBag.Categories = await _context.Categories.Where(c => c.IsDeleted == false).ToListAsync();
+            ViewBag.Brands = await _context.Brands.Where(c => c.IsDeleted == false).ToListAsync();
             ViewBag.Colors = await _context.Colors.Where(c => c.IsDeleted == false).ToListAsync();
 
             if (!ModelState.IsValid) return View(product);
@@ -66,12 +71,11 @@ namespace Momentum.Areas.Manage.Controllers
                 return View(product);
             }
 
-            if (product.DiscountedPrice != null && product.DiscountedPrice > 0 && (product.EcoTax >= product.DiscountedPrice || product.EcoTax >= product.Price))
+            if (product.BrandId != null && !await _context.Brands.AnyAsync(c => c.IsDeleted == false && c.Id == product.BrandId))
             {
-                ModelState.AddModelError("EcoTax", "Tax can`t be more than price or discounted price");
+                ModelState.AddModelError("BrandId", $"Brand id = {product.Brand} is incorrect");
                 return View(product);
             }
-
 
             List<ProductColor> productColors = new List<ProductColor>();
             
@@ -114,6 +118,10 @@ namespace Momentum.Areas.Manage.Controllers
             }
             product.ProductCategories = productCategories;
 
+            //Category category = await _context.Categories.FirstOrDefaultAsync(c => c.Id == product.CategoryId);
+            //Brand brand = await _context.Brands.FirstOrDefaultAsync(b => b.Id == product.BrandId);
+
+            //string seria = (category.Name.Substring(0, 2) + brand.Name.Substring(0, 2)).ToLower();
 
             if (product.Files == null || product.Files.Count() <= 0)
             {
@@ -204,7 +212,7 @@ namespace Momentum.Areas.Manage.Controllers
         {
             if (id == null) return BadRequest();
 
-            Product product = await _context.Products
+            Product? product = await _context.Products
                 .Include(p => p.ProductImages.Where(pi => pi.IsDeleted == false))
                 .Include(p => p.ProductColors.Where(pc => pc.IsDeleted == false))
                 .Include(p => p.ProductCategories.Where(pc => pc.IsDeleted == false))
@@ -213,6 +221,7 @@ namespace Momentum.Areas.Manage.Controllers
             if (product == null) return NotFound();
 
             ViewBag.Categories = await _context.Categories.Where(c => c.IsDeleted == false).ToListAsync();
+            ViewBag.Brands = await _context.Brands.Where(c => c.IsDeleted == false).ToListAsync();
             ViewBag.Colors = await _context.Colors.Where(c => c.IsDeleted == false).ToListAsync();
 
             product.ColorIds = product.ProductColors.Select(pc => pc.ColorId).ToList();
@@ -223,6 +232,7 @@ namespace Momentum.Areas.Manage.Controllers
         [HttpPost]
         public async Task<IActionResult> Update(int? id, Product product)
         {
+            ViewBag.Brands = await _context.Brands.Where(c => c.IsDeleted == false).ToListAsync();
             if (product.CategoryIds == null)
             {
                 product.CategoryIds = new List<int>();
@@ -248,6 +258,12 @@ namespace Momentum.Areas.Manage.Controllers
 
             if (dbProduct == null) return NotFound();
 
+            if (product.BrandId == null || !await _context.Brands.AnyAsync(c => c.IsDeleted == false && c.Id == product.BrandId))
+            {
+                ModelState.AddModelError("BrandId", "Incorrect");
+                return View(dbProduct);
+            }
+
             dbProduct.CategoryIds = product.CategoryIds;
             dbProduct.ColorIds = product.ColorIds;
 
@@ -256,11 +272,6 @@ namespace Momentum.Areas.Manage.Controllers
             if (product.DiscountedPrice > product.Price)
             {
                 ModelState.AddModelError("DiscountedPrice", "Discounted price cannot be high than price");
-                return View(product);
-            }
-            if (product.EcoTax > product.Price || product.EcoTax > product.DiscountedPrice)
-            {
-                ModelState.AddModelError("EcoTax", "EcoTax cannot be high than price or discounted price");
                 return View(product);
             }
             if (product.Files != null && product.Files.Count() > canUpload)
@@ -410,9 +421,9 @@ namespace Momentum.Areas.Manage.Controllers
 
             dbProduct.Title = product.Title.Trim();
             dbProduct.Price = product.Price;
+            dbProduct.BrandId = product.BrandId;
             dbProduct.DiscountedPrice = product.DiscountedPrice;
             dbProduct.Description = product.Description;
-            dbProduct.EcoTax = product.EcoTax;
             dbProduct.Count = product.Count;
             dbProduct.IsTopSeller = product.IsTopSeller;
             dbProduct.IsOurProduct = product.IsOurProduct;

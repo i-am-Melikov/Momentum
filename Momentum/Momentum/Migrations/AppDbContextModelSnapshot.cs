@@ -282,6 +282,48 @@ namespace Momentum.Migrations
                     b.ToTable("Blogs");
                 });
 
+            modelBuilder.Entity("Momentum.Models.Brand", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Brands");
+                });
+
             modelBuilder.Entity("Momentum.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -377,6 +419,9 @@ namespace Momentum.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int?>("BrandId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Count")
                         .HasColumnType("int");
 
@@ -402,9 +447,6 @@ namespace Momentum.Migrations
                     b.Property<decimal>("DiscountedPrice")
                         .HasColumnType("money");
 
-                    b.Property<decimal>("EcoTax")
-                        .HasColumnType("money");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -421,6 +463,10 @@ namespace Momentum.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("money");
 
+                    b.Property<string>("Seria")
+                        .HasMaxLength(4)
+                        .HasColumnType("nvarchar(4)");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -434,6 +480,8 @@ namespace Momentum.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BrandId");
 
                     b.ToTable("Products");
                 });
@@ -650,6 +698,15 @@ namespace Momentum.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Momentum.Models.Product", b =>
+                {
+                    b.HasOne("Momentum.Models.Brand", "Brand")
+                        .WithMany("Products")
+                        .HasForeignKey("BrandId");
+
+                    b.Navigation("Brand");
+                });
+
             modelBuilder.Entity("Momentum.Models.ProductCategory", b =>
                 {
                     b.HasOne("Momentum.Models.Category", "Category")
@@ -697,6 +754,11 @@ namespace Momentum.Migrations
                         .IsRequired();
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Momentum.Models.Brand", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("Momentum.Models.Category", b =>

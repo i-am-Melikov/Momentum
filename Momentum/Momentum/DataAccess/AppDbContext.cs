@@ -15,5 +15,6 @@ namespace Momentum.DataAccess
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Color> Colors { get; set; }
         public DbSet<ProductColor> ProductColors { get; set; }
+        public DbSet<Brand> Brands { get; set; }
     }
 }

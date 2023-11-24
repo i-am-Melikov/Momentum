@@ -24,6 +24,8 @@
                                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Id</th>
                                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Image</th>
                                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Title</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Brand</th>
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Category</th>
                                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Category</th>
                                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Price</th>
                                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Discounted Price</th>
@@ -38,6 +40,8 @@
                                                     <img style="width:100px;" src="~/assets/img/product/@Model.MainImage">
                                                     </td>
                                                     <td>@Model.Title</td>
+                                                    <td class="product-title"><p>@Model.Brand?.Name</p></td>
+                                                    <td>@string.Join(", ", Model.ProductColors?.Select(pc => pc.Color.Title))</td>
                                                     <td>@string.Join(", ",Model.ProductCategories.Select(t=>t.Category.Name))</td>
                                                     <td>@Model.Price</td>
                                                     <td>@Model.DiscountedPrice</td>

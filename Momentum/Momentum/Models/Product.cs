@@ -11,14 +11,16 @@ namespace Momentum.Models
         public double Price { get; set; }
         [Column(TypeName = "money")]
         public int DiscountedPrice { get; set; }
-        [Column(TypeName = "money")]
-        public double EcoTax { get; set; }
         [Range(0, int.MaxValue)]
         public int Count { get; set; }
+        [StringLength(4)]
+        public string? Seria { get; set; }
         [StringLength(5000)]
         public string Description { get; set; }
         [StringLength(255)]
         public string? MainImage { get; set; }
+        public int? BrandId { get; set; }
+        public Brand? Brand { get; set; }
         public List<ProductCategory>? ProductCategories { get; set; }
         public List<ProductColor>? ProductColors { get; set; }
         public bool IsTopSeller { get; set; }

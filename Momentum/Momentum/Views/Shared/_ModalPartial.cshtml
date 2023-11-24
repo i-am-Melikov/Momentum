@@ -1,0 +1,94 @@
+﻿@model Product
+<style>
+    .common-heading p {
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+        <section class="product-main-section quick-product">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 col-12">
+                        <div class="product-left-inner">
+                            <div class="common-heading">
+                                <h2>@Model.Title</h2>
+                                <ul class="pro-number">
+                                    <li>
+                                        TYPE: @string.Join(", ", Model.ProductCategories.Select(pc => pc.Category.Name))
+                                    </li>
+
+                                    <li class="hideAll" style="display: block;">
+                                        SKU: <span class="sku">1140550231142</span>
+                                    </li>
+                                    <p>@Html.Raw(Model.Description)</p>
+                                </ul>
+                            </div>
+                            <div class="pro-labl">Color: @string.Join(", ", Model.ProductColors.Select(pc => pc.Color.Title))</div>
+                            <div class="product-content-bottom d-flex align-items-center justify-content-between">
+                                <div class="no-js-hidden price">
+                                    @if (Model.DiscountedPrice == null || Model.DiscountedPrice == 0)
+                                    {
+                                        <ins class="price-item--regular">@Model.Price <span class="currency-type">USD</span></ins>
+                                    }
+                                    else
+                                    {
+                                        <ins class="price-item--regular">@Model.Price <span class="currency-type">USD</span></ins>
+                                        <ins class="price-item--sale">@Model.DiscountedPrice <span class="currency-type">USD</span></ins>
+                                    }
+                                </div>
+                                <div class="quantity-select">
+                                    <span class="lbl">Quantity :</span>
+                                    <div class="quantity qty-spinner">
+                                        <button class="quantity__button no-js-hidden quantity-decrement " name="minus" type="button">
+                                            <svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 0.251343V1.74871H12V0.251343H0Z" fill="#61AFB3"></path>
+                                            </svg>
+                                        </button>
+                                        <input class="quantity__input" type="number" name="quantity" min="1" value="1">
+                                        <button class="quantity__button no-js-hidden quantity-increment" name="plus" type="button">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.74868 5.25132V0H5.25132V5.25132H0V6.74868H5.25132V12H6.74868V6.74868H12V5.25132H6.74868Z" fill="#61AFB3"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-primary add-cart-btn product-form__submit">
+                                <span>Add to Cart</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="slider-wrap">
+                            <div class="product-main-slider">
+                                <div class="slider-for">
+                                    @if (Model.ProductImages != null)
+                                    {
+                                        @foreach (ProductImage productImage in Model.ProductImages)
+                                        {
+                                            <div class="pro-large-img img-zoom" style="position: relative; display: flex; justify-content: center; align-items: center;">
+                                                <img src="~/assets/img/product/@productImage.Image" alt="product thumb" />
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                            <div class="product-thumb-slider">
+                                <div class="slider-nav">
+                                    @if (Model.ProductImages != null)
+                                    {
+                                        @foreach (ProductImage productImage in Model.ProductImages)
+                                        {
+                                            <div class="slider-nav-thumb"><img src="~/assets/img/product/@productImage.Image" alt="" /></div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
