@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Momentum</title>
-    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLjCIgnHE7W7LOlpAfYm-k-ZJwRfhhTMo2CvqfC8vycsnxR_Uu0QBRsLe3s_zpPifSs5E&usqp=CAU">
+    <link rel="icon" href="~/assets/img/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -141,7 +141,7 @@
         <div id="announcebar" class="announcebar">
             <div class="container">
                 <div class="announce-row">
-                    <div class="annoucebar-left">@Html.Raw(settings.FirstOrDefault(x=>x.Key=="welcome").Value)</div>
+                    <div class="annoucebar-left"></div>
                     <div class="search-form-wrapper">
                         <div class="field form-inputs">
                             <button type="submit" class="search__button" id="btn-submit">
@@ -375,10 +375,92 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js"></script>
     <script src="~/assets/js/custom.js"></script>
     <script src="~/assets/js/detail.js"></script>
-    <script src="~/assets/js/basket.js"></script>
+    <script>
+        $(document).ready(function () {
+            var sortByDropdown = $("#SortBy");
 
+            var sortBy = localStorage.getItem("sortBy");
+            if (sortBy) {
+                sortByDropdown.val(sortBy);
+                sortByDropdown.trigger('change');
+            }
+            sortByDropdown.on('change', function (event) {
+
+                sortBy = $(this).val();
+
+                localStorage.setItem("sortBy", sortBy);
+
+                var currentPage = $('.pagination .active a').text();
+
+                fetch(`/product/Index?sortBy=${sortBy}&currentPage=${currentPage}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        return response.text();
+                    })
+                    .then(result => {
+                        $("#Product-Div").html(result);
+                    })
+                    .catch(error => {
+                        console.error("Fetch error:", error);
+                    });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            const labels = $('.acnav-label');
+            const lists = $('.acnav-list');
+
+            labels.each(function (index) {
+                $(this).on('click', function () {
+                    console.log('Clicked on label', index);
+
+                    if (lists[index].style.display !== 'block') {
+                        lists[index].style.display = 'block';
+                        $(this).addClass('clicked');
+                    } else {
+                        lists[index].style.display = 'none';
+                        $(this).removeClass('clicked');
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            var backdrop = document.getElementById('modalBackdrop');
+
+            $(".hcart").on('click', function () {
+                document.getElementById('cart-modal').classList.add('cartOpen');
+                document.getElementById('cart-header').classList.add('cart-header');
+                document.getElementById('cart-header').classList.remove('d-none');
+                $('body').addClass('mobile-open no-scroll');
+                backdrop.style.display = "block";
+            })
+            $(document).on('click', '.closecart', function () {
+                document.getElementById('cart-modal').classList.remove('cartOpen');
+                document.getElementById('cart-header').classList.remove('cart-header');
+                document.getElementById('cart-header').classList.add('d-none');
+                $('body').removeClass('mobile-open no-scroll');
+                backdrop.style.display = "none";
+            });
+            backdrop.addEventListener('click', function (e) {
+                if (e.target === backdrop) {
+                    document.getElementById('cart-modal').classList.remove('cartOpen');
+                    document.getElementById('cart-header').classList.remove('cart-header');
+                    document.getElementById('cart-header').classList.add('d-none');
+                    document.body.classList.remove('modal-open');
+                    $('body').removeClass('mobile-open no-scroll');
+                    backdrop.style.display = "none";
+                }
+            });
+        })
+    </script>
     @if (ViewData["IsProductDetail"] != null && (bool)ViewData["IsProductDetail"]==true)
     {
         <script>

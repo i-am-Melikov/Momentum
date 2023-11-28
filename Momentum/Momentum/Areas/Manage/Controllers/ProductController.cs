@@ -53,6 +53,7 @@ namespace Momentum.Areas.Manage.Controllers
         {
             ViewBag.Categories = await _context.Categories.Where(c => c.IsDeleted == false).ToListAsync();
             ViewBag.Colors = await _context.Colors.Where(c => c.IsDeleted == false).ToListAsync();
+            ViewBag.Brands = await _context.Brands.Where(c => c.IsDeleted == false).ToListAsync();
 
             return View();
         }
@@ -354,9 +355,9 @@ namespace Momentum.Areas.Manage.Controllers
                     ModelState.AddModelError("MainFile", "File Type must be image");
                     return View(dbProduct);
                 }
-                if ((product.MainFile.Length / 1024) > 100)
+                if ((product.MainFile.Length / 1024) > 300)
                 {
-                    ModelState.AddModelError("MainFile", "File length must be maximum 100kb");
+                    ModelState.AddModelError("MainFile", "File length must be maximum 300kb");
                     return View(dbProduct);
                 }
 
@@ -388,9 +389,9 @@ namespace Momentum.Areas.Manage.Controllers
                         ModelState.AddModelError("Files", "File Type must be image");
                         return View(dbProduct);
                     }
-                    if ((file.Length / 1024) > 100)
+                    if ((file.Length / 1024) > 300)
                     {
-                        ModelState.AddModelError("Files", "File length must be maximum 100kb");
+                        ModelState.AddModelError("Files", "File length must be maximum 300kb");
                         return View(dbProduct);
                     }
                 }

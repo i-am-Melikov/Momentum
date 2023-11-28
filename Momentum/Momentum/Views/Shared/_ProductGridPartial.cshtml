@@ -1,0 +1,75 @@
+﻿@model PageNatedList<Product>
+@foreach (Product product in Model)
+{
+    <div class="grid__item col-lg-4 col-md-6 col-sm-6 col-12 product-card card">
+        <div class="product-card-inner card-inner">
+            <h4 class="product-title">
+                <a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">@product.Title</a>
+            </h4>
+            <ul class="product-number">
+                <li>
+                    TYPE: @string.Join(", ", product.ProductCategories.Select(pc => pc.Category.Name))
+                </li>
+            </ul>
+            <div class="product-card-image">
+                <div class="product-card-image card__media">
+                    <a asp-controller="product" asp-action="detail" asp-route-id="@product.Id" class="product__media-item">
+                        <img class="" src="/assets/img/product/@product.MainImage" alt="">
+                    </a>
+                    @if (DateTime.UtcNow.AddHours(4) - product.CreatedAt <= TimeSpan.FromDays(7))
+                    {
+                        <span class="slide-label">New</span>
+                    }
+                    <div class="pro_btn">
+                        <div class="pro_btn_wrapper">
+                            <div>
+                                <a style="text-decoration:none" asp-controller="product" asp-action="modal" asp-route-id="@product.Id" class="quickview-btn" id="quickview">
+                                    <svg id="Layer_1" enable-background="new 0 0 32 32" height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m16 21.693c3.14 0 5.693-2.554 5.693-5.693s-2.553-5.693-5.693-5.693-5.693 2.553-5.693 5.693 2.553 5.693 5.693 5.693zm0-9.386c2.036 0 3.693 1.657 3.693 3.693s-1.657 3.693-3.693 3.693-3.693-1.657-3.693-3.693 1.657-3.693 3.693-3.693z"></path><path d="m16 25.326c8.138 0 14.531-8.368 14.799-8.725.269-.356.269-.847 0-1.203-.268-.356-6.661-8.724-14.799-8.724s-14.531 8.368-14.799 8.724c-.269.356-.269.847 0 1.203.268.357 6.661 8.725 14.799 8.725zm0-16.652c5.958 0 11.132 5.476 12.709 7.326-1.577 1.851-6.751 7.326-12.709 7.326s-11.132-5.475-12.709-7.326c1.577-1.851 6.751-7.326 12.709-7.326z"></path></svg>
+                                </a>
+                            </div>
+                            <div class="pro-compare">
+                                <label>
+                                    <span class="compare-label">
+                                        <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m17.2929 4.29289c-.3905.39053-.3905 1.02369 0 1.41422l1.2929 1.29289h-5.5858c-2.2091 0-4 1.79086-4 4v1c0 .5523.44772 1 1 1 .5523 0 1-.4477 1-1v-1c0-1.10457.8954-2 2-2h5.5858l-1.2929 1.2929c-.3905.3905-.3905 1.0237 0 1.4142s1.0237.3905 1.4142 0l3-2.99999c.3905-.39053.3905-1.02369 0-1.41422l-3-3c-.3905-.39052-1.0237-.39052-1.4142 0zm-3.2929 6.70711c-.5523 0-1 .4477-1 1v1c0 1.1046-.8954 2-2 2h-5.58579l1.2929-1.2929c.39052-.3905.39052-1.0237 0-1.4142-.39053-.3905-1.02369-.3905-1.41422 0l-3 3c-.39052.3905-.39052 1.0237 0 1.4142l3 3c.39053.3905 1.02369.3905 1.41422 0 .39052-.3905.39052-1.0237 0-1.4142l-1.2929-1.2929h5.58579c2.2091 0 4-1.7909 4-4v-1c0-.5523-.4477-1-1-1z" fill="rgb(0,0,0)" fill-rule="evenodd"></path></svg>
+                                    </span>
+                                    <a class="compare-now" href="" style="display:none;">Compare Now</a>
+                                    <input type="checkbox" id="true" data-value="true" style="display:none;" pro-handle="nintendo-switch-lite-turquoise"><span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-content">
+                <div class="pro-labl">Color: @string.Join(", ", product.ProductColors.Select(pc => pc.Color.Title))</div>
+                <div class="product-content-bottom d-flex align-items-center justify-content-between">
+                    <div class="no-js-hidden price">
+                        @if (product.DiscountedPrice == null || product.DiscountedPrice == 0)
+                        {
+                            <ins class="price-item--regular">@product.Price <span class="currency-type">USD</span></ins>
+                        }
+                        else
+                        {
+                            <ins class="price-item--regular">@product.DiscountedPrice <span class="currency-type">USD</span></ins>
+                            <ins class="price-item--sale">@product.Price <span class="currency-type">USD</span></ins>
+                        }
+                    </div>
+                    <div class="product-form">
+                        <form class="form">
+                            <a asp-controller="cookie" asp-action="addbasket" asp-route-id="@product.Id" type="submit" name="add" class="btn-primary add-cart-btn product-form__submit">
+                                <span>Add to Cart</span>
+                                <div class="loading-overlay__spinner hidden">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 511.494 511.494" style="enable-background:new 0 0 511.494 511.494;" xml:space="preserve" width="20" height="20">
+                                        <g>
+                                            <path d="M478.291,255.492c-16.133,0.143-29.689,12.161-31.765,28.16c-15.37,105.014-112.961,177.685-217.975,162.315 S50.866,333.006,66.236,227.992S179.197,50.307,284.211,65.677c35.796,5.239,69.386,20.476,96.907,43.959l-24.107,24.107   c-8.33,8.332-8.328,21.84,0.004,30.17c4.015,4.014,9.465,6.262,15.142,6.246h97.835c11.782,0,21.333-9.551,21.333-21.333V50.991   c-0.003-11.782-9.556-21.331-21.338-21.329c-5.655,0.001-11.079,2.248-15.078,6.246l-28.416,28.416   C320.774-29.34,159.141-19.568,65.476,86.152S-18.415,353.505,87.304,447.17s267.353,83.892,361.017-21.828   c32.972-37.216,54.381-83.237,61.607-132.431c2.828-17.612-9.157-34.183-26.769-37.011   C481.549,255.641,479.922,255.505,478.291,255.492z"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

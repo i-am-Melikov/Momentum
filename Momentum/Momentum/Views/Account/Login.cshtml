@@ -1,9 +1,13 @@
-﻿
+﻿@model LoginVM
 @{
     ViewData["Title"] = "Login";
     ViewData["IsBlackHeader"] = true;
 }
-
+<style>
+    .form-control {
+        color: black !important;
+    }
+</style>
 <main id="MainContent" class="content-for-layout home-wrapper margin-top-login">
     <section class="register-page padding-bottom">
         <div class="container">
@@ -23,27 +27,28 @@
                         <h2>Log In</h2>
                     </div>
                     <div class="form-wrapper">
-                        <form class="login-form">
+                        <form class="login-form" method="post" enctype="multipart/form-data">
                             <div class="form-container">
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="field form-group">
-                                            <label>E-mail<sup>*</sup>:</label>
-                                            <input class="form-control" type="email" placeholder="Email">
+                                            <label asp-for="Email">E-mail<sup>*</sup>:</label>
+                                            <input asp-for="Email" class="form-control" type="email" placeholder="Email">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group field">
-                                            <label>Password<sup>*</sup>:</label>
-                                            <input class="form-control" type="password" placeholder="Password">
+                                            <label asp-for="Password">Password<sup>*</sup>:</label>
+                                            <input asp-for="Password" class="form-control" type="password" placeholder="Password">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-container">
                                 <div class="row align-items-center form-footer justify-content-end">
                                     <div class="col-lg-12 col-12 d-flex align-items-center justify-content-end mobile-direction-column">
-                                        <a href="forgot-password.html" class="forgot-pass">Forgot Password?</a>
+                                        <a asp-controller="account" asp-action="forgotpassword" class="forgot-pass">Forgot Password?</a>
                                         <button class="btn submit-btn" type="submit">
                                             Login
                                             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="14" viewBox="0 0 35 14" fill="none">
@@ -57,7 +62,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-sm-12 col-12 d-flex align-items-center justify-content-center">
                                         <div class="reg-lbl">If you dont have account</div>
-                                        <a href="register.html" class="btn register-btn" type="submit">
+                                        <a asp-controller="account" asp-action="register" class="btn register-btn" type="submit">
                                             Register
                                             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="14" viewBox="0 0 35 14" fill="none">
                                                 <path d="M25.0749 14L35 7L25.0805 0L29.12 6.06667H0V7.93333H29.12L25.0749 14Z"></path>

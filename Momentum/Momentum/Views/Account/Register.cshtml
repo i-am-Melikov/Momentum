@@ -1,9 +1,13 @@
-﻿
+﻿@model RegisterVM
 @{
     ViewData["Title"] = "Register";
     ViewData["IsBlackHeader"] = true;
 }
-
+<style>
+    .form-control {
+        color: black !important;
+    }
+</style>
 <main id="MainContent" class="content-for-layout home-wrapper margin-top">
     <section class="register-page padding-bottom padding-top">
         <div class="container">
@@ -23,7 +27,7 @@
                         <h2>Register</h2>
                     </div>
                     <div class="form-wrapper register-form">
-                        <form class="register-from">
+                        <form class="register-from" method="post" enctype="multipart/form-data">
                             <div class="form-container">
                                 <div class="form-heading">
                                     <h4>Your Personal Details</h4>
@@ -33,20 +37,14 @@
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="form-group field">
-                                            <label>First Name<sup>*</sup>:</label>
-                                            <input class="form-control" placeholder="First name">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group field">
-                                            <label>Last Name<sup>*</sup>:</label>
-                                            <input class="form-control" type="text" placeholder="Last name">
+                                            <label asp-for="UserName">User Name<sup>*</sup>:</label>
+                                            <input asp-for="UserName" class="form-control" placeholder="First name">
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group field">
-                                            <label>E-mail<sup>*</sup>:</label>
-                                            <input class="form-control" type="email" placeholder="Email">
+                                            <label asp-for="Email">E-mail<sup>*</sup>:</label>
+                                            <input asp-for="Email" class="form-control" type="email" placeholder="Email">
                                         </div>
                                     </div>
                                 </div>
@@ -56,12 +54,12 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group field">
-                                            <label>Password<sup>*</sup>:</label>
-                                            <input class="form-control" type="password" placeholder="Password">
+                                            <label asp-for="Password">Password<sup>*</sup>:</label>
+                                            <input asp-for="Password" class="form-control" type="password" placeholder="Password">
                                         </div>
                                         <div class="form-group field">
-                                            <label>Confirm Password<sup>*</sup>:</label>
-                                            <input class="form-control" type="password" placeholder="Cnfirm Password">
+                                            <label asp-for="ConfirmPassword">Confirm Password<sup>*</sup>:</label>
+                                            <input asp-for="ConfirmPassword" class="form-control" type="password" placeholder="Confirm Password">
                                         </div>
                                     </div>
                                 </div>
@@ -79,6 +77,7 @@
                                 </div>
                             </div>
                         </form>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     </div>
                 </div>
             </div>

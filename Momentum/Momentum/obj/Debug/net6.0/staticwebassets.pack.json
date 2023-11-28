@@ -89,18 +89,6 @@
       "PackagePath": "staticwebassets\\assets\\img\\category\\20231115174908564.jpg"
     },
     {
-      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\category\\20231116114001047.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\category\\20231116114001047.jpg"
-    },
-    {
-      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\category\\20231116190101699.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\category\\20231116190101699.jpg"
-    },
-    {
-      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\category\\20231117193914988.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\category\\20231117193914988.jpg"
-    },
-    {
       "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\category\\20231121191244018.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\category\\20231121191244018.jpg"
     },
@@ -109,12 +97,28 @@
       "PackagePath": "staticwebassets\\assets\\img\\category\\20231121191310813.jpg"
     },
     {
-      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\category\\20231123230045654.png",
-      "PackagePath": "staticwebassets\\assets\\img\\category\\20231123230045654.png"
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\category\\20231126185552772.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\20231126185552772.webp"
     },
     {
-      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\category\\20231123231326122.png",
-      "PackagePath": "staticwebassets\\assets\\img\\category\\20231123231326122.png"
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\category\\20231126185558664.png",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\20231126185558664.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\category\\20231126185609475.png",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\20231126185609475.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\category\\20231126190806428.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\20231126190806428.webp"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\category\\20231126191019891.png",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\20231126191019891.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\category\\20231127214926636.png",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\20231127214926636.png"
     },
     {
       "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\dropdown.png",
@@ -123,6 +127,10 @@
     {
       "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\dropdown.svg",
       "PackagePath": "staticwebassets\\assets\\img\\dropdown.svg"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\icon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icon.png"
     },
     {
       "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\logo.png",
@@ -397,8 +405,44 @@
       "PackagePath": "staticwebassets\\assets\\img\\product\\20231124170714942.webp"
     },
     {
-      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\js\\basket.js",
-      "PackagePath": "staticwebassets\\assets\\js\\basket.js"
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\20231127220515228.png",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\20231127220515228.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\20231127220515232.png",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\20231127220515232.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\20231127220515233.png",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\20231127220515233.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\20231127220515234.png",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\20231127220515234.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\20231127220515236.png",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\20231127220515236.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\20231127221229906.png",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\20231127221229906.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\20231127221229909.png",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\20231127221229909.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\20231127221229910.png",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\20231127221229910.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\20231127221229911.png",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\20231127221229911.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\20231127221521014.png",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\20231127221521014.png"
     },
     {
       "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\js\\custom.js",
@@ -1615,6 +1659,10 @@
     {
       "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\manage\\scss\\soft-ui-dashboard\\variables\\_virtual-reality.scss",
       "PackagePath": "staticwebassets\\manage\\scss\\soft-ui-dashboard\\variables\\_virtual-reality.scss"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\templates\\EmailConfirm.html",
+      "PackagePath": "staticwebassets\\templates\\EmailConfirm.html"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Momentum.Microsoft.AspNetCore.StaticWebAssets.props",

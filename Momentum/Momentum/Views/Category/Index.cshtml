@@ -1,8 +1,14 @@
-﻿@{
+﻿@model IQueryable<Category>
+@{
     ViewData["Title"] = "Index";
-    ViewData["IsCategory"] = true;
+    ViewData["IsBlackHeader"] = true;
 }
-
+<style>
+    .category-image {
+        width: 100%; /* Adjust this value based on your design */
+        height: auto; /* This ensures the aspect ratio is maintained */
+    }
+</style>
 <main>
     <div class="section padding-top padding-bottom category-page">
         <div class="collection-list">
@@ -11,105 +17,20 @@
                     <h2 class="text-center">Categories</h2>
                 </div>
                 <div class="row" role="list">
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="card-wrapper">
-                            <a href="product.html">
-                                <img src="https://gaming-workdo.myshopify.com/cdn/shop/collections/hjt.png?v=1671786867" alt="All Collections" loading="lazy">
-                            </a>
-                            <div class="card-content">
-                                <h5 class="card-heading full-unstyled-link">All Collections</h5>
-                                <a href="product.html" class="btn">24 - Items</a>
+                    @foreach (Category category in Model)
+                    {
+                        <div class="col-md-4 col-sm-6 col-12">
+                            <div class="card-wrapper">
+                                <a asp-controller="product" asp-action="index" asp-route-id="@category.Id" style="width:300px; height:250px">
+                                    <img src="~/assets/img/category/@category.MainImage" alt="@category.Name" class="category-image" style="background-size: cover">
+                                </a>
+                                <div class="card-content">
+                                    <h5 class="card-heading full-unstyled-link">@category.Name</h5>
+                                    <a asp-controller="product" asp-action="index" asp-route-id="@category.Id" class="btn">@category.ProductCategories.Count - items</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="card-wrapper">
-                            <a href="product.html">
-                                <img src="https://gaming-workdo.myshopify.com/cdn/shop/collections/hjt.png?v=1671786867" alt="All Collections" loading="lazy">
-                            </a>
-                            <div class="card-content">
-                                <h5 class="card-heading full-unstyled-link">All Collections</h5>
-                                <a href="product.html" class="btn">24 - Items</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="card-wrapper">
-                            <a href="product.html">
-                                <img src="https://gaming-workdo.myshopify.com/cdn/shop/collections/hjt.png?v=1671786867" alt="All Collections" loading="lazy">
-                            </a>
-                            <div class="card-content">
-                                <h5 class="card-heading full-unstyled-link">All Collections</h5>
-                                <a href="product.html" class="btn">24 - Items</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="card-wrapper">
-                            <a href="product.html">
-                                <img src="https://gaming-workdo.myshopify.com/cdn/shop/collections/hjt.png?v=1671786867" alt="All Collections" loading="lazy">
-                            </a>
-                            <div class="card-content">
-                                <h5 class="card-heading full-unstyled-link">All Collections</h5>
-                                <a href="product.html" class="btn">24 - Items</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="card-wrapper">
-                            <a href="product.html">
-                                <img src="https://gaming-workdo.myshopify.com/cdn/shop/collections/hjt.png?v=1671786867" alt="All Collections" loading="lazy">
-                            </a>
-                            <div class="card-content">
-                                <h5 class="card-heading full-unstyled-link">All Collections</h5>
-                                <a href="product.html" class="btn">24 - Items</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="card-wrapper">
-                            <a href="product.html">
-                                <img src="https://gaming-workdo.myshopify.com/cdn/shop/collections/hjt.png?v=1671786867" alt="All Collections" loading="lazy">
-                            </a>
-                            <div class="card-content">
-                                <h5 class="card-heading full-unstyled-link">All Collections</h5>
-                                <a href="product.html" class="btn">24 - Items</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="card-wrapper">
-                            <a href="product.html">
-                                <img src="https://gaming-workdo.myshopify.com/cdn/shop/collections/hjt.png?v=1671786867" alt="All Collections" loading="lazy">
-                            </a>
-                            <div class="card-content">
-                                <h5 class="card-heading full-unstyled-link">All Collections</h5>
-                                <a href="product.html" class="btn">24 - Items</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="card-wrapper">
-                            <a href="product.html">
-                                <img src="https://gaming-workdo.myshopify.com/cdn/shop/collections/hjt.png?v=1671786867" alt="All Collections" loading="lazy">
-                            </a>
-                            <div class="card-content">
-                                <h5 class="card-heading full-unstyled-link">All Collections</h5>
-                                <a href="product.html" class="btn">24 - Items</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="card-wrapper">
-                            <a href="product.html">
-                                <img src="https://gaming-workdo.myshopify.com/cdn/shop/collections/hjt.png?v=1671786867" alt="All Collections" loading="lazy">
-                            </a>
-                            <div class="card-content">
-                                <h5 class="card-heading full-unstyled-link">All Collections</h5>
-                                <a href="product.html" class="btn">24 - Items</a>
-                            </div>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>

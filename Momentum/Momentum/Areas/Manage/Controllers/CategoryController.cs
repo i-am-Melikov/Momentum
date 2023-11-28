@@ -188,9 +188,8 @@ namespace Momentum.Areas.Manage.Controllers
             if (id == null) return BadRequest();
 
             Category? category = await _context.Categories
-              .Include(c => c.ProductCategories)
-              .ThenInclude(pc => pc.Product)
-              .FirstOrDefaultAsync(c => !c.IsDeleted && c.Id == id);
+            .Include(c => c.ProductCategories.Where(pc => !pc.IsDeleted && !pc.Product.IsDeleted))
+            .FirstOrDefaultAsync(c => !c.IsDeleted && c.Id == id);
 
             if (category == null) return NotFound();
 

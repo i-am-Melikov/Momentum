@@ -18,34 +18,28 @@ namespace Momentum.Controllers
         {
             HomeVM homeVM = new HomeVM
             {
-                PC = await _context.Products.Where(p => p.IsDeleted == false && p.IsTopSeller == true)
-                .Join(
-                    _context.ProductCategories.Include(pc => pc.Category).Where(pc => pc.Category.Name == "PC"),
-                    product => product.Id,
-                    productCategory => productCategory.ProductId,
-                    (product, productCategory) => product
-                ).ToListAsync(),
-                Console = await _context.Products.Where(p => p.IsDeleted == false && p.IsTopSeller == true)
-                .Join(
-                    _context.ProductCategories.Include(pc => pc.Category).Where(pc => pc.Category.Name == "Console"),
-                    product => product.Id,
-                    productCategory => productCategory.ProductId,
-                    (product, productCategory) => product
-                ).ToListAsync(),
-
-                Headphone = await _context.Products
-                .Where(p => p.IsDeleted == false && p.IsTopSeller == true)
-                .Join(
-                    _context.ProductCategories.Include(pc => pc.Category).Where(pc => pc.Category.Name == "Headphone"),
-                    product => product.Id,
-                    productCategory => productCategory.ProductId,
-                    (product, productCategory) => product
-                ).ToListAsync(),
-
                 TopSeller = await _context.Products.Where(s => !s.IsDeleted && s.IsTopSeller == true)
                 .Include(p => p.ProductColors.Where(pc => !pc.IsDeleted)).ThenInclude(pc => pc.Color)
                 .Include(p => p.ProductCategories.Where(pc => !pc.IsDeleted)).ThenInclude(pc => pc.Category)
                 .ToListAsync(),
+
+                OurProduct = await _context.Products.Where(s => !s.IsDeleted && s.IsOurProduct == true)
+                .Include(p => p.ProductColors.Where(pc => !pc.IsDeleted)).ThenInclude(pc => pc.Color)
+                .Include(p => p.ProductCategories.Where(pc => !pc.IsDeleted)).ThenInclude(pc => pc.Category)
+                .ToListAsync(),
+
+                PC = await _context.Products
+                .Where(p => !p.IsDeleted && p.ProductCategories.Any(pc => !pc.IsDeleted && pc.Category.Name == "Pc"))
+                .Include(p => p.ProductColors.Where(pc => !pc.IsDeleted)).ThenInclude(pc => pc.Color)
+                .Include(p => p.ProductImages.Where(pi => !pi.IsDeleted))
+                .FirstOrDefaultAsync(),
+
+                Headphone = await _context.Products.Where(s => !s.IsDeleted)
+                .Where(p => !p.IsDeleted && p.ProductCategories.Any(pc => !pc.IsDeleted && pc.Category.Name == "Headphone"))
+                .Include(p => p.ProductColors.Where(pc => !pc.IsDeleted)).ThenInclude(pc => pc.Color)
+                .Include(p => p.ProductImages.Where(pi => !pi.IsDeleted))
+                .FirstOrDefaultAsync(),
+
                 Blog = await _context.Blogs.Where(b => !b.IsDeleted).ToListAsync(),
             };
 

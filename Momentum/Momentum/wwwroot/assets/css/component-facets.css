@@ -558,3 +558,27 @@ input.mobile-facets__checkbox {
     justify-content: end;
   }
 }
+@media (max-width: 991px) {
+    .section-title-center {
+        display:none;
+    }
+    .gaming-categories-section {
+        padding: 30px 0px 100px !important;
+    }
+    .gaming-categories-section .section-title {
+        padding: 20px 0px 0px !important;
+    }
+}
+@media (max-width: 1300px) {
+    .section-title-center {
+        display: none;
+    }
+
+    .gaming-categories-section {
+        padding: 25px 0px 100px !important;
+    }
+
+        .gaming-categories-section .section-title {
+            padding: 20px 0px 0px !important;
+        }
+}

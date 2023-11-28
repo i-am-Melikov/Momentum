@@ -54,14 +54,14 @@ $(document).ready(function () {
         dots: false,
         infinite: false,
         speed: 300,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         arrows:true,
         responsive: [
             {
             breakpoint: 991,
             settings: {
-                slidesToShow: 2,
+                slidesToShow: 3,
                 slidesToScroll: 1,
                 infinite: true,
                 dots: false
@@ -343,22 +343,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //FILTERS OPENING CLOSING AREA START
-document.addEventListener('DOMContentLoaded', function () {
-    const labels = $('.acnav-label');
-    const lists = $('.acnav-list');
+//document.addEventListener('DOMContentLoaded', function () {
+//    const labels = $('.acnav-label');
+//    const lists = $('.acnav-list');
 
-    labels.each(function (index) {
-        $(this).click(function () {
-            if (lists[index].style.display !== 'block') {
-                lists[index].style.display = 'block';
-                $(this).addClass('clicked');
-            } else {
-                lists[index].style.display = 'none';
-                $(this).removeClass('clicked');
-            }
-        });
-    });
-});
+//    labels.each(function (index) {
+//        $(this).click(function () {
+//            if (lists[index].style.display !== 'block') {
+//                lists[index].style.display = 'block';
+//                $(this).addClass('clicked');
+//            } else {
+//                lists[index].style.display = 'none';
+//                $(this).removeClass('clicked');
+//            }
+//        });
+//    });
+//});
 //FILTERS OPENING CLOSING AREA END
 
 //FILTERS MOBILE OPENING CLOSING AREA START

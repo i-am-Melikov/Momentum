@@ -62,11 +62,16 @@ namespace Momentum.Controllers
 
             foreach (BasketVM basketVM in basketVMs)
             {
-                Product product = await _context.Products.FirstOrDefaultAsync(p => p.Id == basketVM.Id);
-
-                basketVM.Title = product.Title;
-                basketVM.Image = product.MainImage;
-                basketVM.Price = product.DiscountedPrice > 0 ? product.DiscountedPrice : product.Price;
+                Product? product = await _context.Products
+                    .Include(p=>p.ProductColors.Where(pc=>!pc.IsDeleted)).ThenInclude(pc=>pc.Color)
+                    .FirstOrDefaultAsync(p => p.Id == basketVM.Id);
+                if (product != null)
+                {
+                    basketVM.Title = product.Title;
+                    basketVM.Image = product.MainImage;
+                    basketVM.Price = product.DiscountedPrice > 0 ? product.DiscountedPrice : product.Price;
+                    basketVM.Color = string.Join(", ", product.ProductColors.Select(pc => pc.Color.Title));
+                }
             }
 
             return PartialView("_BasketPartial", basketVMs);

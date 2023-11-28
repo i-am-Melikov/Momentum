@@ -4,9 +4,21 @@
     IEnumerable<Category> categories = ViewBag.Categories;
     IEnumerable<Color> colors = ViewBag.Colors;
     IEnumerable<Brand> brands = ViewBag.Brands;
-    SelectList selectListBrands = new SelectList(brands, nameof(Brand.Id), nameof(Brand.Name));
-    SelectList selectListColors = new SelectList(colors, nameof(Color.Id), nameof(Color.Title));
-    SelectList selectListItems = new SelectList(categories, nameof(Category.Id), nameof(Category.Name));
+    SelectList selectListBrands = null;
+    SelectList selectListColors = null;
+    SelectList selectListItems = null;
+    if (brands != null)
+    {
+        selectListBrands = new SelectList(brands, nameof(Brand.Id), nameof(Brand.Name));
+    }
+    if (colors != null)
+    {
+        selectListColors = new SelectList(colors, nameof(Color.Id), nameof(Color.Title));
+    }
+    if (categories != null)
+    {
+        selectListItems = new SelectList(categories, nameof(Category.Id), nameof(Category.Name));
+    }
 }
 <main class="main-content  mt-0">
     <section>

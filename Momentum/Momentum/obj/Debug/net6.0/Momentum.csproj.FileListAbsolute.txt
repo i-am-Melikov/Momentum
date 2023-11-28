@@ -250,3 +250,11 @@ C:\Users\mmmma\source\repos\final-back-end-project\Momentum\Momentum\obj\Debug\n
 C:\Users\mmmma\source\repos\final-back-end-project\Momentum\Momentum\obj\Debug\net6.0\ref\Momentum.dll
 C:\Users\mmmma\source\repos\final-back-end-project\Momentum\Momentum\obj\Debug\net6.0\Momentum.RazorAssemblyInfo.cache
 C:\Users\mmmma\source\repos\final-back-end-project\Momentum\Momentum\obj\Debug\net6.0\Momentum.RazorAssemblyInfo.cs
+C:\Users\mmmma\source\repos\final-back-end-project\Momentum\Momentum\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\mmmma\source\repos\final-back-end-project\Momentum\Momentum\bin\Debug\net6.0\MailKit.dll
+C:\Users\mmmma\source\repos\final-back-end-project\Momentum\Momentum\bin\Debug\net6.0\MimeKit.dll
+C:\Users\mmmma\source\repos\final-back-end-project\Momentum\Momentum\bin\Debug\net6.0\System.Formats.Asn1.dll
+C:\Users\mmmma\source\repos\final-back-end-project\Momentum\Momentum\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\mmmma\source\repos\final-back-end-project\Momentum\Momentum\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\mmmma\source\repos\final-back-end-project\Momentum\Momentum\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\mmmma\source\repos\final-back-end-project\Momentum\Momentum\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
