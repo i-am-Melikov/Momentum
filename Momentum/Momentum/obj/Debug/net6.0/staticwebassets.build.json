@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "e6mUBQ7AFqPbBJwxmiX0LauSZXHDGLFni5cSK9n49Cg=",
+  "Hash": "QTc0n0IZXUa6mjtrJuOZYyWmHGqCk97+fpkpahjSDjs=",
   "Source": "Momentum",
   "BasePath": "_content/Momentum",
   "Mode": "Default",
@@ -1411,23 +1411,6 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\product\\20231123232122054.png"
     },
     {
-      "Identity": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\20231123232122055.png",
-      "SourceId": "Momentum",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\",
-      "BasePath": "_content/Momentum",
-      "RelativePath": "assets/img/product/20231123232122055.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\product\\20231123232122055.png"
-    },
-    {
       "Identity": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\20231123232122057.png",
       "SourceId": "Momentum",
       "SourceType": "Discovered",
@@ -1749,23 +1732,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\product\\20231127220515228.png"
-    },
-    {
-      "Identity": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\20231127220515232.png",
-      "SourceId": "Momentum",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\",
-      "BasePath": "_content/Momentum",
-      "RelativePath": "assets/img/product/20231127220515232.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\product\\20231127220515232.png"
     },
     {
       "Identity": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\20231127220515233.png",

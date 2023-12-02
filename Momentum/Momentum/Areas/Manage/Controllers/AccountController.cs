@@ -40,23 +40,7 @@ namespace Momentum.Areas.Manage.Controllers
                 Email = registerVM.Email,
             };
 
-            //if(await _userManager.Users.AnyAsync(u => u.NormalizedUserName == registerVM.UserName.Trim().ToUpperInvariant()))
-            //{
-            //	ModelState.AddModelError("UserName", $"'{registerVM.UserName}' already exists.");
-            //	return View(registerVM);
-            //}
-            //         if (await _userManager.Users.AnyAsync(u => u.Email == registerVM.UserName.Trim().ToUpperInvariant()))
-            //         {
-            //             ModelState.AddModelError("Email", $"'{registerVM.Email}' already exists.");
-            //             return View(registerVM);
-            //         }
-
-
-
             IdentityResult identityResult = await _userManager.CreateAsync(appUser, registerVM.Password);
-            //menimsetdiyimiz butun deyerleri bura gonderirikki yoxluyaq bizim verdiyimiz shertlerle uyqunlashir yoxsa yox
-
-
 
             if (!identityResult.Succeeded)
             {

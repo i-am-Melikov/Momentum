@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Momentum.DataAccess;
 using Momentum.Models;
@@ -6,6 +7,7 @@ using Momentum.Models;
 namespace Momentum.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class ColorController : Controller
     {
         private readonly AppDbContext _context;

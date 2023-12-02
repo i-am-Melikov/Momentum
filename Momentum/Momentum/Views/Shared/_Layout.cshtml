@@ -1,4 +1,6 @@
-﻿@inject ILayoutService layoutService
+﻿@using Microsoft.AspNetCore.Antiforgery;
+@inject ILayoutService layoutService
+@inject IAntiforgery Xsrf
 @{
     Dictionary<string, string> settings = await layoutService.GetSettingAsync();
     List<BasketVM> basketVms = await layoutService.GetBasketsAsync();
@@ -44,6 +46,24 @@
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
+        }
+
+        .search-product-title {
+            display: inline-block;
+            width: 155px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        #searchBody{
+            padding: 0px 10px;
+            margin-top: 10px;
+            position: absolute;
+            background: black;
+            max-height: 300px;
+            overflow: scroll;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
         }
     </style>
     <header id="section-header" class="site-header header-style-one" style=" background-color:@(ViewData["IsBlackHeader"] != null && (bool)ViewData["IsBlackHeader"] ? "black" : "") !important">
@@ -99,15 +119,21 @@
                                 </a>
                                 <div class="menu-dropdown">
                                     <ul>
-                                        <li><a asp-controller="account" asp-action="login">Log in</a></li>
-                                        <li><a asp-controller="account" asp-action="register">Register</a></li>
-
-                                        <li class="headwish wishlist">
-                                            <a href="wishlist.html" title="wishlist">Wishlist(<span class="wishcount">0</span>)</a>
+                                        @if (!User.Identity.IsAuthenticated)
+                                        {
+                                            <li><a asp-controller="account" asp-action="login">Log in</a></li>
+                                            <li><a asp-controller="account" asp-action="register">Register</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a asp-controller="account" asp-action="logout">Log out</a></li>
+                                        }
+                                        <li class="headwish wishlist-page">
+                                            <a asp-controller="wishlist" asp-action="index" title="wishlist">Wishlist</a>
                                         </li>
                                         <li class="headcomp compare-header">
                                             <a href="compare.html" class="compare">
-                                                Compare(<span>0</span>)
+                                                Compare
                                             </a>
                                         </li>
                                     </ul>
@@ -144,22 +170,20 @@
                     <div class="annoucebar-left"></div>
                     <div class="search-form-wrapper">
                         <div class="field form-inputs">
-                            <button type="submit" class="search__button" id="btn-submit">
+                            <span class="search__button" id="btn-submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 13 13" fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M9.47487 10.5039C8.48031 11.2764 7.23058 11.7363 5.87332 11.7363C2.62957 11.7363 0 9.10906 0 5.86816C0 2.62727 2.62957 0 5.87332 0C9.11706 0 11.7466 2.62727 11.7466 5.86816C11.7466 7.22423 11.2863 8.47286 10.5131 9.46655L12.785 11.7362C13.0717 12.0227 13.0717 12.4871 12.785 12.7736C12.4983 13.06 12.0334 13.06 11.7467 12.7736L9.47487 10.5039ZM10.2783 5.86816C10.2783 8.29884 8.30612 10.2693 5.87332 10.2693C3.44051 10.2693 1.46833 8.29884 1.46833 5.86816C1.46833 3.43749 3.44051 1.46704 5.87332 1.46704C8.30612 1.46704 10.2783 3.43749 10.2783 5.86816Z" fill="#C6C6C6"></path>
                                 </svg>
-                            </button>
+                            </span>
                             <input class="search__input field__input form-control" placeholder="Search Product...">
                         </div>
-                        <div class="predictive-search predictive-search--header">
-                            <div class="predictive-search__loading-state">
-                                <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                                    <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                                </svg>
+                        <div class="predictive-search predictive-search--header" style="max-height:50px">
+                            <div id="searchBody">
+
                             </div>
                         </div>
                     </div>
-                    <div class="announcebar-right"><a href="category.html">All Categories</a></div>
+                    <div class="announcebar-right"><a asp-controller="category" asp-action="index">All Categories</a></div>
                 </div>
             </div>
         </div>
@@ -331,36 +355,9 @@
     <!-- Scroll to Top End -->
 
     <!-- ADD TO CART NOTIFICATION START -->
-    <div class="cart-notification-wrapper page-width">
+    <div id="add-to-cart-notification-placeholder" class="cart-notification-wrapper page-width">
         <div id="cart-notification" class="cart-notification focus-inset animate">
-            <div class="cart-notification__header">
-                <h6 class="cart-notification__heading caption-large text-body">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Item added to your cart
-                </h6>
-                <button type="button" class="cart-notification__close modal__close-button link link--text focus-inset">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>
-            </div>
-            <div id="cart-notification-product" class="cart-notification-product">
-                <div class="cart-notification-product__image global-media-settings">
-                    <img src="//cdn.shopify.com/s/files/1/0688/5192/5313/products/1_50862e3f-4e56-4d7c-9220-04cde28aca6d_120x.png?v=1671448019" alt="Colossus Ergonomic Gaming Office Chair">
-                </div>
-                <div class="cart-notification-cnt">
-                    <h3 class="cart-notification-product__name">Colossus Ergonomic Gaming Office Chair</h3>
-                    <div class="product-option">
-                        <dt>Color: </dt>
-                        <dd>White</dd>
-                    </div>
-                </div>
-            </div>
-            <div class="cart-notification__links">
-                <a href="" id="cart-notification-button" class="outline-btn">View my cart (1)</a>
-                <form id="cart-notification-form">
-                    <button class="btn" name="checkout">Proceed to checkout</button>
-                </form>
-                <button type="button" class="btn-link">Continue shopping</button>
-            </div>
+
         </div>
     </div>
     <!-- ADD TO CART NOTIFICATION END -->
@@ -372,6 +369,106 @@
         </div>
     </div>
     <!-- DETAIL MODAL END -->
+    <style>
+        #wishlistNotificationPlaceholder {
+            position: relative;
+        }
+
+        .wishlistNotification {
+            background: var(--white);
+            border-left: 1px solid #cccccc;
+            border-bottom: 1px solid #cccccc;
+            padding: 15px;
+            position: fixed;
+            right: 0;
+            top: 0;
+            transform: translateY(-100%);
+            opacity: 0;
+            z-index: 3;
+            max-width: 380px;
+            transition: transform 0.3s ease, visibility 0s;
+        }
+
+            .wishlistNotification .wishlist-notification__header {
+                gap: 15px;
+                display: flex;
+                position: relative;
+                border-bottom: 1px solid #cccccc;
+                padding: 0 0 8px;
+                margin: 0 0 15px;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+
+                .wishlistNotification .wishlist-notification__header .text-body {
+                    --bs-text-opacity: 1;
+                    color: #838383 !important;
+                    font-size: 14px;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .wishlistNotification .wishlist-notification__header .wishlist-notification__close {
+                    background: none;
+                    border: none;
+                }
+
+        #wishlist-notification-product {
+            display: flex;
+        }
+
+        .wishlistNotification .wishlist-notification-product .wishlist-notification-cnt {
+            padding: 0 0 0 15px;
+        }
+
+            .wishlistNotification .wishlist-notification-product .wishlist-notification-cnt .wishlist-notification-product__name {
+                margin: 0 0px 10px;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 20px;
+            }
+
+            .wishlistNotification .wishlist-notification-product .wishlist-notification-cnt .product-option dt {
+                margin: 0px;
+                font-weight: 600;
+                font-size: 14px;
+            }
+
+            .wishlistNotification .wishlist-notification-product .wishlist-notification-cnt .product-option dd {
+                font-weight: 400;
+                font-size: 14px;
+            }
+
+                .wishlistNotification .wishlist-notification-product .wishlist-notification-cnt .product-option dd .pro-labl {
+                    color: #838383 !important;
+                }
+
+        .wishlistNotification .wishlist-notification__links {
+            float: left;
+            width: 100%;
+            text-align: center;
+        }
+
+            .wishlistNotification .wishlist-notification__links #wishlist-notification-button {
+                margin: 0 0 15px;
+                font-family: var(--first-font);
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 17px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-bottom: 1px solid var(--theme-color);
+            }
+    </style>
+    <!-- WISHLIST MODAL START -->
+    <div id="wishlistNotificationPlaceholder">
+        <div id="wishlistNotification" class="wishlistNotification">
+
+        </div>
+    </div>
+    <!-- WISHLIST MODAL END -->
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
@@ -379,23 +476,276 @@
     <script src="~/assets/js/custom.js"></script>
     <script src="~/assets/js/detail.js"></script>
     <script>
+        var antiForgeryToken = '@Xsrf.GetAndStoreTokens(ViewContext.HttpContext).RequestToken';
+        var wishlistNotif = document.getElementById('wishlistNotification');
+
+        function showWishlistNotification() {
+            if (wishlistNotif) {
+                clearTimeout(notificationTimer);
+
+                wishlistNotif.style.transform = 'translateY(0%)';
+                wishlistNotif.style.opacity = '1';
+
+                notificationTimer = setTimeout(hideWishlistNotification, 3000);
+            } else {
+                console.error("Element with id 'wishlistNotification' not found.");
+            }
+        }
+
+        function hideWishlistNotification() {
+            if (wishlistNotif) {
+                wishlistNotif.style.transform = 'translateY(-100%)';
+                wishlistNotif.style.opacity = '0';
+            } else {
+                console.error("Element with id 'wishlistNotif' not found.");
+            }
+        }
+
+        $('.wishlist').click(function (e) {
+            e.preventDefault();
+
+            let url = $(this).attr('href');
+            let productId = $(this).data('product-id');
+
+            fetch(url)
+                .then(res => {
+                    if (res.redirected) {
+                        // If the response is a redirect, navigate to the redirected URL
+                        window.location.href = res.url;
+                    } else {
+                        // If not a redirect, continue processing the response
+                        return res.text();
+
+                    }
+                })
+                .then(data => {
+                    $('.wishlistNotification').html(data);
+                    showWishlistNotification();
+                })
+                .catch(error => {
+                    console.error("Error adding to basket:", error);
+                });
+        });
+    </script>
+    <script>
+        $('.search__input').on('keyup', function () {
+            let search = $(this).val();
+            let searchUrl = 'product/search?search=' + search;
+            if (search.length >= 3) {
+                fetch(searchUrl)
+                    .then(response => response.text())
+                    .then(data => {
+                        $('#searchBody').html(data);
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+            } else {
+                $('#searchBody').html("");
+            }
+        })
+    </script>
+    <script>
+        var notificationTimer = null;
+        $(document).ready(function () {
+            var cartBtns = document.querySelectorAll('.add-cart-btn');
+            var cartNotif = document.getElementById('cart-notification');
+
+            function showCartNotification() {
+                if (cartNotif) {
+                    clearTimeout(notificationTimer);
+
+                    cartNotif.style.transform = 'translateY(0%)';
+                    cartNotif.style.opacity = '1';
+
+                    notificationTimer = setTimeout(hideCartNotification, 3000);
+                } else {
+                    console.error("Element with id 'cart-notification' not found.");
+                }
+            }
+
+            function hideCartNotification() {
+                if (cartNotif) {
+                    cartNotif.style.transform = 'translateY(-100%)';
+                    cartNotif.style.opacity = '0';
+                } else {
+                    console.error("Element with id 'cart-notification' not found.");
+                }
+            }
+            
+            $('.add-cart-btn').click(function (e) {
+                e.preventDefault();
+
+                let url = $(this).attr('href');
+                let productId = $(this).data('product-id');
+
+                fetch(url)
+                    .then(res => res.text())
+                    .then(data => {
+                        $('.cart-modal').html(data);
+                        fetch("/Cookie/BasketNotification/" + productId)
+                            .then(res => res.text())
+                            .then(data => {
+                                $('#cart-notification').html(data);
+                                showCartNotification();
+                            })
+                            .catch(error => {
+                                console.error("Error updating cart notification:", error);
+                            });
+                    })
+                    .catch(error => {
+                        console.error("Error adding to basket:", error);
+                    });
+            });
+        });
+    </script>
+    <script>
+        var currentPage = 1;
+
+        function applyFilters() {
+            var minPriceFilter = document.getElementById('MinPrice').value;
+            var maxPriceFilter = document.getElementById('MaxPrice').value;
+            var sortByFilter = document.getElementById('SortBy').value;
+
+            var selectedCategories = [];
+            $('input[name="filter.category"]:checked').each(function () {
+                selectedCategories.push($(this).val());
+            });
+
+            var selectedBrands = [];
+            $('input[name="filter.brand"]:checked').each(function () {
+                selectedBrands.push($(this).val());
+            });
+
+            var selectedColors = [];
+            $('input[name="filter.color"]:checked').each(function () {
+                selectedColors.push($(this).val());
+            });
+
+            var selectedAvailability = [];
+            $('input[name="filter.availability"]:checked').each(function () {
+                selectedAvailability.push($(this).val());
+            });
+
+            localStorage.setItem('selectedCategories', JSON.stringify(selectedCategories));
+            localStorage.setItem('selectedBrands', JSON.stringify(selectedBrands));
+            localStorage.setItem('selectedColors', JSON.stringify(selectedColors));
+            localStorage.setItem('selectedAvailability', JSON.stringify(selectedAvailability));
+
+            var url = `/product/Index?&currentPage=${currentPage}&minPrice=${minPriceFilter}&maxPrice=${maxPriceFilter}&sortBy=${sortByFilter}`;
+
+            if (selectedCategories.length > 0) {
+                url += `&category=${selectedCategories.join(',')}`;
+            }
+
+            if (selectedBrands.length > 0) {
+                url += `&brand=${selectedBrands.join(',')}`;
+            }
+
+            if (selectedColors.length > 0) {
+                url += `&color=${selectedColors.join(',')}`;
+            }
+
+            if (selectedAvailability.length > 0) {
+                url += `&availability=${selectedAvailability.join(',')}`;
+            }
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(result => {
+                    $("#Product-Div").html(result);
+                })
+                .catch(error => {
+                    console.error("Fetch error:", error);
+                });
+        }
+
+        function resetFilters(filterType) {
+            if (filterType === 'availability') {
+                document.getElementById('Filter-Availability-1').checked = false;
+                document.getElementById('Filter-Availability-2').checked = false;
+            } else if (filterType === 'price') {
+                document.getElementById('MinPrice').value = '';
+                document.getElementById('MaxPrice').value = '';
+            } else if (filterType === 'all') {
+                $('input[name="filter.category"]:checked').prop('checked', false);
+                $('input[name="filter.brand"]:checked').prop('checked', false);
+                $('input[name="filter.color"]:checked').prop('checked', false);
+                $('input[name="filter.availability"]:checked').prop('checked', false);
+                document.getElementById('MinPrice').value = '';
+                document.getElementById('MaxPrice').value = '';
+
+                document.getElementById('SortBy').selectedIndex = 0;
+            }
+            $('#Filter-Availability-1, #Filter-Availability-2, #MinPrice, #MaxPrice, #SortBy').trigger('change');
+        }
+
+        function setSavedFilters() {
+            var selectedCategories = JSON.parse(localStorage.getItem('selectedCategories')) || [];
+            var selectedBrands = JSON.parse(localStorage.getItem('selectedBrands')) || [];
+            var selectedColors = JSON.parse(localStorage.getItem('selectedColors')) || [];
+            var selectedAvailability = JSON.parse(localStorage.getItem('selectedAvailability')) || [];
+
+            selectedCategories.forEach(category => {
+                $('input[name="filter.category"][value="' + category + '"]').prop('checked', true);
+            });
+
+            selectedBrands.forEach(brand => {
+                $('input[name="filter.brand"][value="' + brand + '"]').prop('checked', true);
+            });
+
+            selectedColors.forEach(color => {
+                $('input[name="filter.color"][value="' + color + '"]').prop('checked', true);
+            });
+
+            selectedAvailability.forEach(availability => {
+                $('input[name="filter.availability"][value="' + availability + '"]').prop('checked', true);
+            });
+        }
+
+        $(document).ready(function () {
+            setSavedFilters();
+
+            $('.active-facets__button-remove').on('click', function (e) {
+                e.preventDefault();
+                resetFilters('all');
+                applyFilters();
+            });
+        });
+    </script>
+    <script>
         $(document).ready(function () {
             var sortByDropdown = $("#SortBy");
+
+            var urlParams = new URLSearchParams(window.location.search);
+            var minPriceFilter = urlParams.get('minPrice') || '';
+            var maxPriceFilter = urlParams.get('maxPrice') || '';
+
+            document.getElementById('MinPrice').value = minPriceFilter;
+            document.getElementById('MaxPrice').value = maxPriceFilter;
 
             var sortBy = localStorage.getItem("sortBy");
             if (sortBy) {
                 sortByDropdown.val(sortBy);
                 sortByDropdown.trigger('change');
             }
-            sortByDropdown.on('change', function (event) {
 
+            sortByDropdown.on('change', function (event) {
                 sortBy = $(this).val();
 
                 localStorage.setItem("sortBy", sortBy);
 
                 var currentPage = $('.pagination .active a').text();
 
-                fetch(`/product/Index?sortBy=${sortBy}&currentPage=${currentPage}`)
+                var newUrl = window.location.pathname + `?sortBy=${sortBy}&currentPage=${currentPage}&minPrice=${minPriceFilter}&maxPrice=${maxPriceFilter}`;
+                window.history.pushState({}, '', newUrl);
+
+                fetch(newUrl)
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -418,8 +768,6 @@
 
             labels.each(function (index) {
                 $(this).on('click', function () {
-                    console.log('Clicked on label', index);
-
                     if (lists[index].style.display !== 'block') {
                         lists[index].style.display = 'block';
                         $(this).addClass('clicked');
@@ -503,5 +851,6 @@
             });
         </script>
     }
+
 </body>
 </html>

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Momentum.Areas.Manage.ViewModels.SettingVM;
 using Momentum.DataAccess;
@@ -8,6 +9,7 @@ using NuGet.Configuration;
 namespace Momentum.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class SettingController : Controller
     {
         private readonly AppDbContext _context;

@@ -1,5 +1,9 @@
-﻿@using Momentum.Models;
+﻿@using Microsoft.AspNetCore.Antiforgery
+@using Momentum.Models
+@inject IAntiforgery Xsrf
+
 @model HomeVM
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -61,7 +65,7 @@
         <div class="container">
             <div class="section-title d-flex align-items-center justify-content-between">
                 <h2> Bestsellers of the week</h2>
-                <a href="product.html" class="btn-transparent">
+                <a asp-controller="product" asp-action="index" class="btn-transparent">
                     Show products
                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="rgba(131, 131, 131, 1)">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0801 11.334L11.5042 11.9203C11.8709 12.4273 12.4637 12.7507 13.1277 12.7507C14.3316 12.7507 15.2631 11.6955 15.1137 10.5008L14.5652 6.11208C14.4322 5.04867 13.5283 4.25065 12.4566 4.25065H4.54294C3.47125 4.25065 2.56727 5.04867 2.43435 6.11208L1.88575 10.5008C1.73642 11.6955 2.66792 12.7507 3.87184 12.7507C4.53583 12.7507 5.12857 12.4273 5.49529 11.9203L5.91944 11.334H11.0801ZM10.3564 12.7507C10.9792 13.6116 11.9918 14.1673 13.1277 14.1673C15.1837 14.1673 16.7745 12.3653 16.5195 10.3251L15.9709 5.93636C15.7493 4.16401 14.2427 2.83398 12.4566 2.83398H4.54294C2.75679 2.83398 1.25016 4.16401 1.02862 5.93636L0.480024 10.3251C0.225003 12.3653 1.81579 14.1673 3.87184 14.1673C5.00767 14.1673 6.02032 13.6116 6.64311 12.7507H10.3564Z" fill="rgba(131, 131, 131, 1)"></path>
@@ -97,7 +101,7 @@
                                     }
                                     <div class="pro_btn">
                                         <div class="pro_btn_wrapper">
-                                            <a class="wishlist wish heart" href="wishlist.html" title="Wishlist">
+                                            <a class="wishlist wish heart" asp-controller="wishlist" asp-action="AddToWishlist" asp-route-id="@product.Id" data-product-id="@product.Id">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="white">
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1335 2.95108C16.73 4.16664 16.9557 6.44579 15.6274 7.93897L8.99983 15.3894L2.37233 7.93977C1.04381 6.44646 1.26946 4.167 2.86616 2.95128C4.50032 1.70704 6.87275 2.10393 7.99225 3.80885L8.36782 4.38082C8.59267 4.72325 9.05847 4.82238 9.40821 4.60224C9.51777 4.53328 9.60294 4.44117 9.66134 4.33666L10.0076 3.80914C11.1268 2.10394 13.4993 1.70679 15.1335 2.95108ZM8.99998 2.653C7.31724 0.526225 4.15516 0.102335 1.94184 1.78754C-0.33726 3.52284 -0.659353 6.77651 1.23696 8.90805L8.4334 16.9972C8.7065 17.3041 9.18204 17.3362 9.49557 17.0688C9.53631 17.0341 9.57231 16.996 9.60351 16.9553L16.7628 8.90721C18.6589 6.77579 18.3367 3.52246 16.0579 1.78734C13.8446 0.102142 10.6825 0.526185 8.99998 2.653Z" fill="white"></path>
                                                 </svg>
@@ -143,15 +147,8 @@
                                         }
                                     </div>
                                     <div class="product-form">
-                                        <a type="submit" name="add" class="btn-primary add-cart-btn product-form__submit" asp-controller="cookie" asp-action="AddBasket" asp-route-id="@product.Id">
-                                            <span id="add-to-cart">Add to Cart</span>
-                                            <div class="loading-overlay__spinner hidden">
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 511.494 511.494" style="enable-background:new 0 0 511.494 511.494;" xml:space="preserve" width="20" height="20">
-                                                    <g>
-                                                        <path d="M478.291,255.492c-16.133,0.143-29.689,12.161-31.765,28.16c-15.37,105.014-112.961,177.685-217.975,162.315 S50.866,333.006,66.236,227.992S179.197,50.307,284.211,65.677c35.796,5.239,69.386,20.476,96.907,43.959l-24.107,24.107   c-8.33,8.332-8.328,21.84,0.004,30.17c4.015,4.014,9.465,6.262,15.142,6.246h97.835c11.782,0,21.333-9.551,21.333-21.333V50.991   c-0.003-11.782-9.556-21.331-21.338-21.329c-5.655,0.001-11.079,2.248-15.078,6.246l-28.416,28.416   C320.774-29.34,159.141-19.568,65.476,86.152S-18.415,353.505,87.304,447.17s267.353,83.892,361.017-21.828   c32.972-37.216,54.381-83.237,61.607-132.431c2.828-17.612-9.157-34.183-26.769-37.011   C481.549,255.641,479.922,255.505,478.291,255.492z"></path>
-                                                    </g>
-                                                </svg>
-                                            </div>
+                                        <a asp-controller="cookie" asp-action="addbasket" asp-route-id="@product.Id" data-product-id="@product.Id" type="submit" name="add" class="btn-primary add-cart-btn product-form__submit">
+                                            <span>Add to Cart</span>
                                         </a>
                                     </div>
                                 </div>
@@ -163,7 +160,7 @@
         </div>
     </section>
     <!-- PRODUCT SECTION END -->
-    <!-- CATEGORIES SECTION START -->
+    <!-- OUR PRODUCT SECTION START -->
     <section class="gaming-categories-section tabs-wrapper" style="padding:40px 0px 143px; background: none">
         <img src="//gaming-workdo.myshopify.com/cdn/shop/files/design-circle-3.png?v=1671514613" class="design-circle-4" alt="image">
         <img src="//gaming-workdo.myshopify.com/cdn/shop/files/main-conent-games.png?v=1671440689" class="main-content-games-1" alt="image">
@@ -253,7 +250,7 @@
                                                                 <ins class="price-item--sale">@product.Price <span class="currency-type">USD</span></ins>
                                                             }
                                                         </div>
-                                                        <a asp-controller="cookie" asp-action="addbasket" asp-route-id="@product.Id" type="submit" name="add" class="btn-primary add-cart-btn product-form__submit">
+                                                        <a asp-controller="cookie" asp-action="addbasket" asp-route-id="@product.Id" data-product-id="@product.Id" type="submit" name="add" class="btn-primary add-cart-btn product-form__submit">
                                                             <span>Add to Cart</span>
                                                         </a>
                                                     </div>
@@ -269,7 +266,7 @@
             </div>
         </div>
     </section>
-    <!-- CATEGORIES SECTION END -->
+    <!-- OUR PRODUCT SECTION END -->
     <!-- FIRST ABOUT PRODUCT SECTION START -->
     @if (Model.PC != null)
     {
@@ -331,7 +328,7 @@
                                                 <ins class="price-item--sale">@Model.PC.Price <span class="currency-type">USD</span></ins>
                                             }
                                         </div>
-                                        <a asp-controller="cookie" asp-action="addbasket" asp-route-id="@Model.PC.Id" type="submit" class="btn-primary add-cart-btn product-form__submit">
+                                        <a asp-controller="cookie" asp-action="addbasket" asp-route-id="@Model.PC.Id" data-product-id="@Model.PC.Id" type="submit" class="btn-primary add-cart-btn product-form__submit">
                                             <span>Add to Cart</span>
                                         </a>
                                     </div>
@@ -387,7 +384,7 @@
                                                 <ins class="price-item--sale">@Model.Headphone.Price <span class="currency-type">USD</span></ins>
                                             }
                                         </div>
-                                        <a asp-controller="cookie" asp-action="addbasket" asp-route-id="@Model.Headphone.Id" type="submit" name="add" class="btn-primary add-cart-btn product-form__submit">
+                                        <a asp-controller="cookie" asp-action="addbasket" asp-route-id="@Model.Headphone.Id" data-product-id="@Model.Headphone.Id" type="submit" name="add" class="btn-primary add-cart-btn product-form__submit">
                                             <span>Add to Cart</span>
                                         </a>
                                     </div>

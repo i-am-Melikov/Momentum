@@ -21,11 +21,13 @@ namespace Momentum.Controllers
                 TopSeller = await _context.Products.Where(s => !s.IsDeleted && s.IsTopSeller == true)
                 .Include(p => p.ProductColors.Where(pc => !pc.IsDeleted)).ThenInclude(pc => pc.Color)
                 .Include(p => p.ProductCategories.Where(pc => !pc.IsDeleted)).ThenInclude(pc => pc.Category)
+                .Take(10)
                 .ToListAsync(),
 
                 OurProduct = await _context.Products.Where(s => !s.IsDeleted && s.IsOurProduct == true)
                 .Include(p => p.ProductColors.Where(pc => !pc.IsDeleted)).ThenInclude(pc => pc.Color)
                 .Include(p => p.ProductCategories.Where(pc => !pc.IsDeleted)).ThenInclude(pc => pc.Category)
+                .Take(10)
                 .ToListAsync(),
 
                 PC = await _context.Products
@@ -40,7 +42,10 @@ namespace Momentum.Controllers
                 .Include(p => p.ProductImages.Where(pi => !pi.IsDeleted))
                 .FirstOrDefaultAsync(),
 
-                Blog = await _context.Blogs.Where(b => !b.IsDeleted).ToListAsync(),
+                Blog = await _context.Blogs
+                .Where(b => !b.IsDeleted)
+                .Take(16)
+                .ToListAsync(),
             };
 
             return View(homeVM);

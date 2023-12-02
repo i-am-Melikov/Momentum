@@ -1,0 +1,69 @@
+﻿@model CartNotificationVM
+<style>
+    #cart-notification-product {
+        display: flex;
+    }
+
+    .image-container {
+        width: 250px;
+        height: 147px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .product-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+</style>
+<div class="cart-notification__header">
+    <h6 class="cart-notification__heading caption-large text-body">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        Item added to your cart
+    </h6>
+    <button type="button" class="cart-notification__close modal__close-button link link--text focus-inset">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+    </button>
+</div>
+<div id="cart-notification-product" class="cart-notification-product">
+    <div class="image-container">
+        <img src="~/assets/img/product/@Model.Image" alt="@Model.Title" class="product-image">
+    </div>
+    <div class="cart-notification-cnt">
+        <h3 class="cart-notification-product__name">@Model.Title</h3>
+        <div class="product-option">
+            <dt>Color: </dt>
+            <dd>@Model.Color</dd>
+        </div>
+    </div>
+</div>
+<div class="cart-notification__links">
+    <a href="" id="cart-notification-button" class="outline-btn">View my cart (1)</a>
+</div>
+<script>
+    var cartNotif = document.getElementById('cart-notification');
+    var cartNotifClose = document.querySelector('.cart-notification__close');
+    function hideCartNotification() {
+        if (cartNotif) {
+            cartNotif.style.transform = 'translateY(-100%)';
+            cartNotif.style.opacity = '0';
+        } else {
+            console.error("Element with id 'cart-notification' not found.");
+        }
+    }
+    if (cartNotifClose) {
+        cartNotifClose.addEventListener('click', function () {
+            hideCartNotification();
+        });
+    } else {
+        console.error("Element with class 'cart-notification__close' not found.");
+    }
+</script>

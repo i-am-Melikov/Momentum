@@ -1,0 +1,33 @@
+﻿@model PageNatedList<AppUser>
+@{
+    int no = (Model.CurrentPage - 1) * Model.ElementCount;
+}
+@foreach (AppUser appUser in Model)
+{
+    no++;
+    <tr>
+        <td>
+            <div class="d-flex px-2 py-1">
+                <div class="d-flex flex-column justify-content-center">
+                    @no
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="d-flex px-2 py-1">
+                <div class="d-flex flex-column justify-content-center">
+                    <h6 class="mb-0 text-sm">@appUser.Name</h6>
+                    <p class="text-xs text-secondary mb-0">@appUser.Email</p>
+                </div>
+            </div>
+        </td>
+        <td>
+            <p class="text-xs font-weight-bold mb-0">@string.Join(",",appUser.Roles.Select(x=>x))</p>
+        </td>
+        <td style="display:flex; justify-content: center">
+            <a style="margin-right:5px;" class="resetPasswordBtn btn btn-warning" asp-route-currentPage="@Model.CurrentPage" asp-area="manage" asp-controller="user" asp-action="ResetPassword" asp-route-id="@appUser.Id">Reset Password</a>
+            <a style="margin-right:5px;" class="btn btn-danger" asp-area="manage" asp-controller="user" asp-action="ChangeRole" asp-route-id="@appUser.Id">Change Role</a>
+            <a style="margin-right:5px;" class="setActiveBtn btn btn-@(appUser.IsActive?"danger":"success")" asp-route-currentPage="@Model.CurrentPage" asp-area="manage" asp-controller="user" asp-action="SetActive" asp-route-id="@appUser.Id">@(appUser.IsActive ? "Deactive" : "Active")</a>
+        </td>
+    </tr>
+}

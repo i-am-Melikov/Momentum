@@ -181,6 +181,8 @@ $(document).ready(function () {
         ]
     });
 
+
+
     // scroll to top
     $(window).on('scroll', function () {
     if ($(this).scrollTop() > 600) {
@@ -325,20 +327,20 @@ document.addEventListener('DOMContentLoaded', function () {
 //quantity section end
 
 //cart notification start
-document.addEventListener('DOMContentLoaded', function() {
-    var cartBtns = document.querySelectorAll('.add-cart-btn');
-    var cartNotifClose = document.querySelector('.cart-notification__close');
-    var cartNotif = document.getElementById('cart-notification');
-    cartBtns.forEach(function(cartBtn){
-        cartBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            cartNotif.classList.add('active');
-        });
-        cartNotifClose.addEventListener('click', function() {
-            cartNotif.classList.remove('active');
-        });
-    })
-});
+//document.addEventListener('DOMContentLoaded', function() {
+//    var cartBtns = document.querySelectorAll('.add-cart-btn');
+//    var cartNotifClose = document.querySelector('.cart-notification__close');
+//    var cartNotif = document.getElementById('cart-notification');
+//    cartBtns.forEach(function(cartBtn){
+//        cartBtn.addEventListener('click', function(e) {
+//            e.preventDefault();
+//            cartNotif.classList.add('active');
+//        });
+//        cartNotifClose.addEventListener('click', function() {
+//            cartNotif.classList.remove('active');
+//        });
+//    })
+//});
 //cart notification end
 
 
@@ -384,7 +386,6 @@ $('.quickview-btn').click(function (e) {
     fetch(url)
         .then(res => res.text())
         .then(data => {
-            console.log(data);
             $('.quickview_popup_data').html(data);
 
             $('.slider-for').slick({
@@ -436,17 +437,4 @@ $('.quickview-btn').click(function (e) {
                 vertical: true,
             });
         });
-
-    console.log(url);
 });
-$('.add-cart-btn').click(function (e) {
-        e.preventDefault();
-
-        let url = $(this).attr('href');
-
-        fetch(url)
-            .then(res => res.text())
-            .then(data => {
-                $('.cart-modal').html(data);
-            })
-    })

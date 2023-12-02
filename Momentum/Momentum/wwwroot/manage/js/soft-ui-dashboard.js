@@ -13,6 +13,140 @@
 // The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 "use strict";
+$(document).ready(function () {
+    $(document).on('click', '.setActiveBtn', function (e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Change active status!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                let url = $(this).attr("href");
+
+                fetch(url)
+                    .then(res => res.text())
+                    .then(data => {
+                        $('.listContainer').html(data);
+                        console.log("salam");
+
+                    })
+
+                Swal.fire(
+                    'Active status changed!',
+                    'Your active status has been changed.',
+                    'success'
+                )
+            }
+        })
+
+    })
+    $(document).on('click', '.resetPasswordBtn', function (e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, reset it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                let url = $(this).attr("href");
+
+                fetch(url)
+                    .then(res => res.text())
+                    .then(data => {
+                        $('.listContainer').html(data);
+                    })
+
+                Swal.fire(
+                    'Reseted!',
+                    'Your password has been reseted.',
+                    'success'
+                )
+            }
+        })
+
+    })
+
+})
+$(document).ready(function () {
+    $(document).on('click', '.setActiveBtn', function (e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Change active status!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                let url = $(this).attr("href");
+
+                fetch(url)
+                    .then(res => res.text())
+                    .then(data => {
+                        $('.listContainer').html(data);
+                        console.log("salam");
+
+                    })
+
+                Swal.fire(
+                    'Active status changed!',
+                    'Your active status has been changed.',
+                    'success'
+                )
+            }
+        })
+
+    })
+    $(document).on('click', '.resetPasswordBtn', function (e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, reset it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                let url = $(this).attr("href");
+
+                fetch(url)
+                    .then(res => res.text())
+                    .then(data => {
+                        $('.listContainer').html(data);
+                    })
+
+                Swal.fire(
+                    'Reseted!',
+                    'Your password has been reseted.',
+                    'success'
+                )
+            }
+        })
+
+    })
+
+})
 (function() {
   var isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 

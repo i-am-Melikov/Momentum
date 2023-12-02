@@ -1,0 +1,33 @@
+﻿@model ChangeRoleVM
+@{
+    ViewData["Title"] = "ChangeRole";
+}
+
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header pb-0">
+                        <h6>Change Role</h6>
+                    </div>
+                    <div class="card-body px-0 pt-0 pb-2">
+                        <div class="table-responsive p-0">
+                            <form method="post" style="padding:20px;">
+                                <input type="hidden" asp-for="User.Id" />
+                                <div class="form-group">
+                                    <label asp-for="SelectedRole">New Role</label>
+                                    <select asp-for="SelectedRole" asp-items="Model.RolesSelectList" class="form-control">
+                                        <option value="">Select Role</option>
+                                    </select>
+                                    <span asp-validation-for="SelectedRole" class="text-danger"></span>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

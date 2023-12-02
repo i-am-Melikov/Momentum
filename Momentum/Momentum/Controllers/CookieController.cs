@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Momentum.DataAccess;
 using Momentum.Models;
@@ -76,6 +76,29 @@ namespace Momentum.Controllers
 
             return PartialView("_BasketPartial", basketVMs);
 
+        }
+        public async Task<IActionResult> BasketNotification(int? id)
+        {
+            if (id == null) return BadRequest("Id is not be null");
+
+            var product = await _context.Products
+                .Include(p => p.ProductColors.Where(pc => !pc.IsDeleted)).ThenInclude(pc => pc.Color)
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (product != null)
+            {
+                var cartNotification = new CartNotificationVM
+                {
+                    Id = product.Id,
+                    Title = product.Title,
+                    Color = string.Join(", ", product.ProductColors.Select(pc => pc.Color.Title)),
+                    Image = product.MainImage
+                };
+
+                return PartialView("_BasketNotificationPartial", cartNotification);
+            }
+
+            return NotFound();
         }
         [HttpDelete]
         [Route("/Cookie/DeleteItem/{itemId}")]

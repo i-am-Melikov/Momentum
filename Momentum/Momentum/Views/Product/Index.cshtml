@@ -1,6 +1,8 @@
 ﻿@model PageNatedList<Product>
 @{
     ViewData["Title"] = "Index";
+    IEnumerable<Category> categories = ViewBag.Categories;
+    IEnumerable<Brand> brands = ViewBag.Brands;
 }
 <style>
     .content-for-layout header {
@@ -55,7 +57,10 @@
                                     <ul class="produdt-filter-cat d-flex align-items-center">
                                         <li><a asp-controller="home" asp-action="index">Home</a></li>
                                         <li><a href="">Products</a></li>
-                                        <li><a href="">@ViewBag.SortBy</a></li>
+                                        @if (ViewBag.SortBy != null)
+                                        {
+                                            <li><a href="">@ViewBag.SortBy</a></li>
+                                        }
                                     </ul>
                                     <div class="filter-select-box d-flex align-items-center justify-content-end">
                                         <form id="FacetFiltersForm" asp-controller="Home" asp-action="Index" method="get">
@@ -87,14 +92,19 @@
                         <div class="product-filter-column col-lg-3 col-md-4 col-1" id="main-collection-filters">
                             <div class="facets-container product-filter-body pc-product-filter-body">
                                 <div class="facets small-hide">
-                                    <form id="FacetFiltersForm" class="facets__form">
-                                        <div class="active-facets active-facets-desktop">
-                                            <a href="" class="active-facets__button-remove btn-secondary">
-                                                <span>Remove all</span>
-                                            </a>
+                                    <form id="FacetFiltersForm" class="facets__form" method="post">
+                                        <div class="d-flex">
+                                            <div class="active-facets active-facets-desktop">
+                                                <a href="" class="active-facets__button-remove btn-secondary">
+                                                    <span>Remove all</span>
+                                                </a>
+                                            </div>
+                                            <div class="active-facets active-facets-desktop">
+                                                <button type="button" class="no-js-hidden btn apply-btn" onclick="applyFilters()">Apply</button>
+                                            </div>
                                         </div>
-
                                         <div id="FacetsWrapperDesktop" class="facets__wrapper">
+                                            <!-- Availability Filter -->
                                             <div class="product-widget disclosure-has-popup facets__disclosure js-filter">
                                                 <div id="filter_open_avail" class="acnav-label">Availability</div>
                                                 <div id="filter-content-avail" class="facets__display pro-itm-inner acnav-list">
@@ -107,7 +117,7 @@
                                                     <ul class="facets__list list-unstyled">
                                                         <li class="list-menu__item facets__item">
                                                             <label class="facet-checkbox">
-                                                                <input type="checkbox" id="Filter-Availability-1">
+                                                                <input type="checkbox" id="Filter-Availability-1" value="In stock" name="filter.availability">
                                                                 <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                                                                     <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
                                                                 </svg>
@@ -118,7 +128,7 @@
                                                         </li>
                                                         <li class="list-menu__item facets__item ">
                                                             <label class="facet-checkbox facet-checkbox--disabled">
-                                                                <input type="checkbox" id="Filter-Availability-2">
+                                                                <input type="checkbox" id="Filter-Availability-2" value="Out of stock" name="filter.availability">
                                                                 <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                                                                     <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
                                                                 </svg>
@@ -131,25 +141,21 @@
                                                 </div>
                                             </div>
 
+                                            <!-- Price Filter -->
                                             <div class="product-price-widget product-widget disclosure-has-popup facets__disclosure js-filter">
                                                 <div id="filter_open_price" class="acnav-label">Price</div>
                                                 <div id="filter-content-price" class="facets__display pro-itm-inner acnav-list">
                                                     <div class="facets__header">
-                                                        <span class="facets__selected price-header">The highest price is 890.00USD</span>
-                                                        <div>
-                                                            <a href="" class="facets__reset link">
-                                                                Reset
-                                                            </a>
-                                                        </div>
+                                                        <a href="#" class="facets__reset link" onclick="resetFilter('price')">Reset</a>
                                                     </div>
                                                     <div class="facets__price">
                                                         <div class="field">
                                                             <label class="field__label">Min price:</label>
-                                                            <input class="field__input" type="number" placeholder="0" min="" max="">
+                                                            <input id="MinPrice" class="field__input" type="number" placeholder="0" min="" max="">
                                                         </div>
                                                         <div class="field">
                                                             <label class="field__label">Max price:</label>
-                                                            <input class="field__input" type="number" min="0" placeholder="0" max="">
+                                                            <input id="MaxPrice" class="field__input" type="number" min="0" placeholder="0" max="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -168,17 +174,22 @@
                                                     </div>
 
                                                     <ul class="facets__list list-unstyled">
-                                                        <li class="list-menu__item facets__item ">
-                                                            <label class="facet-checkbox">
-                                                                <input type="checkbox" value="Console">
-                                                                <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-                                                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
-                                                                </svg>
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                                                Console
-                                                            </label>
-                                                            <span class="filter-count">(4)</span>
-                                                        </li>
+                                                        @if(categories!= null)
+                                                        {
+                                                            @foreach (var category in categories)
+                                                            {
+                                                                <li class="list-menu__item facets__item ">
+                                                                    <label class="facet-checkbox">
+                                                                        <input type="checkbox" name="filter.category" value="@category.Name">
+                                                                        <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                                                                            <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+                                                                        </svg>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                                        @category.Name
+                                                                    </label>
+                                                                </li>
+                                                            }
+                                                        }
                                                     </ul>
                                                 </div>
                                             </div>
@@ -196,17 +207,19 @@
                                                     </div>
 
                                                     <ul class="facets__list list-unstyled">
-                                                        <li class="list-menu__item facets__item ">
-                                                            <label class="facet-checkbox">
-                                                                <input type="checkbox" value="XFX">
-                                                                <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-                                                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
-                                                                </svg>
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                                                XFX
-                                                            </label>
-                                                            <span class="filter-count">(4)</span>
-                                                        </li>
+                                                        @foreach(Brand brand in brands)
+                                                        {
+                                                            <li class="list-menu__item facets__item ">
+                                                                <label class="facet-checkbox">
+                                                                    <input type="checkbox" name="filter.brand" value="@brand.Name">
+                                                                    <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                                                                        <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+                                                                    </svg>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                                    @brand.Name
+                                                                </label>
+                                                            </li>
+                                                        }
                                                     </ul>
                                                 </div>
                                             </div>
@@ -223,50 +236,19 @@
                                                         </div>
                                                     </div>
                                                     <ul class="facets__list list-unstyled">
-                                                        <li class="list-menu__item facets__item facets-color">
-                                                            <label class="facet-checkbox">
-                                                                <input type="checkbox" style="background-color: Black; z-index: unset" name="filter.v.option.color">
-                                                                <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-                                                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
-                                                                </svg>
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                                                Black
-                                                            </label>
-                                                            <span class="filter-count">(2)</span>
-                                                        </li>
-                                                        <li class="list-menu__item facets__item facets-color">
-                                                            <label class="facet-checkbox">
-                                                                <input type="checkbox" style="background-color: Blue; z-index: unset" name="filter.v.option.color" value="Blue">
-                                                                <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-                                                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
-                                                                </svg>
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                                                Blue
-                                                            </label>
-                                                            <span class="filter-count">(1)</span>
-                                                        </li>
-                                                        <li class="list-menu__item facets__item facets-color">
-                                                            <label class="facet-checkbox">
-                                                                <input type="checkbox" style="background-color: Grey; z-index: unset" name="filter.v.option.color">
-                                                                <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-                                                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
-                                                                </svg>
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                                                Grey
-                                                            </label>
-                                                            <span class="filter-count">(1)</span>
-                                                        </li>
-                                                        <li class="list-menu__item facets__item facets-color">
-                                                            <label class="facet-checkbox">
-                                                                <input type="checkbox" style="background-color: White; z-index: unset" name="filter.v.option.color">
-                                                                <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-                                                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
-                                                                </svg>
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                                                White
-                                                            </label>
-                                                            <span class="filter-count">(2)</span>
-                                                        </li>
+                                                        @foreach (Color color in ViewBag.Colors)
+                                                        {
+                                                            <li class="list-menu__item facets__item facets-color">
+                                                                <label class="facet-checkbox">
+                                                                    <input type="checkbox" style="background-color: @color.Title; z-index: unset" name="filter.color" value="@color.Title">
+                                                                    <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                                                                        <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+                                                                    </svg>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                                    @color.Title
+                                                                </label>
+                                                            </li>
+                                                        }
                                                     </ul>
                                                 </div>
                                             </div>

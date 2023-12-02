@@ -39,26 +39,10 @@
                                         <ins class="price-item--sale">@Model.DiscountedPrice <span class="currency-type">USD</span></ins>
                                     }
                                 </div>
-                                <div class="quantity-select">
-                                    <span class="lbl">Quantity :</span>
-                                    <div class="quantity qty-spinner">
-                                        <button class="quantity__button no-js-hidden quantity-decrement " name="minus" type="button">
-                                            <svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M0 0.251343V1.74871H12V0.251343H0Z" fill="#61AFB3"></path>
-                                            </svg>
-                                        </button>
-                                        <input class="quantity__input" type="number" name="quantity" min="1" value="1">
-                                        <button class="quantity__button no-js-hidden quantity-increment" name="plus" type="button">
-                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M6.74868 5.25132V0H5.25132V5.25132H0V6.74868H5.25132V12H6.74868V6.74868H12V5.25132H6.74868Z" fill="#61AFB3"></path>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
+                                <a asp-controller="cookie" asp-action="addbasket" asp-route-id="@Model.Id" data-product-id="@Model.Id" class="btn-primary add-cart-btn product-form__submit">
+                                    <span>Add to Cart</span>
+                                </a>
                             </div>
-                            <button type="submit" class="btn-primary add-cart-btn product-form__submit">
-                                <span>Add to Cart</span>
-                            </button>
                         </div>
                     </div>
                     <div class="col-md-6 col-12">
