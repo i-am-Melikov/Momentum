@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Momentum.DataAccess;
 
@@ -11,9 +12,10 @@ using Momentum.DataAccess;
 namespace Momentum.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231202161508_AddedOrderTable")]
+    partial class AddedOrderTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -688,7 +690,7 @@ namespace Momentum.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderProducts");
+                    b.ToTable("OrderProduct");
                 });
 
             modelBuilder.Entity("Momentum.Models.Product", b =>
@@ -1034,7 +1036,7 @@ namespace Momentum.Migrations
             modelBuilder.Entity("Momentum.Models.OrderProduct", b =>
                 {
                     b.HasOne("Momentum.Models.Order", "Order")
-                        .WithMany("OrderProducts")
+                        .WithMany()
                         .HasForeignKey("OrderId");
 
                     b.HasOne("Momentum.Models.Product", "Product")
@@ -1126,11 +1128,6 @@ namespace Momentum.Migrations
             modelBuilder.Entity("Momentum.Models.Color", b =>
                 {
                     b.Navigation("ProductColors");
-                });
-
-            modelBuilder.Entity("Momentum.Models.Order", b =>
-                {
-                    b.Navigation("OrderProducts");
                 });
 
             modelBuilder.Entity("Momentum.Models.Product", b =>

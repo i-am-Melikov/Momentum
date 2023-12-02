@@ -31,7 +31,7 @@ namespace Momentum.Areas.Manage.Controllers
         {
             if (id == null) return BadRequest();
 
-            Blog blog = await _context.Blogs.Where(c => !c.IsDeleted).FirstOrDefaultAsync(b => b.Id == id && b.IsDeleted == false);
+            Blog? blog = await _context.Blogs.Where(c => !c.IsDeleted).FirstOrDefaultAsync(b => b.Id == id && b.IsDeleted == false);
 
             if (blog == null) return NotFound();
 
@@ -87,7 +87,7 @@ namespace Momentum.Areas.Manage.Controllers
         {
             if (id == null) return BadRequest();
 
-            Blog blog = await _context.Blogs.Where(c => !c.IsDeleted).FirstOrDefaultAsync(b => b.Id == id && b.IsDeleted == false);
+            Blog? blog = await _context.Blogs.Where(c => !c.IsDeleted).FirstOrDefaultAsync(b => b.Id == id && b.IsDeleted == false);
 
 
             if (blog == null) return NotFound();

@@ -26,6 +26,7 @@ namespace Momentum.Models
         public bool IsTopSeller { get; set; }
         public bool IsOurProduct { get; set; }
         public List<ProductImage>? ProductImages { get; set; }
+        public IEnumerable<OrderProduct>? OrderProducts { get; set; }
         [NotMapped]
         public IFormFile? MainFile { get; set; }
         [NotMapped]

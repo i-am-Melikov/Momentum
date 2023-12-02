@@ -134,6 +134,7 @@ namespace Momentum.Areas.Manage.Controllers
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Profile()
         {
+            if (!User.Identity.IsAuthenticated) return RedirectToAction(nameof(Login));
             AppUser appUser = await _userManager.FindByNameAsync(User.Identity.Name);
 
             if (appUser == null) return BadRequest();

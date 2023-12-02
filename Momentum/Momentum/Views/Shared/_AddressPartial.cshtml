@@ -1,0 +1,58 @@
+﻿@model Address
+<form method="post" asp-controller="Account" asp-action="AddAddress">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="single-form">
+                <input asp-for="Line1" placeholder="Line1">
+                <span asp-validation-for=Line1 class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="single-form">
+                <input asp-for="Line2" placeholder="Line2">
+                <span asp-validation-for=Line2 class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="single-form">
+                <input asp-for="Country" placeholder="Country">
+                <span asp-validation-for=Country class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="single-form">
+                <input asp-for="Town" placeholder="Town">
+                <span asp-validation-for=Town class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="single-form">
+                <input asp-for="State" placeholder="State">
+                <span asp-validation-for=State class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="single-form">
+                <input asp-for="PostalCode" placeholder="PostalCode">
+                <span asp-validation-for=PostalCode class="text-danger"></span>
+            </div>
+        </div>
+        <div class="custom-checkbox mt-30">
+            <input asp-for="IsDefault">
+            <label for="IsDefault"></label>
+            <p>Set Default</p>
+        </div>
+        <div class="col-md-6 d-flex ">
+            <div class="single-form mr-3">
+                <button class="main-btn main-btn-2">Save Change</button>
+            </div>
+            <div class="single-form">
+                <a class="main-btn main-btn-2 goBackBtn " href="#"><i class="far fa-edit"></i> Go Back</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @await Html.PartialAsync("_Validation")
+            }

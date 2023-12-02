@@ -1,11 +1,15 @@
 ﻿using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Build.Framework.Profiler;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using MimeKit;
 using Momentum.DataAccess;
 using Momentum.Models;
 using Momentum.ViewModels;
+using Momentum.ViewModels.AccountVMs;
 
 namespace Momentum.Controllers
 {
@@ -111,6 +115,11 @@ namespace Momentum.Controllers
                 ModelState.AddModelError("", "Email or password is incorrect");
                 return View(loginVM);
             }
+            if (loginVM.Password == null)
+            {
+                ModelState.AddModelError("", "Email or password is incorrect");
+                return View(loginVM);
+            }
 
             Microsoft.AspNetCore.Identity.SignInResult signInResult = await _signInManager
                 .PasswordSignInAsync(appUser, loginVM.Password, loginVM.RemindMe, true);
@@ -163,5 +172,162 @@ namespace Momentum.Controllers
 
             return RedirectToAction(nameof(Login));
         }
+        [HttpGet]
+        public async Task<IActionResult> Profile()
+        {
+            AppUser appUser = await _userManager.Users
+               .Include(u => u.Addresses.Where(a => a.IsDeleted == false))
+               .Include(u => u.Orders.Where(o => o.IsDeleted == false)).ThenInclude(o => o.OrderProducts.Where(op => op.IsDeleted == false))
+               .FirstOrDefaultAsync(u => u.UserName == User.Identity.Name);
+
+            if (appUser == null) return RedirectToAction(nameof(Login));
+            ProfileVM profileVM = new ProfileVM();
+            
+            if (appUser.Addresses != null)
+            {
+                profileVM.Addresses = appUser.Addresses;
+            }
+            profileVM.ProfileAccountVM = new ProfileAccountVM
+            {
+                Name = appUser.Name,
+                SurName = appUser.SurName,
+                Email = appUser.Email,
+                UserName = appUser.UserName
+            };
+            profileVM.Orders = appUser.Orders;
+
+            return View(profileVM);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ProfileAccount(ProfileAccountVM profileAccountVM)
+        {
+            TempData["Tab"] = "Account";
+            AppUser appUser = await _userManager.Users
+               .Include(u => u.Addresses.Where(a => a.IsDeleted == false))
+               .FirstOrDefaultAsync(u => u.UserName == User.Identity.Name);
+
+            if (appUser == null) return RedirectToAction(nameof(Login));
+
+            ProfileVM profileVM = new ProfileVM();
+            if(appUser.Addresses != null)
+            {
+                profileVM.Addresses = appUser.Addresses;
+            }
+            profileVM.ProfileAccountVM = profileAccountVM;
+
+            if (!ModelState.IsValid)
+            {
+                return View("Profile", profileVM);
+            }
+
+
+            if (appUser.NormalizedUserName != profileAccountVM.UserName.Trim().ToUpperInvariant())
+            {
+                appUser.UserName = profileAccountVM.UserName;
+            }
+            if (appUser.NormalizedEmail != profileAccountVM.Email.Trim().ToUpperInvariant())
+            {
+                appUser.Email = profileAccountVM.Email;
+            }
+
+            appUser.Name = profileAccountVM.Name;
+            appUser.SurName = profileAccountVM.SurName;
+
+            IdentityResult identityResult = await _userManager.UpdateAsync(appUser);
+            if (!identityResult.Succeeded)
+            {
+                foreach (IdentityError identityError in identityResult.Errors)
+                {
+                    ModelState.AddModelError("", identityError.Description);
+                }
+                return View("Profile", profileVM);
+            }
+            if (profileAccountVM.CurrentPassword != null && profileAccountVM.NewPassword!= null && profileAccountVM.ConfirmPassword != null && profileAccountVM.NewPassword==profileAccountVM.ConfirmPassword)
+            {
+                if(await _userManager.CheckPasswordAsync(appUser, profileAccountVM.CurrentPassword) && profileAccountVM.CurrentPassword != null)
+                {
+                    var result = await _userManager.ChangePasswordAsync(appUser, profileAccountVM.CurrentPassword, profileAccountVM.NewPassword);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction(nameof(Login));
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Please check the passwords inputs");
+                        foreach (var error in result.Errors)
+                        {
+                            ModelState.AddModelError("", error.Description);
+                        }
+                    }
+                }
+            }
+
+            await _signInManager.SignInAsync(appUser, true);
+
+            return RedirectToAction(nameof(Profile));
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        //[Authorize(Roles = "Member")]
+        public async Task<IActionResult> AddAddress(Address address)
+        {
+            TempData["Tab"] = "Address";
+
+            AppUser? appUser = await _userManager.Users
+               .Include(u => u.Addresses.Where(a => a.IsDeleted == false))
+               .FirstOrDefaultAsync(u => u.UserName == User.Identity.Name);
+
+            if (appUser == null) RedirectToAction(nameof(Login));
+
+            ProfileVM profileVM = new ProfileVM();
+            profileVM.ProfileAccountVM = new ProfileAccountVM
+            {
+                Name = appUser.Name,
+                SurName = appUser.SurName,
+                Email = appUser.Email,
+                UserName = appUser.UserName
+            };
+            if(appUser.Addresses != null)
+            {
+                profileVM.Addresses = appUser.Addresses;
+            }
+
+            if (!ModelState.IsValid)
+            {
+                profileVM.Address = address;
+                TempData["addreess"] = "true";
+                return View("Profile", profileVM);
+            }
+
+            if (address.IsDefault == true)
+            {
+                if (appUser.Addresses != null && appUser.Addresses.Count() > 0)
+                {
+                    foreach (Address address1 in appUser.Addresses)
+                    {
+                        address1.IsDefault = false;
+                    }
+                }
+            }
+            else
+            {
+                if (appUser.Addresses == null || appUser.Addresses.Count() <= 0)
+                {
+                    address.IsDefault = true;
+                }
+            }
+
+            address.UserId = appUser.Id;
+            address.CreatedBy = appUser.Name + " " + appUser.SurName;
+            address.CreatedAt = DateTime.Now;
+
+            await _context.Addresses.AddAsync(address);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Profile));
+        }
+
     }
 }
