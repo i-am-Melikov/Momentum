@@ -852,6 +852,30 @@
             });
         </script>
     }
+    <script>
+        $('.editAddressBtn').click(function (e) {
+            e.preventDefault();
 
+            $('.addAddressBtn').addClass('d-none');
+            $('.addressContainer').addClass('d-none');
+            $('.editAddressForm').removeClass('d-none');
+
+            let url = $(this).attr('href');
+            fetch(url)
+                .then(res => res.text())
+                .then(data => {
+                    $('.editAddressForm').html(data);
+                })
+        })
+
+        $('.addAddressBtn').click(function (e) {
+            e.preventDefault();
+
+            $('.addressForm').removeClass('d-none');
+            $('.addAddressBtn').addClass('d-none');
+            $('.addressContainer').addClass('d-none');
+        })
+
+    </script>
 </body>
 </html>

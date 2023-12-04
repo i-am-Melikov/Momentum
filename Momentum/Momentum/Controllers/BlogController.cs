@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging.Abstractions;
 using Momentum.DataAccess;
 using Momentum.Models;
 using Momentum.ViewModels;
@@ -28,7 +29,13 @@ namespace Momentum.Controllers
                 return BadRequest();
             }
 
-            Blog blog = _context.Blogs.FirstOrDefault(b => !b.IsDeleted && b.Id == id);
+            Blog blog = _context.Blogs
+                .FirstOrDefault(b => !b.IsDeleted && b.Id == id);
+
+            IEnumerable<Comment> comments = _context.Comments
+                .Where(b=>!b.IsDeleted&& b.BlogId == id)
+                .OrderByDescending(b=>b.CreatedAt)
+                .ToList();
 
             if (blog == null) return NotFound();
 
@@ -38,10 +45,42 @@ namespace Momentum.Controllers
             BlogVM blogVM = new BlogVM
             {
                 Selected = blog,
-                Related = relatedBlogs
+                Related = relatedBlogs,
+                Comments = comments
             };
 
             return View(blogVM);
+        }
+        [HttpPost]
+        public IActionResult PostComment(int blogId, string name, string email, string content)
+        {
+            if(name == null || email == null || content ==null || blogId == null || blogId == 0)
+            {
+                return RedirectToAction("Detail", new { id = blogId });
+            }
+
+            var blog = _context.Blogs
+                .Include(b => b.Comments)
+                .FirstOrDefault(b => b.Id == blogId && !b.IsDeleted);
+
+            if (blog == null)
+            {
+                return NotFound();
+            }
+
+            var comment = new Comment
+            {
+                Name = name,
+                Email = email,
+                Content = content,
+                CreatedAt = DateTime.Now,
+                CreatedBy = name
+            };
+
+            blog.Comments.Add(comment);
+            _context.SaveChanges();
+
+            return RedirectToAction("Detail", new { id = blogId });
         }
     }
 }

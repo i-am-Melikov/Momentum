@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Momentum.DataAccess;
+using Momentum.Hubs.SignalRHubs;
 using Momentum.Interfaces;
 using Momentum.Models;
 using Momentum.Services;
@@ -35,14 +36,17 @@ builder.Services.AddSession(options =>
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ILayoutService, LayoutService>();
 builder.Services.AddScoped<IWishlistService, WishlistService>();
-//builder.Services.AddSignalR();
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapHub<ContactHub>("/contact");
+});
 app.MapControllerRoute("area", "{area:exists}/{controller=dashboard}/{action=index}/{id?}");
 app.MapControllerRoute("default", "{controller=home}/{action=index}/{id?}");
-//app.MapHub<"">
 app.UseStaticFiles();
 app.UseSession();
 app.Run();

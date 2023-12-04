@@ -1,0 +1,72 @@
+﻿@model Address
+<div class="section-title">
+    <h2>Profile form</h2>
+</div>
+<form id="ContactForm" class="contact-form" method="post" asp-controller="Account" asp-action="AddAddress">
+    <div style="margin-bottom:10px; font-size:20px;">Adress Datas:</div>
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <div class="form-group">
+                <label asp-for="Line1">Line1<sup>*</sup>:</label>
+                <input asp-for="Line1" class="form-control" type="text" placeholder="Line1" required>
+                <span asp-validation-for="Line1" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-group">
+                <label asp-for="Line2">Line2<sup>*</sup>:</label>
+                <input asp-for="Line2" class="form-control" type="text" placeholder="Line2" required>
+                <span asp-validation-for="Line2" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-group">
+                <label asp-for="Country">Country<sup>*</sup>:</label>
+                <input asp-for="Country" class="form-control" type="text" placeholder="Country" required>
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-group">
+                <label asp-for="Town">Town<sup>*</sup>:</label>
+                <input asp-for="Town" class="form-control" type="text" placeholder="Town" required>
+                <span asp-validation-for="Town" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-group">
+                <label asp-for="State">State<sup>*</sup>:</label>
+                <input asp-for="State" class="form-control" type="text" placeholder="State">
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-group">
+                <label asp-for="PostalCode">PostalCode<sup>*</sup>:</label>
+                <input asp-for="PostalCode" class="form-control" type="text" placeholder="PostalCode">
+                <span asp-validation-for="PostalCode" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-group" style="margin-top: 10px; display: flex;">
+                <input asp-for="IsDefault" style="width: 15px; margin-right: 5px;">
+                <label for="IsDefault">IsDefault</label>
+            </div>
+        </div>
+    </div>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row align-items-center">
+        <div class="col-lg-4 col-12">
+            <button type="submit" class="btn submit-btn" asp-controller="account" asp-action="editaddress" asp-route-id="@Model.Id">
+                Save Changes
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="14" viewBox="0 0 35 14" fill="none">
+                    <path d="M25.0749 14L35 7L25.0805 0L29.12 6.06667H0V7.93333H29.12L25.0749 14Z"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @await Html.PartialAsync("_Validation")
+}

@@ -72,6 +72,25 @@
                         <a class="blog-post__full-image"><img src="~/assets/img/blog/@Model.Selected.MainImage" alt=""></a>
                         @Html.Raw(Model.Selected.Description)
                     </div>
+                    @if (Model.Comments != null)
+                    {
+                        <div style="color:black; font-weight:bold; margin: 50px 0px 30px; font-size:20px;">Comments:</div>
+                        <div class="comments-show-table">
+                            @foreach (Comment comment in Model.Comments)
+                            {
+                                <div style="display: flex;">
+                                    <div class="col-lg-4">
+                                        <p style="font-size: 18px;">@comment.Name</p>
+                                        <p style="font-size: 13px;">@comment.Email</p>
+                                    </div>
+                                    <div class="col-lg-8" style="max-width: 100%; word-wrap: break-word;">
+                                        <p style="max-width: 100%; overflow-wrap: break-word;">@comment.Content</p>
+                                    </div>
+                                </div>
+                                    <hr>
+                            }
+                        </div>
+                    }
                 </div>
                 <div class="col-md-4 col-12">
                     <div class="articlerightbar blog-grid-section">
@@ -111,17 +130,18 @@
                     </div>
                     <div class="comments">
                         <div id="comments">
-                            <form class="comment-form">
+                            <form asp-controller="blog" asp-action="PostComment" class="comment-form" method="post">
                                 <div class="article-comment">
                                     <h3>Leave a Comment</h3>
+                                    <input type="hidden" name="blogId" value="@Model.Selected.Id" />
                                     <div class="grid-item comments-form__author">
-                                        <input placeholder="Name" id="comment-author">
+                                        <input name="name" placeholder="Name" id="comment-author">
                                     </div>
                                     <div class="grid-item comments-form__email">
-                                        <input type="email" placeholder="Email" id="comment-email">
+                                        <input name="email" type="email" placeholder="Email" id="comment-email">
                                     </div>
                                     <div class="grid-item">
-                                        <input id="comment-body" placeholder="Message"></input>
+                                        <input name="content" id="comment-body" placeholder="Content">
                                     </div>
                                     <div class="grid-item">
                                         <button type="submit" class="btn text-center">Post Comment</button>

@@ -14,5 +14,6 @@ namespace Momentum.Models
         public string? MainImage { get; set; }
         [NotMapped]
         public IFormFile? MainFile { get; set; }
+        public List<Comment> Comments { get; set; }
     }
 }

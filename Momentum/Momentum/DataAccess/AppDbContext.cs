@@ -21,5 +21,6 @@ namespace Momentum.DataAccess
         public DbSet<Basket> Baskets { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderProduct> OrderProducts { get; set; }
+        public DbSet<Comment> Comments { get; set; }
     }
 }

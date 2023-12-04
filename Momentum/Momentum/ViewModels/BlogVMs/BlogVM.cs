@@ -6,5 +6,6 @@ namespace Momentum.ViewModels.BlogVMs
     {
         public Blog Selected { get; set; }
         public IEnumerable<Blog> Related { get; set; }
+        public IEnumerable<Comment> Comments { get; set; }
     }
 }

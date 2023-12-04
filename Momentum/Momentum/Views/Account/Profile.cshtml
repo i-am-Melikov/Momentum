@@ -13,6 +13,31 @@
     .form-control {
         color: black !important;
     }
+
+    .nav-pills .nav-link {
+        cursor: pointer;
+    }
+
+        .nav-pills .nav-link.active {
+            background: linear-gradient(75deg, var(--blue) 0%, var(--second-color) 100%);
+            color: #fff;
+        }
+
+    .tab-pane {
+        display: none;
+    }
+
+        .tab-pane.show {
+            display: block;
+            color: black;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+        .contact-right-column{
+            margin-top:0px !important;
+        }
 </style>
 <main id="MainContent" class="content-for-layout home-wrapper">
 
@@ -38,72 +63,111 @@
             </div>
         </section>
     </div>
-    <!--====== Breadcrumb Part Start ======-->
-
-    <div class="breadcrumb-area">
-        <div class="container-fluid custom-container">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">My Account</li>
-                </ol>
-            </nav>
-        </div> <!-- container -->
-    </div>
-
-    <!--====== Breadcrumb Part Ends ======-->
-    <!--====== My Account Part Start ======-->
-
-    <section class="my-account-area pt-10">
-        <div class="container-fluid custom-container">
-            <div class="row">
-                <div class="col-xl-3 col-md-4">
-                    <div class="my-account-menu mt-30">
-                        <ul class="nav account-menu-list flex-column nav-pills" id="pills-tab" role="tablist">
-                            <li>
-                                <a class="@(isDashboard ? "active":"")" id="pills-dashboard-tab" data-toggle="pill" href="#pills-dashboard" role="tab" aria-controls="pills-dashboard" aria-selected="@(isDashboard ? true:false)"><i class="far fa-tachometer-alt-fast"></i> Dashboard</a>
-                            </li>
-                            <li>
-                                <a class="@(isOrder ? "active":"")" id="pills-order-tab" data-toggle="pill" href="#pills-order" role="tab" aria-controls="pills-order" aria-selected="@(isOrder ? true:false)"><i class="far fa-shopping-cart"></i> Order</a>
-                            </li>
-                            <li>
-                                <a class="@(isAddress ? "active":"")" id="pills-address-tab" data-toggle="pill" href="#pills-address" role="tab" aria-controls="pills-address" aria-selected="@(isAddress ? true:false)"><i class="far fa-map-marker-alt"></i> Address</a>
-                            </li>
-                            <li>
-                                <a class="@(isAccount ? "active":"")" id="pills-account-tab" data-toggle="pill" href="#pills-account" role="tab" aria-controls="pills-account" aria-selected="@(isAccount ? true:false)"><i class="far fa-user"></i> Account Details</a>
-                            </li>
-                            <li>
-                                <a asp-controller="Account" asp-action="Logout"><i class="far fa-sign-out-alt"></i> Logout</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-8 col-md-8">
-                    <div class="tab-content my-account-tab mt-30" id="pills-tabContent">
-                        <div class="tab-pane fade @(isDashboard?"show active":"")" id="pills-dashboard" role="tabpanel" aria-labelledby="pills-dashboard-tab">
-                            <div class="my-account-dashboard account-wrapper">
-                                <h4 class="account-title">Dashboard</h4>
-                                <div class="welcome-dashboard">
-                                    <p>Hello, <strong>Alex Tuntuni</strong> (If Not <strong>Tuntuni !</strong> <a href="#">Logout</a> )</p>
+    <div class="container" style="padding:200px 0px 200px">
+        <div class="row">
+            <div class="col-md-3" >
+                <ul class="nav nav-pills flex-column" id="myTabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="tab1" onclick="showTab('content1')">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="tab2" onclick="showTab('content2')">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="tab3" onclick="showTab('content3')">Addresses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="tab4" asp-controller="account" asp-action="logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <!-- Tab panes -->
+                <div class="tab-content" style="display:block;">
+                    <div class="tab-pane fade show active" id="content1">
+                        <section class="contact-page" >
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12 col-12 contact-right-column">
+                                        <div class="contact-right-inner">
+                                            @await Html.PartialAsync("_ProfileAccountPartial", Model.ProfileAccountVM)
+                                        </div>
+                                    </div>
                                 </div>
-                                <p class="mt-25">From your account dashboard. you can easily check & view your recent orders, manage your shipping and billing addresses and edit your password and account details.</p>
                             </div>
-                        </div>
-                        <div class="tab-pane fade @(isOrder?"show active":"")" id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab">
-                            <div class="my-account-order account-wrapper">
-                                <h4 class="account-title">Orders</h4>
-                                <div class="account-table text-center mt-30 table-responsive">
-                                    <div class="container shadow min-vh-100 py-2">
-                                        <div class="table-responsive">
-                                            <table class="fold-table">
+                        </section>
+                    </div>
+                    <div class="tab-pane fade @(isOrder?"show active":"")" id="content2">
+                        <section class="contact-page">
+                            <div class="container">
+                                <div class="card mb-4">
+                                    <div class="card-body px-0 pt-0 pb-2">
+                                        <div class="p-0">
+                                            <table class="table align-items-center mb-0" style="padding:20px 20px 0px">
                                                 <thead>
                                                     <tr>
+                                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Order No</th>
+                                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Amount</th>
+                                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Value</th>
+                                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
+                                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Comment</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (Order order in Model.Orders)
+                                                    {
+                                                        <tr>
+                                                            <td>@order.No</td>
+                                                            <td>@order.OrderProducts.Sum(o=>o.Count)</td>
+                                                            <td>@order.OrderProducts.Sum(o=>o.Price*o.Count)</td>
+                                                            <td>@order.Status</td>
+                                                            <td>@order.Comment</td>
+                                                        </tr>
+                                                        <tr class="fold">
+                                                            <td colspan="7">
+                                                                <div class="fold-content">
+                                                                    <table class="table align-items-center mb-0">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Title</th>
+                                                                                <th>Count</th>
+                                                                                <th>Price</th>
+                                                                                <th>Total</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            @foreach (OrderProduct orderProduct in order.OrderProducts)
+                                                                            {
+                                                                                <tr>
+                                                                                    <td>@orderProduct.Title</td>
+                                                                                    <td>@orderProduct.Count</td>
+                                                                                    <td>@orderProduct.Price</td>
+                                                                                    <td>@(orderProduct.Price * orderProduct.Count)</td>
+                                                                                </tr>
+                                                                            }
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                @* <div class="row">
+                                    <div class="col-md-12 col-12 contact-right-column">
+                                        <div class="contact-right-inner">
+                                            <table>
+                                                <thead>
+                                                    <td>
                                                         <th>Order No</th>
                                                         <th>Amount</th>
                                                         <th>Value</th>
                                                         <th>Status</th>
                                                         <th>Comment</th>
-                                                    </tr>
+                                                    </td>
                                                 </thead>
                                                 <tbody>
                                                     @foreach (Order order in Model.Orders)
@@ -111,7 +175,7 @@
                                                         <tr class="view">
                                                             <td>@order.No</td>
                                                             <td>@order.OrderProducts.Sum(o=>o.Count)</td>
-                                                            <td>@order.OrderProducts.Sum(o=>o.Price *o.Count)</td>
+                                                            <td>@order.OrderProducts.Sum(o=>o.Price*o.Count)</td>
                                                             <td>@order.Status</td>
                                                             <td>@order.Comment</td>
                                                         </tr>
@@ -148,62 +212,61 @@
                                             </table>
                                         </div>
                                     </div>
-                                </div>
+                                </div> *@
                             </div>
+                        </section>
+                    </div>
+                    <div class="tab-pane fade" id="content3">
+                        <a style="margin-bottom: 30px" class="main-btn main-btn-2 addAddressBtn @(addressErrorr || editadressErrorr ? "d-none":"")"><i class="far fa-edit"></i> Add Address</a>
+                        <div class="addressForm @(addressErrorr ? "":"d-none")">
+                            @await Html.PartialAsync("_AddressPartial",Model.Address)
                         </div>
-                        <div class="tab-pane fade @(isAddress?"show active":"")" id="pills-address" role="tabpanel" aria-labelledby="pills-address-tab">
-                            <div class="my-account-address account-wrapper">
-                                <h4 class="account-title">Payment Method</h4>
-                                <a class="main-btn main-btn-2 addAddressBtn @(addressErrorr || editadressErrorr ? "d-none":"")" href="#"><i class="far fa-edit"></i> Add Address</a>
-                                <div class="addressForm @(addressErrorr ? "":"d-none")">
-                                    @await Html.PartialAsync("_AddressPartial",Model.Address)
-                                </div>
-                                <div class="editAddressForm @(editadressErrorr ? "":"d-none")">
-                                    @if (editadressErrorr)
-                                    {
-                                        @await Html.PartialAsync("_EditAddressPartial",Model.Address)
-                                    }
-                                </div>
-                                <div class="addressContainer row @(addressErrorr || editadressErrorr ? "d-none":"") ">
-
-
-                                    @foreach (Address address in Model.Addresses.OrderByDescending(a => a.IsDefault))
-                                    {
-                                        <div class="account-address mt-30 col-lg-3">
-
-                                            <h6 class="name">
-                                                @address.Country
-                                                @if (address.IsDefault)
-                                                {
-                                                    <span class="badge badge-pill badge-info">Default</span>
-                                                }
-                                            </h6>
-                                            <p>@address.Line1 <br> @address.Line2, @address.PostalCode</p>
-                                            <p>@address.Town</p>
-                                            <p>@address.State</p>
-                                            <a class="main-btn main-btn-2 editAddressBtn" asp-controller="account" asp-action="editaddress" asp-route-id="@address.Id"><i class="far fa-edit"></i> Edit Address</a>
-                                        </div>
-                                    }
-                                </div>
-                            </div>
+                        <div class="editAddressForm @(editadressErrorr ? "":"d-none")">
+                            @if (editadressErrorr)
+                            {
+                                @await Html.PartialAsync("_EditAddressPartial",Model.Address)
+                            }
                         </div>
-                        <div class="tab-pane fade @(isAccount?"show active":"")" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">
-                            @await Html.PartialAsync("_ProfileAccountPartial",Model.ProfileAccountVM)
+                        <div class="addressContainer row @(addressErrorr || editadressErrorr ? "d-none":"") ">
+                            @foreach (Address address in Model.Addresses.OrderByDescending(a => a.IsDefault))
+                            {
+                                <div class="account-address mt-30 col-lg-3">
+
+                                    <h6 class="name">
+                                        @address.Country
+                                        @if (address.IsDefault)
+                                        {
+                                            <span class="badge badge-pill badge-info">Default</span>
+                                        }
+                                    </h6>
+                                    <p>@address.Line1 <br> @address.Line2, @address.PostalCode</p>
+                                    <p>@address.Town</p>
+                                    <p>@address.State</p>
+                                    <a class="main-btn main-btn-2 editAddressBtn" asp-controller="account" asp-action="editaddress" asp-route-id="@address.Id"><i class="far fa-edit"></i> Edit Address</a>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <section class="contact-page" style="padding:400px 0px 200px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-12 contact-right-column">
-                    <div class="contact-right-inner">
-                        @await Html.PartialAsync("_ProfileAccountPartial", Model.ProfileAccountVM)
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 </main>
+<!-- JavaScript to handle tab switching -->
+<script>
+    function showTab(tabId) {
+        // Remove 'active' class from all tabs
+        var tabs = document.querySelectorAll('.nav-link');
+        tabs.forEach(function (tab) {
+            tab.classList.remove('active');
+        });
+
+        // Add 'active' class to the clicked tab
+        var selectedTab = document.getElementById('tab' + tabId.charAt(tabId.length - 1));
+        selectedTab.classList.add('active');
+
+        // Show the selected tab content
+        $('.tab-pane').removeClass('show active');
+        $('#' + tabId).addClass('show active');
+    }
+</script>

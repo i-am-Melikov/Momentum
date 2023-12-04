@@ -1,0 +1,70 @@
+﻿@model Order
+<form id="checkoutform" class="contact-form" method="post">
+    <div style="margin-bottom:10px; font-size:20px;">Adress Datas:</div>
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <div class="form-group">
+                <label asp-for="Name">Name<sup>*</sup>:</label>
+                <input asp-for="Name" class="form-control" type="text" placeholder="Name" required>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-group">
+                <label asp-for="SurName">SurName<sup>*</sup>:</label>
+                <input asp-for="SurName" class="form-control" type="text" placeholder="SurName" required>
+                <span asp-validation-for="SurName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-group">
+                <label asp-for="Email">Email<sup>*</sup>:</label>
+                <input asp-for="Email" class="form-control" type="text" placeholder="Email" required>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-group">
+                <label asp-for="Line1">Line1<sup>*</sup>:</label>
+                <input asp-for="Line1" class="form-control" type="text" placeholder="Line1" required>
+                <span asp-validation-for="Line1" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-group">
+                <label asp-for="Line2">Line2<sup>*</sup>:</label>
+                <input asp-for="Line2" class="form-control" type="text" placeholder="Line2" required>
+                <span asp-validation-for="Line2" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-group">
+                <label asp-for="Country">Country<sup>*</sup>:</label>
+                <input asp-for="Country" class="form-control" type="text" placeholder="Country" required>
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-group">
+                <label asp-for="Town">Town<sup>*</sup>:</label>
+                <input asp-for="Town" class="form-control" type="text" placeholder="Town" required>
+                <span asp-validation-for="Town" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-group">
+                <label asp-for="State">State<sup>*</sup>:</label>
+                <input asp-for="State" class="form-control" type="text" placeholder="State">
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-group">
+                <label asp-for="PostalCode">PostalCode<sup>*</sup>:</label>
+                <input asp-for="PostalCode" class="form-control" type="text" placeholder="PostalCode">
+                <span asp-validation-for="PostalCode" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+</form>

@@ -8,10 +8,11 @@ using Momentum.Enums;
 using Momentum.Models;
 using Momentum.ViewModels.BasketVMs;
 using Momentum.ViewModels.OrderVMs;
+using Newtonsoft.Json;
 
 namespace Momentum.Controllers
 {
-    [Authorize(Roles = "Member")]
+    //[Authorize(Roles = "Member")]
     public class OrderController : Controller
     {
         private readonly AppDbContext _context;
@@ -26,14 +27,21 @@ namespace Momentum.Controllers
         [HttpGet]
         public async Task<IActionResult> CheckOut()
         {
-            AppUser appUser = await _userManager.Users
+            AppUser? appUser = await _userManager.Users
                 .Include(u => u.Addresses.Where(a => a.IsDeleted == false && a.IsDefault))
-                .Include(u => u.Baskets.Where(b => b.IsDeleted == false)).ThenInclude(b => b.Product)
+                .Include(u => u.Baskets.Where(b => b.IsDeleted == false)).ThenInclude(b => b.Product).ThenInclude(b=>b.ProductColors.Where(pc=>!pc.IsDeleted)).ThenInclude(p=>p.Color)
                 .FirstOrDefaultAsync(u => u.UserName == User.Identity.Name);
 
-            if (appUser.Baskets == null || appUser.Baskets.Count() <= 0)
+            if (appUser == null) RedirectToAction("Login", "Account");
+            string? basket = Request.Cookies["basket"];
+
+            List<BasketVM> basketVMs = null;
+
+            basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
+         
+            if (basketVMs == null || basketVMs.Count() <= 0)
             {
-                TempData["Info"] = "Zehmet Olmas Sebete Mehsul Elave Edin";
+                TempData["Info"] = "Zehmet Olmasa Sebete Mehsul Elave Edin";
                 return RedirectToAction("Index", "Product");
             }
 
@@ -60,7 +68,6 @@ namespace Momentum.Controllers
                     Title = x.Product.Title,
                 }).ToList(),
             };
-
             return View(orderVM);
         }
 
@@ -68,12 +75,14 @@ namespace Momentum.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CheckOut(Order order)
         {
-            AppUser appUser = await _userManager.Users
+            AppUser? appUser = await _userManager.Users
                .Include(u => u.Addresses.Where(a => a.IsDeleted == false && a.IsDefault))
                .Include(u => u.Orders)
                .Include(u => u.Baskets.Where(b => b.IsDeleted == false)).ThenInclude(b => b.Product)
                .FirstOrDefaultAsync(u => u.UserName == User.Identity.Name);
 
+            if (appUser == null) RedirectToAction("Login", "Account");
+            
             OrderVM orderVM = new OrderVM
             {
                 Order = order,
@@ -89,11 +98,18 @@ namespace Momentum.Controllers
 
             if (!ModelState.IsValid) return View(orderVM);
 
-            if (appUser.Baskets == null || appUser.Baskets.Count() <= 0)
+            string? basketDatas = Request.Cookies["basket"];
+
+            List<BasketVM> basketVMs = null;
+
+            basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basketDatas);
+         
+            if (basketVMs == null || basketVMs.Count() <= 0)
             {
-                TempData["Info"] = "Zehmet Olmas Sebete Mehsul Elave Edin";
+                TempData["Info"] = "Zehmet Olmasa Sebete Mehsul Elave Edin";
                 return RedirectToAction("Index", "Product");
             }
+
 
             List<OrderProduct> orderProducts = new List<OrderProduct>();
 
@@ -127,7 +143,6 @@ namespace Momentum.Controllers
 
             TempData["Success"] = "Sifarisiniz Ugurla Elave Edildi";
             return RedirectToAction("Index", "Product");
-
         }
     }
 }
