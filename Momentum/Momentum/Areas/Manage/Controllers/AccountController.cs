@@ -130,8 +130,8 @@ namespace Momentum.Areas.Manage.Controllers
             return RedirectToAction("Index", "Dashboard", new { area = "manage" });
         }
         [HttpGet]
-        //[Authorize(Roles = "SuperAdmin,Admin")]
-        //[ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin,Admin")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Profile()
         {
             if (!User.Identity.IsAuthenticated) return RedirectToAction(nameof(Login));

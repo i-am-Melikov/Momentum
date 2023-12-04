@@ -109,10 +109,6 @@
                                                 <div id="filter_open_avail" class="acnav-label">Availability</div>
                                                 <div id="filter-content-avail" class="facets__display pro-itm-inner acnav-list">
                                                     <div class="facets__header">
-                                                        <span class="facets__selected no-js-hidden">0 selected</span>
-                                                        <a href="" class="facets__reset link">
-                                                            Reset
-                                                        </a>
                                                     </div>
                                                     <ul class="facets__list list-unstyled">
                                                         <li class="list-menu__item facets__item">
@@ -124,7 +120,6 @@
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                                                 In stock
                                                             </label>
-                                                            <span class="filter-count">(4)</span>
                                                         </li>
                                                         <li class="list-menu__item facets__item ">
                                                             <label class="facet-checkbox facet-checkbox--disabled">
@@ -135,7 +130,6 @@
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                                                 Out of stock
                                                             </label>
-                                                            <span class="filter-count">(0)</span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -146,7 +140,6 @@
                                                 <div id="filter_open_price" class="acnav-label">Price</div>
                                                 <div id="filter-content-price" class="facets__display pro-itm-inner acnav-list">
                                                     <div class="facets__header">
-                                                        <a href="#" class="facets__reset link" onclick="resetFilter('price')">Reset</a>
                                                     </div>
                                                     <div class="facets__price">
                                                         <div class="field">
@@ -160,17 +153,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="product-widget disclosure-has-popup facets__disclosure js-filter">
-                                                <div id="filter_open_type" class="acnav-label">Product type</div>
+                                                <div id="filter_open_type" class="acnav-label">Category</div>
                                                 <div id="filter-content-type" class="facets__display pro-itm-inner acnav-list">
                                                     <div class="facets__header">
-                                                        <span class="facets__selected no-js-hidden">0 selected</span>
-                                                        <div>
-                                                            <a href="" class="facets__reset link">
-                                                                Reset
-                                                            </a>
-                                                        </div>
                                                     </div>
 
                                                     <ul class="facets__list list-unstyled">
@@ -198,12 +184,6 @@
                                                 <div id="filter_open_brand" class="acnav-label">Brand</div>
                                                 <div id="filter-content-brand" class="facets__display pro-itm-inner acnav-list">
                                                     <div class="facets__header">
-                                                        <span class="facets__selected no-js-hidden">0 selected</span>
-                                                        <div>
-                                                            <a href="" class="facets__reset link">
-                                                                Reset
-                                                            </a>
-                                                        </div>
                                                     </div>
 
                                                     <ul class="facets__list list-unstyled">
@@ -228,12 +208,6 @@
                                                 <div id="filter_open_color" class="acnav-label">Color</div>
                                                 <div id="filter-content-color" class="facets__display pro-itm-inner acnav-list">
                                                     <div class="facets__header">
-                                                        <span class="facets__selected no-js-hidden">0 selected</span>
-                                                        <div>
-                                                            <a href="" class="facets__reset link" role="button">
-                                                                Reset
-                                                            </a>
-                                                        </div>
                                                     </div>
                                                     <ul class="facets__list list-unstyled">
                                                         @foreach (Color color in ViewBag.Colors)
@@ -260,14 +234,6 @@
                                         <a href="" class="active-facets__button-remove btn-secondary">
                                             <span>Remove all</span>
                                         </a>
-                                    </div>
-                                </div>
-                                <div class="product-count light hidden">
-                                    <p id="ProductCount" class="product-count__text">4 products</p>
-                                    <div class="loading-overlay__spinner">
-                                        <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                                        </svg>
                                     </div>
                                 </div>
                                 <div class="mobile-facets__open mobile-only">

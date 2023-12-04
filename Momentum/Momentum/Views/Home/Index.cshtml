@@ -11,24 +11,14 @@
     <!-- BANNER SECTION START -->
     <section class="home-banner-section">
         <img src="//gaming-workdo.myshopify.com/cdn/shop/files/design-circle-2.png?v=1671440608" class="design-circle-2" alt="image">
-        <img src="//gaming-workdo.myshopify.com/cdn/shop/files/design-circle-1.png?v=1671440643" class="design-circle-1" alt="image">
-        <img src="//gaming-workdo.myshopify.com/cdn/shop/files/main-conent-games.png?v=1671440689" class="main-content-games" alt="image">
+        <img src="~/assets/img/design-circle-1.webp" class="design-circle-1" alt="image">
         <img src="//gaming-workdo.myshopify.com/cdn/shop/files/Half-bluthooth.png?v=1671440723" class="half-bluthooth-left" alt="image">
-        <img src="//gaming-workdo.myshopify.com/cdn/shop/files/Half-bluthooth-right.png?v=1671440737" class="half-bluthooth-right" alt="image">
-        <img src="//gaming-workdo.myshopify.com/cdn/shop/files/round-img-big.png?v=1671440773" class="round-img-big" alt="image">
-        <img src="//gaming-workdo.myshopify.com/cdn/shop/files/round-img-small.png?v=1671440815" class="round-img-small" alt="image">
-        <img src="//gaming-workdo.myshopify.com/cdn/shop/files/full-bluthooth.png?v=1671432444" class="full-bluthooth" alt="image">
-        <img src="//gaming-workdo.myshopify.com/cdn/shop/files/top-star.png?v=1671440863" class="top-star" alt="image">
+        <img src="~/assets/img/Half-bluthooth-right.webp" class="half-bluthooth-right" alt="image">
+        <img src="~/assets/img/top-star.png" class="top-star" alt="image">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-12">
                     <div class="home-banner-contain">
-                        <div class="banner-tagline">
-                            <div class="tagline-row d-flex align-items-center">
-                                <span class="btn-label">Featured</span>
-                                <p>New featured collection <a href="product.html"> \ Gaming. Collector</a></p>
-                            </div>
-                        </div>
                         <div class="section-title">
                             <h2 class="xl-text">Best <b>Pro Gaming</b> Accessories</h2>
                             <p>Gaming accessories include gear such as headsets, extra controllers, charging stations, memory devices, carrying cases and much more.</p>
@@ -116,14 +106,11 @@
                                             </div>
                                             <div class="pro-compare">
                                                 <label>
-                                                    <span class="compare-label">
+                                                    <a class="compare-label" asp-controller="cookie" asp-action="AddToCompare" asp-route-id="@product.Id">
                                                         <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
                                                             <path clip-rule="evenodd" d="m17.2929 4.29289c-.3905.39053-.3905 1.02369 0 1.41422l1.2929 1.29289h-5.5858c-2.2091 0-4 1.79086-4 4v1c0 .5523.44772 1 1 1 .5523 0 1-.4477 1-1v-1c0-1.10457.8954-2 2-2h5.5858l-1.2929 1.2929c-.3905.3905-.3905 1.0237 0 1.4142s1.0237.3905 1.4142 0l3-2.99999c.3905-.39053.3905-1.02369 0-1.41422l-3-3c-.3905-.39052-1.0237-.39052-1.4142 0zm-3.2929 6.70711c-.5523 0-1 .4477-1 1v1c0 1.1046-.8954 2-2 2h-5.58579l1.2929-1.2929c.39052-.3905.39052-1.0237 0-1.4142-.39053-.3905-1.02369-.3905-1.41422 0l-3 3c-.39052.3905-.39052 1.0237 0 1.4142l3 3c.39053.3905 1.02369.3905 1.41422 0 .39052-.3905.39052-1.0237 0-1.4142l-1.2929-1.2929h5.58579c2.2091 0 4-1.7909 4-4v-1c0-.5523-.4477-1-1-1z" fill="rgb(0,0,0)" fill-rule="evenodd"></path>
                                                         </svg>
-                                                    </span>
-                                                    <a class="compare-now" href="compare.html" style="display:none;">Compare Now</a>
-                                                    <input type="checkbox" style="display:none;">
-                                                    <span class="checkmark"></span>
+                                                    </a>
                                                 </label>
                                             </div>
                                         </div>
@@ -162,8 +149,6 @@
     <!-- PRODUCT SECTION END -->
     <!-- OUR PRODUCT SECTION START -->
     <section class="gaming-categories-section tabs-wrapper" style="padding:40px 0px 143px; background: none">
-        <img src="//gaming-workdo.myshopify.com/cdn/shop/files/design-circle-3.png?v=1671514613" class="design-circle-4" alt="image">
-        <img src="//gaming-workdo.myshopify.com/cdn/shop/files/main-conent-games.png?v=1671440689" class="main-content-games-1" alt="image">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-12">
@@ -206,7 +191,7 @@
                                                         </a>
                                                         <div class="pro_btn">
                                                             <div class="pro_btn_wrapper">
-                                                                <a class="wishlist wish heart" href="wishlist.html" title="Wishlist">
+                                                                <a class="wishlist wish heart" asp-controller="wishlist" asp-action="AddToWishlist" asp-route-id="@product.Id" data-product-id="@product.Id">
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="white">
                                                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1335 2.95108C16.73 4.16664 16.9557 6.44579 15.6274 7.93897L8.99983 15.3894L2.37233 7.93977C1.04381 6.44646 1.26946 4.167 2.86616 2.95128C4.50032 1.70704 6.87275 2.10393 7.99225 3.80885L8.36782 4.38082C8.59267 4.72325 9.05847 4.82238 9.40821 4.60224C9.51777 4.53328 9.60294 4.44117 9.66134 4.33666L10.0076 3.80914C11.1268 2.10394 13.4993 1.70679 15.1335 2.95108ZM8.99998 2.653C7.31724 0.526225 4.15516 0.102335 1.94184 1.78754C-0.33726 3.52284 -0.659353 6.77651 1.23696 8.90805L8.4334 16.9972C8.7065 17.3041 9.18204 17.3362 9.49557 17.0688C9.53631 17.0341 9.57231 16.996 9.60351 16.9553L16.7628 8.90721C18.6589 6.77579 18.3367 3.52246 16.0579 1.78734C13.8446 0.102142 10.6825 0.526185 8.99998 2.653Z" fill="white"></path>
                                                                     </svg>
@@ -221,14 +206,11 @@
                                                                 </div>
                                                                 <div class="pro-compare">
                                                                     <label>
-                                                                        <span class="compare-label">
+                                                                        <a class="compare-label" asp-controller="cookie" asp-action="AddToCompare" asp-route-id="@product.Id">
                                                                             <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
                                                                                 <path clip-rule="evenodd" d="m17.2929 4.29289c-.3905.39053-.3905 1.02369 0 1.41422l1.2929 1.29289h-5.5858c-2.2091 0-4 1.79086-4 4v1c0 .5523.44772 1 1 1 .5523 0 1-.4477 1-1v-1c0-1.10457.8954-2 2-2h5.5858l-1.2929 1.2929c-.3905.3905-.3905 1.0237 0 1.4142s1.0237.3905 1.4142 0l3-2.99999c.3905-.39053.3905-1.02369 0-1.41422l-3-3c-.3905-.39052-1.0237-.39052-1.4142 0zm-3.2929 6.70711c-.5523 0-1 .4477-1 1v1c0 1.1046-.8954 2-2 2h-5.58579l1.2929-1.2929c.39052-.3905.39052-1.0237 0-1.4142-.39053-.3905-1.02369-.3905-1.41422 0l-3 3c-.39052.3905-.39052 1.0237 0 1.4142l3 3c.39053.3905 1.02369.3905 1.41422 0 .39052-.3905.39052-1.0237 0-1.4142l-1.2929-1.2929h5.58579c2.2091 0 4-1.7909 4-4v-1c0-.5523-.4477-1-1-1z" fill="rgb(0,0,0)" fill-rule="evenodd"></path>
                                                                             </svg>
-                                                                        </span>
-                                                                        <a class="compare-now" href="compare.html" style="display:none;">Compare Now</a>
-                                                                        <input type="checkbox" style="display:none;">
-                                                                        <span class="checkmark"></span>
+                                                                        </a>
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -271,8 +253,6 @@
     @if (Model.PC != null)
     {
         <section class="full-width-section padding-top padding-bottom">
-            <img src="//gaming-workdo.myshopify.com/cdn/shop/files/gaming-products.png?v=1671538553" class="gaming-products-1" alt="image">
-            <img src="//gaming-workdo.myshopify.com/cdn/shop/files/gaming-products-1.png?v=1671538565" class="gaming-products-2" alt="image">
             <img src="//gaming-workdo.myshopify.com/cdn/shop/files/design-circle-4.png?v=1671538604" class="design-circle-4" alt="image">
             <img src="//gaming-workdo.myshopify.com/cdn/shop/files/design-circle-5.png?v=1671538615" class="design-circle-5" alt="image">
             <div class="container">
@@ -350,7 +330,6 @@
     @if (Model.Headphone != null)
     {
         <section class="full-width-second-section">
-            <img src="//gaming-workdo.myshopify.com/cdn/shop/files/about-us_f9e74f88-c6e8-473e-98e6-594078e45cc3.png?v=1671594461" class="about-img" alt="image">
             <div class="full-container">
                 <div class="d-flex full-width-row align-items-center">
                     <div class="col-xl-6 col-lg-4 col-sm-6 col-12">
@@ -404,8 +383,6 @@
     <!-- SECOND ABOUT PRODUCT SECTION END -->
     <!-- BLOG SECTION START -->
     <section class="home-blog-section padding-top">
-        <img src="//gaming-workdo.myshopify.com/cdn/shop/files/blog-ring-1.png?v=1671432430" class="blog-ring" alt="image">
-        <img src="//gaming-workdo.myshopify.com/cdn/shop/files/full-bluthooth.png?v=1671432444" class="blog-blutooth" alt="image">
         <div class="container">
             <div class="section-title d-flex justify-content-between align-items-center">
                 <div class="section-title-left">
@@ -466,8 +443,7 @@
     </section>
     <!-- BLOG SECTION END -->
     <!-- ABOUT SECTION START -->
-    <section class="about-us-section padding-bottom">
-        <img src="//gaming-workdo.myshopify.com/cdn/shop/files/about-us.png?v=1670902356" class="about-img-1" alt="image">
+    <section class="about-us-section padding-bottom" style="padding: 90px 0px;">
         <div class="container">
             <div class="section-title">
                 <h2>About our shop</h2>

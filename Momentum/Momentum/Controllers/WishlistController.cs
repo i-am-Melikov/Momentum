@@ -59,6 +59,33 @@ namespace Momentum.Controllers
 
             return PartialView("_WishlistNotificationPartial", product);
         }
+        public async Task<IActionResult> RemoveFromWishlist(int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            // Check if the product is in the wishlist
+            bool isInWishlist = await IsProductInWishlist(userId, id.Value);
+
+            if (isInWishlist)
+            {
+                // Remove the product from the wishlist
+                await wishlistService.RemoveFromWishlist(userId, id.Value);
+                return RedirectToAction(nameof(Index));
+            }
+
+            // If the product is not in the wishlist, you might want to handle this case differently
+            return Content($"Product is not in the wishlist.");
+        }
         private async Task<bool> IsProductInWishlist(string userId, int productId)
         {
             var userWishlists = await wishlistService.GetUserWishlistsAsync(userId);

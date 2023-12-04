@@ -582,3 +582,354 @@ input.mobile-facets__checkbox {
             padding: 20px 0px 0px !important;
         }
 }
+/************************  CART PAGE CSS **********************/
+.cart-page-section {
+    padding-top: 40px;
+}
+
+    .cart-page-section .back-btn span svg path {
+        fill: var(--second-color);
+    }
+
+    .cart-page-section .section-title {
+        margin-bottom: 50px;
+    }
+
+        .cart-page-section .section-title h2 {
+            margin-top: 20px;
+        }
+
+            .cart-page-section .section-title h2 span {
+                font-size: 18px;
+            }
+
+.product-option {
+    display: flex;
+    align-items: baseline;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+    .product-option dt {
+        font-weight: 500;
+    }
+
+    .product-option dd {
+        margin-left: 5px;
+        font-weight: 400;
+    }
+
+.remove-btn {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    vertical-align: top;
+    margin-left: 8px;
+}
+
+    .remove-btn svg path {
+        fill: red;
+    }
+
+.pro-img-cart {
+    max-width: 100px;
+}
+
+.cart-summery {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+}
+
+    .cart-summery ul li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+    }
+
+        .cart-summery ul li span:last-child {
+            font-weight: 600;
+        }
+
+    .cart-summery .btn {
+        padding: 15px 10px;
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        text-transform: capitalize;
+    }
+/****  TABLE CSS ****/
+table {
+    border: 0;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: auto;
+}
+
+    table tr {
+        padding: 20px 0 0;
+        border-bottom: 1px solid var(--border-color);
+        display: block;
+    }
+
+        table tr:last-of-type {
+            border-bottom: 0;
+        }
+
+        table tr th, table tr td {
+            text-align: left;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        table tr th {
+            padding-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+            table tr th:first-child, table tr td:first-child {
+                padding-left: 0;
+            }
+
+                table tr td:first-child a {
+                    vertical-align: middle;
+                }
+
+        table tr td {
+            display: block;
+            text-align: center;
+            padding: 0 0 20px;
+        }
+
+@media (min-width: 992px) {
+    .cart-tble tr th:first-child, .cart-tble tr td:first-child {
+        width: 90px;
+    }
+
+    .cart-tble tr th:nth-child(2), .cart-tble tr td:nth-child(2) {
+        width: 233px;
+    }
+
+    .cart-tble tr th:nth-child(4), .cart-tble tr td:nth-child(4) {
+        width: 116px;
+        padding-right: 9px;
+    }
+}
+
+@media (max-width: 767px) {
+    table tr td::before {
+        content: attr(data-label);
+        display: block;
+        text-align: center;
+        padding-bottom: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        display: none;
+    }
+
+    .product-option {
+        justify-content: center;
+    }
+
+    table .qty-spinner {
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .remove-btn {
+        height: 14px;
+        width: 14px;
+    }
+}
+
+@media (min-width: 768px) {
+    table tr:first-child {
+        border-top: none;
+    }
+
+    table tr {
+        padding: 0;
+        display: table-row;
+    }
+
+        table tr td {
+            padding: 20px 10px 20px;
+            display: table-cell;
+            text-align: left;
+        }
+
+            table tr th:last-child, table tr td:last-child {
+                text-align: right;
+                padding-right: 0;
+            }
+
+            table tr th:nth-child(5), table tr td:nth-child(5) {
+                text-align: right;
+            }
+}
+
+/*==================== SHF Cart Page ====================*/
+.cart-item__error {
+    display: flex;
+    align-items: flex-start;
+}
+
+.cart-item__price-wrapper {
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.remove-btn a {
+    display: block;
+}
+
+    .remove-btn a svg {
+        height: 100%;
+        width: 100%;
+    }
+
+.cart-page-section .cart__warnings {
+    text-align: center;
+    border: 1px solid var(--border-color);
+    padding: 30px 15px;
+}
+
+    .cart-page-section .cart__warnings .section-title {
+        margin: 0;
+    }
+
+    .cart-page-section .cart__warnings .common-btn2 {
+        display: inline-block;
+    }
+
+    .cart-page-section .cart__warnings .section-title {
+        margin: 0;
+    }
+
+.cart-item__error-text:empty + svg {
+    display: none;
+}
+
+cart-note.cart__note.field {
+    margin: 0 0 30px;
+    display: block;
+}
+
+    cart-note.cart__note.field label {
+        margin: 0 0 15px;
+        display: block;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+.cart__footer .cart__note #Cart-note {
+    min-height: 100px;
+    padding: 10px;
+}
+
+.cart__footer-wrapper .cart__blocks {
+    border: 1px solid var(--border-color);
+    padding: 30px 15px;
+    text-align: center;
+    border-radius: 0px 20px 0px 20px;
+    -webkit-border-radius: 0px 20px 0px 20px;
+    -moz-border-radius: 0px 20px 0px 20px;
+    -ms-border-radius: 0px 20px 0px 20px;
+    -o-border-radius: 0px 20px 0px 20px;
+}
+
+.cart__blocks .totals__subtotal {
+    margin: 0 0 15px;
+    line-height: 1;
+    color: var(--theme-color);
+}
+
+.cart__footer ins {
+    font-size: 20px;
+}
+
+.cart__blocks .totals__subtotal-value {
+    font: var(--h5);
+    margin: 0 0 20px;
+    background: linear-gradient(75deg, var(--blue) 0%, var(--second-color) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+small.tax-note.caption-large.rte {
+    margin: 0 0 10px;
+    display: block;
+    font-size: 14px;
+}
+
+.facets__item {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    padding-right: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.product-widget .acnav-list .facets__item {
+    margin-top: 8px;
+}
+
+.prorow-lbl-qntty {
+    display: flex;
+    align-items: center;
+    margin: 0 0 30px;
+}
+
+    .prorow-lbl-qntty .qty-spinner {
+        margin: 0 0 0 10px;
+        background: var(--black);
+        border-color: #788c6d;
+        box-shadow: none;
+    }
+/*======================= SHF collection-list =====================*/
+.card-wrapper {
+    text-align: center;
+    margin: 0 0 30px;
+}
+
+    .card-wrapper .card-content {
+        margin: 10px 0 0;
+        display: block;
+    }
+
+        .card-wrapper .card-content .card-heading {
+            margin: 0 0 10px;
+        }
+.price--end{
+    display:flex;
+}
+cart-item__totals .right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}

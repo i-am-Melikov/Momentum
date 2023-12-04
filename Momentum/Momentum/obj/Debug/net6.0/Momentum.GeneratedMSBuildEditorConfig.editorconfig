@@ -100,6 +100,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENvbG9yXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/mmmma/source/repos/final-back-end-project/Momentum/Momentum/Areas/Manage/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENvbnRhY3RcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mmmma/source/repos/final-back-end-project/Momentum/Momentum/Areas/Manage/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXERhc2hib2FyZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -196,6 +200,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/mmmma/source/repos/final-back-end-project/Momentum/Momentum/Views/Cookie/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29va2llXENhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mmmma/source/repos/final-back-end-project/Momentum/Momentum/Views/Cookie/CompareIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29va2llXENvbXBhcmVJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mmmma/source/repos/final-back-end-project/Momentum/Momentum/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -230,6 +242,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/mmmma/source/repos/final-back-end-project/Momentum/Momentum/Views/Shared/_BlogPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CbG9nUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mmmma/source/repos/final-back-end-project/Momentum/Momentum/Views/Shared/_CartPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXJ0UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mmmma/source/repos/final-back-end-project/Momentum/Momentum/Views/Shared/_CheckOutPartial.cshtml]

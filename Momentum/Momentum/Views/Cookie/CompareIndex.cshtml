@@ -1,0 +1,78 @@
+﻿@model List<CompareVM>
+
+@{
+    ViewData["Title"] = "CompareIndex";
+    ViewData["IsBlackHeader"] = true;
+}
+<style>
+    .compare-prod-remove {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: var(--blue);
+        padding: 5px 10px;
+        border-radius: 0 8px;
+        color: var(--white);
+    }
+</style>
+<main id="MainContent" class="content-for-layout wrapper" style="padding:150px 0px 0px">
+    <div>
+        <section class="padding-top padding-bottom dark-contnt">
+            <div class="container wishpg">
+                <div class="mainwish">
+                    <div class="section-title text-center">
+                        <h3>
+                            <span>Wishlist</span>
+                        </h3>
+                    </div>
+                    <div class="row main-wishlist">
+                        @if (Model != null && Model.Any())
+                        {
+                            foreach (CompareVM compare in Model)
+                            {
+                                <div class="cart col-lg-3 col-sm-4 col-12">
+                                    <div class="innerwish product-card-inner">
+                                        <div class="innerwimg">
+                                            <a asp-controller="product" asp-action="detail" asp-route-id="@compare.Id" style="min-height: 240px;">
+                                                <img src="~/assets/img/product/@compare.Image" alt="@compare.Title">
+                                            </a>
+                                            <a asp-controller="cookie" asp-action="RemoveFromCompare" asp-route-id="@compare.Id" class="compare-prod-remove">X</a>
+                                        </div>
+                                        <div class="wishdesc product-content-bottom">
+                                            <h4 class="product-title">
+                                                <a asp-controller="product" asp-action="detail" asp-route-id="@compare.Id" style="color: black;">@compare.Title</a>
+                                            </h4>
+                                            <div class="no-js-hidden price" id="price-@compare.Id" role="status">
+                                                @if (compare.DiscountedPrice == null || compare.DiscountedPrice == 0)
+                                                {
+                                                    <ins class="price-item--regular" style="color: black;">@compare.Price <span class="currency-type">USD</span></ins>
+                                                }
+                                                else
+                                                {
+                                                    <ins class="price-item--regular" style="color: black;">@compare.DiscountedPrice <span class="currency-type">USD</span></ins>
+                                                    <ins class="price-item--sale" style="color: black;">@compare.Price <span class="currency-type">USD</span></ins>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="wishempty text-center" style="padding: 50px;">
+                                <h3>Your wishlist is currently empty!</h3>
+                            </div>
+                        }
+                    </div>
+                    <div class="d-flex wish-btn-wrp align-items-center justify-content-center text-center padding-top">
+                        <a href="javascript:history.go(-1)" class="btn">Continue Shopping</a>
+                    </div>
+                </div>
+                <div class="wishempty text-center" style="display: none;">
+                    <h3>Your compare is currently empty!</h3>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

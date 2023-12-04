@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 namespace Momentum.Controllers
 {
-    //[Authorize(Roles = "Member")]
+    [Authorize(Roles = "Member")]
     public class OrderController : Controller
     {
         private readonly AppDbContext _context;
@@ -29,7 +29,7 @@ namespace Momentum.Controllers
         {
             AppUser? appUser = await _userManager.Users
                 .Include(u => u.Addresses.Where(a => a.IsDeleted == false && a.IsDefault))
-                .Include(u => u.Baskets.Where(b => b.IsDeleted == false)).ThenInclude(b => b.Product).ThenInclude(b=>b.ProductColors.Where(pc=>!pc.IsDeleted)).ThenInclude(p=>p.Color)
+                .Include(u => u.Baskets.Where(b => b.IsDeleted == false)).ThenInclude(b => b.Product).ThenInclude(b => b.ProductColors.Where(pc => !pc.IsDeleted)).ThenInclude(p => p.Color)
                 .FirstOrDefaultAsync(u => u.UserName == User.Identity.Name);
 
             if (appUser == null) RedirectToAction("Login", "Account");
@@ -38,7 +38,7 @@ namespace Momentum.Controllers
             List<BasketVM> basketVMs = null;
 
             basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
-         
+
             if (basketVMs == null || basketVMs.Count() <= 0)
             {
                 TempData["Info"] = "Zehmet Olmasa Sebete Mehsul Elave Edin";
@@ -82,7 +82,7 @@ namespace Momentum.Controllers
                .FirstOrDefaultAsync(u => u.UserName == User.Identity.Name);
 
             if (appUser == null) RedirectToAction("Login", "Account");
-            
+
             OrderVM orderVM = new OrderVM
             {
                 Order = order,
@@ -103,7 +103,7 @@ namespace Momentum.Controllers
             List<BasketVM> basketVMs = null;
 
             basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basketDatas);
-         
+
             if (basketVMs == null || basketVMs.Count() <= 0)
             {
                 TempData["Info"] = "Zehmet Olmasa Sebete Mehsul Elave Edin";

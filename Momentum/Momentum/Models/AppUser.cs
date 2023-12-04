@@ -13,7 +13,7 @@ namespace Momentum.Models
         public string? SurName { get; set; }
         [NotMapped]
         public IList<string> Roles { get; set; }
-        public IEnumerable<Basket>? Baskets { get; set; }
+        public List<Basket>? Baskets { get; set; }
 
         public IEnumerable<Order>? Orders { get; set; }
 

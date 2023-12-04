@@ -46,12 +46,12 @@
                         {
                             <div class="mini-cart-item">
                                 <div class="mini-cart-image">
-                                    <a href="">
+                                    <a asp-controller="product" asp-action="detail" asp-route-id="@basketVM.Id">
                                         <img src="~/assets/img/product/@basketVM.Image" alt="@basketVM.Title">
                                     </a>
                                 </div>
                                 <div class="mini-cart-details">
-                                    <a href="" class="mini-cart-title">@basketVM.Title</a>
+                                    <a asp-controller="product" asp-action="detail" asp-route-id="@basketVM.Id" class="mini-cart-title">@basketVM.Title</a>
                                     <div class="cart-variable">
                                         <p><strong>Color: </strong>@basketVM.Color</p>
                                     </div>
@@ -118,7 +118,7 @@
                                 <path d="M13.9902 5.16668H12.6601V4.00001C12.6601 3.29276 12.3798 2.61449 11.8809 2.11439C11.382 1.61429 10.7054 1.33334 9.99986 1.33334C9.29432 1.33334 8.61768 1.61429 8.11879 2.11439C7.61991 2.61449 7.33963 3.29276 7.33963 4.00001V5.16668H6.00952V4.00001C6.00952 2.93914 6.42993 1.92172 7.17826 1.17158C7.9266 0.421428 8.94155 0 9.99986 0C11.0582 0 12.0731 0.421428 12.8215 1.17158C13.5698 1.92172 13.9902 2.93914 13.9902 4.00001V5.16668Z" fill="white"></path>
                             </svg>
                         </a>
-                        <a href="" class="link-btn">
+                        <a asp-controller="cookie" asp-action="cart" class="link-btn">
                             View Cart
                             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="14" viewBox="0 0 35 14" fill="none">
                                 <path d="M25.0749 14L35 7L25.0805 0L29.12 6.06667H0V7.93333H29.12L25.0749 14Z"></path>

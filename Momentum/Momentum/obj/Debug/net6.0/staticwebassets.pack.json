@@ -25,6 +25,14 @@
       "PackagePath": "staticwebassets\\assets\\css\\swiper.css"
     },
     {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\Half-bluthooth-right.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\Half-bluthooth-right.webp"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\Half-bluthooth.avif",
+      "PackagePath": "staticwebassets\\assets\\img\\Half-bluthooth.avif"
+    },
+    {
       "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\blog\\20231122101015884.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\blog\\20231122101015884.jpg"
     },
@@ -119,6 +127,18 @@
     {
       "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\category\\20231127214926636.png",
       "PackagePath": "staticwebassets\\assets\\img\\category\\20231127214926636.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\design-circle-1.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\design-circle-1.webp"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\design-circle-2 (1).avif",
+      "PackagePath": "staticwebassets\\assets\\img\\design-circle-2 (1).avif"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\design-circle-2.avif",
+      "PackagePath": "staticwebassets\\assets\\img\\design-circle-2.avif"
     },
     {
       "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\dropdown.png",
@@ -435,6 +455,10 @@
     {
       "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\product\\20231127221521014.png",
       "PackagePath": "staticwebassets\\assets\\img\\product\\20231127221521014.png"
+    },
+    {
+      "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\img\\top-star.png",
+      "PackagePath": "staticwebassets\\assets\\img\\top-star.png"
     },
     {
       "Id": "C:\\Users\\mmmma\\source\\repos\\final-back-end-project\\Momentum\\Momentum\\wwwroot\\assets\\js\\custom.js",
